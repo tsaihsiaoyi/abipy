@@ -9,6 +9,7 @@ import tempfile
 import pickle
 import numpy as np
 import pandas as pd
+import scipy
 
 from time import ctime
 from shutil import which
@@ -244,6 +245,184 @@ class AbinitFortranFile(BaseFile):
     def close(self) -> None:
         """nop, just to fulfill the abstract interface."""
 
+    def read_header(self) -> None:
+        """
+        Read the header
+        Returns: dict with the header information.
+        """
+        self.codvsn, \
+        self.headform, \
+        self.fform = \
+        self.wfnfile.read_record(
+            "a8",
+            "i4",
+            "i4")
+        self.bantot, \
+        self.date, \
+        self.intxc, \
+        self.ixc, \
+        self.natom, \
+        self.ngfft, \
+        self.nkpt, \
+        self.nspden, \
+        self.nspinor, \
+        self.nsppol, \
+        self.nsym, \
+        self.npsp, \
+        self.ntypat, \
+        self.occopt, \
+        self.pertcase, \
+        self.usepaw, \
+        self.ecut, \
+        self.ecutdg, \
+        self.ecutsm, \
+        self.ecut_eff, \
+        self.qptn, \
+        self.rprimd, \
+        self.stmbias, \
+        self.tphysel, \
+        self.tsmear, \
+        self.usewvl, \
+        self.nshiftk_orig, \
+        self.nshiftk, \
+        self.mband = \
+        self.wfnfile.read_record(
+            "i4", # self.bantot
+            "i4", # self.date
+            "i4", # self.intxc
+            "i4", # self.ixc
+            "i4", # self.natom
+            "3i4", # self.ngfft
+            "i4", # self.nkpt
+            "i4", # self.nspden
+            "i4", # self.nspinor
+            "i4", # self.nsppol
+            "i4", # self.nsym
+            "i4", # self.npsp
+            "i4", # self.ntypat
+            "i4", # self.occopt
+            "i4", # self.pertcase
+            "i4", # self.usepaw
+            "f8", # self.ecut
+            "f8", # self.ecutdg
+            "f8", # self.ecutsm
+            "f8", # self.ecut_eff
+            "3f8", # self.qptn
+            "(3,3)f8", # self.rprimd
+            "f8", # self.stmbias
+            "f8", # self.tphysel
+            "f8", # self.tsmear
+            "i4", # self.usewvl
+            "i4", # self.nshiftk_orig
+            "i4", # self.nshiftk
+            "i4") # self.mband
+
+        self.istwfk, \
+        self.nband, \
+        self.npwarr, \
+        self.so_psp, \
+        self.symafm, \
+        self.symrel, \
+        self.typat, \
+        self.kpt, \
+        self.occ, \
+        self.tnons, \
+        self.znucltypat, \
+        self.wtk = \
+        self.wfnfile.read_record(
+            "%di4" % self.nkpt, #self.istwfk
+            "%di4" % (self.nkpt * self.nsppol), #self.nband
+            "%di4" % self.nkpt, #self.npwarr
+            "%di4" % self.npsp, #self.so_psp
+            "%di4" % self.nsym, #self.symafm
+            "(3,3,%d)i4" % self.nsym, #self.symrel
+            "%di4" % self.natom, #self.typat
+            "(3,%d)f8" % self.nkpt, #self.kpt
+            "(%d,%d,%d)f8" % (self.mband, self.nkpt, self.nsppol), #self.occ
+            "(3,%d)f8" % self.nsym, #self.tnons
+            "%df8" % self.ntypat, #self.znucltypat
+            "%df8" % self.nkpt) #self.wtk
+        
+        self.residm, \
+        self.xred, \
+        self.etotal, \
+        self.fermie, \
+        self.amu = \
+        self.wfnfile.read_record(
+            "f8", # self.residm
+            "(3,%d)f8" % self.natom, # self.xred
+            "f8", # self.etotal
+            "f8", # self.fermie
+            "%df8" % self.ntypat) # self.amu
+
+        self.kptopt, \
+        self.pawcpxocc, \
+        self.nelect, \
+        self.cellcharge, \
+        self.icoulomb, \
+        self.kptrlatt, \
+        self.kptrlatt_orig, \
+        self.shiftk_orig, \
+        self.shiftk = \
+        self.wfnfile.read_record(
+            "i4", # self.kptopt
+            "i4", # self.pawcpxocc
+            "f8", # self.nelect
+            "f8", # self.cellcharge
+            "i4", # self.icoulomb
+            "(3,3)i4", # self.kptrlatt
+            "(3,3)i4", # self.kptrlatt_orig
+            "(3,%d)f8" % self.nshiftk_orig, # self.shiftk_orig
+            "(3,%d)f8" % self.nshiftk) # self.shiftk
+
+        self.title = []
+        self.znuclpsp = np.zeros(self.npsp)
+        self.zionpsp = np.zeros(self.npsp)
+        self.pspso = np.zeros(self.npsp)
+        self.pspdat = np.zeros(self.npsp)
+        self.pspcod = np.zeros(self.npsp)
+        self.pspxc = np.zeros(self.npsp)
+        self.lmn_size = np.zeros(self.npsp)
+        self.md5_pseudos = []
+        for i in range(self.npsp[0]):
+            title, \
+            self.znuclpsp[i], \
+            self.zionpsp[i], \
+            self.pspso[i], \
+            self.pspdat[i], \
+            self.pspcod[i], \
+            self.pspxc[i], \
+            self.lmn_size[i], \
+            md5_pseudos = \
+            self.wfnfile.read_record(
+                "a132", # self.title
+                "f8", # self.znuclpsp
+                "f8", # self.zionpsp
+                "i4", # self.pspso
+                "i4", # self.pspdat
+                "i4", # self.pspcod
+                "i4", # self.pspxc
+                "i4", # self.lmn_size
+                "a32")
+            self.title.append(title)
+            self.md5_pseudos.append(md5_pseudos)
+        
+        if self.usepaw[0] == 1:
+            # Just read. Havn't used it yet.
+            nrhoijsel, \
+            self.cplex, \
+            self.nspden, \
+            self.qphase = \
+            self.wfnfile.read_record(
+                "%di4" % (self.natom), # self.nrhoijsel
+                "i4", # self.cplex
+                "i4", # self.nspden
+                "i4") # self.qphase
+            
+            self.wfnfile.read_record(
+                "%di4" % sum(nrhoijsel),
+                "%df8" % sum(nrhoijsel)*self.nspden[0]*self.nspden[0]*self.qphase[0],
+            )
 
 class CubeFile(BaseFile):
     """

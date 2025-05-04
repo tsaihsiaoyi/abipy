@@ -3,12 +3,13 @@
 from __future__ import annotations
 
 import numpy as np
+import scipy
 
 from monty.functools import lazy_property
 from monty.string import marquee
 from abipy.core import Mesh3D, GSphere
 from abipy.core.structure import Structure
-from abipy.core.mixins import AbinitNcFile, Has_Header, Has_Structure, Has_ElectronBands, NotebookWriter
+from abipy.core.mixins import AbinitNcFile, Has_Header, Has_Structure, Has_ElectronBands, NotebookWriter, AbinitFortranFile
 from abipy.iotools import Visualizer
 from abipy.electrons.ebands import ElectronsReader, ElectronBands
 from abipy.waves.pwwave import PWWaveFunction
@@ -16,6 +17,7 @@ from abipy.tools import duck
 
 __all__ = [
     "WfkFile",
+    "WfkFortranFile"
 ]
 
 
@@ -430,3 +432,17 @@ def get_h1mat_same_qpt(prefix: str):
             print(pertcase, f"{g2:.6e}")
 
     return g_mnks, qpt
+
+class WfkFortranFile(AbinitFortranFile):
+    """
+    Class representing the _WFK fortran file containing wavefunction.
+
+    .. rubric:: Inheritance Diagram
+    .. inheritance-diagram:: WfkFortranFile
+    """
+
+    def __init__(self, filepath: str):
+        super().__init__(filepath)
+
+        self.wfnfile = scipy.io.FortranFile(filepath, "r")
+        self.read_header()

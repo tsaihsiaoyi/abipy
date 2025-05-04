@@ -62,7 +62,7 @@ from abipy.dfpt.ddb import DdbFile, DdbRobot
 from abipy.dfpt.anaddbnc import AnaddbNcFile, AnaddbNcRobot
 from abipy.dfpt.gruneisen import GrunsNcFile
 from abipy.dynamics.hist import HistFile, HistRobot
-from abipy.waves import WfkFile
+from abipy.waves import WfkFile, WfkFortranFile
 from abipy.eph.a2f import A2fFile, A2fRobot
 from abipy.eph.sigeph import SigEPhFile, SigEPhRobot
 from abipy.eph.cumulant import CumulantEPhFile
@@ -119,6 +119,7 @@ ext2file = collections.OrderedDict([
     (".cube", CubeFile),
     ("anaddb.nc", AnaddbNcFile),
     ("DEN", DensityFortranFile),
+    ("WFK", WfkFortranFile),
     (".wout", WoutFile),
     ("EDOS", EdosFile),
     # Pseudos
