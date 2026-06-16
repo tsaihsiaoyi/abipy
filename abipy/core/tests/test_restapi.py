@@ -1,18 +1,25 @@
 """Tests for core.restapi module"""
 
 import contextlib
+import os
+from unittest.mock import patch
 
 import pytest
 
 import abipy.data as abidata
 from abipy import abilab
 from abipy.core.testing import AbipyTest
+from abipy.core.structure import Structure
+from abipy.core.restapi import get_mprester
 
 
 class TestMpRestApi(AbipyTest):
     """Test interfaces with the Materials Project REST API."""
 
-    @pytest.mark.skip(reason="Interface with MP rester is broken")
+    @pytest.mark.skipif(
+        os.environ.get("ABIPY_REAL_API_TEST") is not None,
+        reason="Interface with real MP Rester is broken / requires API key"
+    )
     def test_mprester(self):
         """Testing MP Rest API wrappers."""
         # Test mp_search
@@ -57,3 +64,17 @@ class TestMpRestApi(AbipyTest):
 
         with contextlib.redirect_stdout(None):
             cod.print_results(fmt="POSCAR", verbose=2)
+
+    def test_mp_connectivity(self):
+        """Check real connectivity to Materials Project API."""
+        if os.environ.get("ABIPY_REAL_API_TEST") is None:
+            pytest.skip("Only run in real API connectivity check")
+
+        api_key = os.environ.get("PMG_MAPI_KEY")
+        if not api_key:
+            pytest.skip("PMG_MAPI_KEY env var not set")
+
+        with get_mprester() as rest:
+            struct = rest.get_structure_by_material_id("mp-149")
+            assert struct is not None
+

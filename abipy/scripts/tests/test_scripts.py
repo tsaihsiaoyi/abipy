@@ -309,7 +309,10 @@ class TestAbistruct(ScriptTest):
             expect_stderr=self.expect_stderr,
         )
 
-    @pytest.mark.skip(reason="Interface with MP rester is broken")
+    @pytest.mark.skipif(
+        os.environ.get("ABIPY_REAL_API_TEST") is not None,
+        reason="Interface with real MP Rester is broken / requires API key"
+    )
     def test_mp_api(self):
         """Testing abistruct mp methods."""
         env = self.get_env()

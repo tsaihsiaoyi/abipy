@@ -14,3 +14,10 @@ del author, email
 
 __license__ = release.license
 __version__ = release.version
+
+import os
+if os.environ.get("ABIPY_MOCK_API") == "true":
+    import pymatgen.ext.cod
+    from abipy.core.restapi import MockCOD
+    pymatgen.ext.cod.COD = MockCOD
+

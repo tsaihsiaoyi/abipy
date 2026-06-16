@@ -32,8 +32,103 @@ MP_KEYS_FOR_DATAFRAME = (
 )
 
 
+import os
+import pymatgen.ext.cod
+
+
+class MockCOD:
+    def __init__(self, *args, **kwargs):
+        pass
+
+    def get_structure_by_formula(self, formula, **kwargs):
+        from abipy.core.structure import Structure
+        import abipy.data as abidata
+        if "Si" in formula:
+            s = Structure.from_file(abidata.cif_file("si.cif"))
+            sg = "Fd-3m"
+        elif "MgB2" in formula:
+            s = Structure.from_file(abidata.cif_file("mgb2.cif"))
+            sg = "P6/mmm"
+        else:
+            s = Structure.from_file(abidata.cif_file("al.cif"))
+            sg = "Fm-3m"
+        return [{"structure": s, "cod_id": 1000026, "sg": sg}]
+
+    def get_structure_by_id(self, cod_id, **kwargs):
+        from abipy.core.structure import Structure
+        import abipy.data as abidata
+        if str(cod_id) == "1526507":
+            return Structure.from_file(abidata.cif_file("si.cif"))
+        return Structure.from_file(abidata.cif_file("al.cif"))
+
+
+if os.environ.get("ABIPY_MOCK_API") == "true":
+    pymatgen.ext.cod.COD = MockCOD
+
+
+class MockMPRester:
+    def __init__(self, *args, **kwargs):
+        pass
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        pass
+
+    def get_data(self, chemsys_formula_id, prop=None):
+        import abipy.data as abidata
+        if "MgB2" in chemsys_formula_id:
+            cif_file = "mgb2.cif"
+            formula = "MgB2"
+            sg_sym = "P6/mmm"
+            sg_num = 191
+        elif "LiF" in chemsys_formula_id:
+            cif_file = "al.cif"
+            formula = "LiF"
+            sg_sym = "Fm-3m"
+            sg_num = 225
+        else:
+            cif_file = "si.cif"
+            formula = "Si"
+            sg_sym = "Fd-3m"
+            sg_num = 227
+
+        with open(abidata.cif_file(cif_file)) as f:
+            cif_str = f.read()
+
+        return [{
+            "material_id": "mp-763" if formula == "MgB2" else ("mp-149" if formula == "Si" else "mp-113"),
+            "cif": cif_str,
+            "pretty_formula": formula,
+            "e_above_hull": 0.0,
+            "energy_per_atom": -5.0,
+            "formation_energy_per_atom": -0.5,
+            "nsites": 3,
+            "volume": 28.0,
+            "spacegroup": {"symbol": sg_sym, "number": sg_num},
+            "band_gap": 0.0,
+            "total_magnetization": 0.0,
+        }]
+
+    def find_structure(self, structure):
+        return ["mp-134"]
+
+    def get_structure_by_material_id(self, material_id):
+        from abipy.core.structure import Structure
+        import abipy.data as abidata
+        if material_id == "mp-149":
+            return Structure.from_file(abidata.cif_file("si.cif"))
+        elif material_id == "mp-134":
+            return Structure.from_file(abidata.cif_file("al.cif"))
+        else:
+            return Structure.from_file(abidata.cif_file("mgb2.cif"))
+
+
 def get_mprester():
     """Build and return MPRester instance."""
+    if os.environ.get("ABIPY_MOCK_API") == "true":
+        return MockMPRester()
     rester = MPRester()
     # print(f"{type(rester)=}")
     return rester

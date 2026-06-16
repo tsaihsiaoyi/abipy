@@ -1,0 +1,53 @@
+name: API Connectivity Check
+
+on:
+  schedule:
+    # Run daily at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows manual trigger from the Actions tab
+
+permissions:
+  contents: read
+
+jobs:
+  check-connectivity:
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Abipy repo
+        uses: actions/checkout@v4
+
+      - name: Set up Miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+            auto-update-conda: true
+
+      - name: Installing abinit and abipy dependencies
+        run: |
+            conda create -n abipy python=3.12 --yes
+            conda activate abipy
+            conda install "abinit>10" -c conda-forge --yes
+
+            # Update submodules with data.
+            git submodule update --remote --init
+            git submodule update --recursive --remote
+
+            pip install -r requirements.txt
+            pip install -r requirements-optional.txt
+            pip install --editable .
+            mkdir -p $HOME/.abinit/abipy/
+            cp abipy/data/managers/gh_manager.yml $HOME/.abinit/abipy/manager.yml
+            cp abipy/data/managers/gh_scheduler.yml $HOME/.abinit/abipy/scheduler.yml
+
+      - name: Run API connectivity tests
+        env:
+          ABIPY_REAL_API_TEST: "true"
+          PMG_MAPI_KEY: ${{ secrets.PMG_MAPI_KEY }}
+        run: |
+          conda activate abipy
+          pip install -r requirements-tests.txt
+          pytest -v abipy/core/tests/test_restapi.py
