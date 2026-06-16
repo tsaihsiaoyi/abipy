@@ -74,16 +74,10 @@ jobs:
         run: |
           conda activate abipy
           pip install -r requirements-tests.txt
-          default_interface=$(ip route | grep default | awk '{print $5}')
-          sudo ip link set dev $default_interface down
-          trap "sudo ip link set dev $default_interface up" EXIT
-          pytest -v .
+          sudo unshare -n sh -c 'ip link set dev lo up && sudo -u $(whoami) -E env PATH=$PATH pytest -v .'
 
       - name: integration_tests
         run: |
           conda activate abipy
           abicheck.py --with-flow
-          default_interface=$(ip route | grep default | awk '{print $5}')
-          sudo ip link set dev $default_interface down
-          trap "sudo ip link set dev $default_interface up" EXIT
-          pytest -v abipy/integration_tests
+          sudo unshare -n sh -c 'ip link set dev lo up && sudo -u $(whoami) -E env PATH=$PATH pytest -v abipy/integration_tests'
