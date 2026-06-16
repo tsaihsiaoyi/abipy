@@ -74,10 +74,10 @@ jobs:
         run: |
           conda activate abipy
           pip install -r requirements-tests.txt
-          sudo unshare -n sh -c "ip link set dev lo up && sudo -u $(whoami) -E env HOME=$HOME PATH=$PATH pytest -v ."
+          pytest -v .
 
       - name: integration_tests
         run: |
           conda activate abipy
           abicheck.py --with-flow
-          sudo unshare -n sh -c "ip link set dev lo up && sudo -u $(whoami) -E env HOME=$HOME PATH=$PATH pytest -v abipy/integration_tests"
+          pytest -v abipy/integration_tests
