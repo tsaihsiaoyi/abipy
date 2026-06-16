@@ -2,7 +2,7 @@ name: Run the Abipy test suite.
 
 on:
   push:
-    branches: [develop, master]
+    branches: [develop, master, feature/mock-api-connectivity]
     paths-ignore: ["**/*.md", docs/**]
   pull_request:
     branches: [develop]
@@ -16,7 +16,7 @@ permissions:
 jobs:
   test:
     # prevent this action from running on forks
-    if: github.repository == 'abinit/abipy'
+    if: github.repository == 'abinit/abipy' || github.repository == 'tsaihsiaoyi/abipy'
     defaults:
       run:
         shell: bash -l {0} # enables conda/mamba env activation by reading bash profile
