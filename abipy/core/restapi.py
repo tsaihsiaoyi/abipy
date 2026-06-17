@@ -66,7 +66,12 @@ class MockCOD:
         
         file_path = os.path.join(mock_dir, f"cod_id_{cod_id}.json")
         if not os.path.exists(file_path):
-            file_path = os.path.join(mock_dir, "cod_id_default.json")
+            # Dynamic fallback
+            available = [f for f in os.listdir(mock_dir) if f.startswith("cod_id_") and f.endswith(".json")]
+            if "cod_id_default.json" in available:
+                file_path = os.path.join(mock_dir, "cod_id_default.json")
+            elif available:
+                file_path = os.path.join(mock_dir, available[0])
             
         if not os.path.exists(file_path):
             raise FileNotFoundError(f"Mock COD id file not found: {file_path}")
@@ -76,9 +81,15 @@ class MockCOD:
             return Structure.from_dict(d)
 
 
-# Automatically set global mock environment variable if running tests via pytest
+# Automatically set global mock environment variable if running tests
 # and real API connectivity check is not explicitly requested.
-is_testing = "pytest" in sys.modules or any("pytest" in arg for arg in sys.argv)
+is_testing = (
+    "pytest" in sys.modules or
+    "_pytest" in sys.modules or
+    "unittest" in sys.modules or
+    any(any(k in arg for k in ("pytest", "unittest", "test_", "setup.py")) for arg in sys.argv) or
+    "PYTEST_CURRENT_TEST" in os.environ
+)
 if is_testing and os.environ.get("ABIPY_REAL_API_TEST") is None:
     os.environ["ABIPY_MOCK_API"] = "true"
 
@@ -100,29 +111,55 @@ class MockMPRester:
         import abipy.data as abidata
         import os
         import json
+        import re
         mock_dir = os.path.join(os.path.dirname(abidata.__file__), "mock_responses")
         
-        # Determine formula
-        if "MgB2" in chemsys_formula_id:
-            formula = "MgB2"
-        elif "LiF" in chemsys_formula_id:
-            formula = "LiF"
-        elif "Si" in chemsys_formula_id:
-            formula = "Si"
-        elif "Al" in chemsys_formula_id:
-            formula = "Al"
-        else:
-            formula = chemsys_formula_id
-
-        file_path = os.path.join(mock_dir, f"get_data_{formula}.json")
-        if not os.path.exists(file_path):
-            raise FileNotFoundError(f"Mock get_data file not found: {file_path}")
+        available_files = [
+            f for f in os.listdir(mock_dir) 
+            if f.startswith("get_data_") and f.endswith(".json")
+        ]
+        
+        # Extract element symbols from chemical system or formula
+        def get_elements(s):
+            return set(re.findall(r'[A-Z][a-z]?', s))
             
+        query_elements = get_elements(chemsys_formula_id)
+        
+        exact_file = f"get_data_{chemsys_formula_id}.json"
+        if exact_file in available_files:
+            file_path = os.path.join(mock_dir, exact_file)
+        else:
+            matched_file = None
+            for f in available_files:
+                formula_part = f[len("get_data_"):-len(".json")]
+                if get_elements(formula_part) == query_elements:
+                    matched_file = f
+                    break
+            if matched_file:
+                file_path = os.path.join(mock_dir, matched_file)
+            else:
+                raise FileNotFoundError(f"No mock get_data file matches query: {chemsys_formula_id}")
+                
         with open(file_path) as f:
             return json.load(f)
 
     def find_structure(self, structure, *args, **kwargs):
-        return ["mp-134"]
+        import abipy.data as abidata
+        import os
+        import json
+        mock_dir = os.path.join(os.path.dirname(abidata.__file__), "mock_responses")
+        formula = structure.composition.reduced_formula
+        file_path = os.path.join(mock_dir, f"find_structure_{formula}.json")
+        if not os.path.exists(file_path):
+            file_path = os.path.join(mock_dir, "find_structure_default.json")
+        if not os.path.exists(file_path):
+            available = [f for f in os.listdir(mock_dir) if f.startswith("find_structure_") and f.endswith(".json")]
+            if available:
+                file_path = os.path.join(mock_dir, available[0])
+        if not os.path.exists(file_path):
+            raise FileNotFoundError(f"Mock find_structure file not found: {file_path}")
+        with open(file_path) as f:
+            return json.load(f)
 
     def _make_request(self, suburl, payload=None, method='GET', *args, **kwargs):
         import re
@@ -175,6 +212,11 @@ class MockMPRester:
                 elif "value" in e:
                     d["efermi"] = float(e["value"])
             return BandStructureSymmLine.from_dict(d)
+
+
+if os.environ.get("ABIPY_MOCK_API") == "true":
+    import pymatgen.ext.matproj
+    pymatgen.ext.matproj.MPRester = MockMPRester
 
 
 def get_mprester():

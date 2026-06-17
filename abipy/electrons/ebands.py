@@ -1551,29 +1551,21 @@ class ElectronBands(Has_Structure):
             else:
                 #
                 # Get nelect from valence band maximum index.
+                # Use eigenvalue comparison directly with fermie to avoid pymatgen's
+                # get_vbm() strict-less-than classification bugs when efermi is at VBM.
                 #
-                # - "band_index": A dict with spin keys pointing to a list of the
-                # indices of the band containing the VBM (please note that you
-                # can have several bands sharing the VBM) {Spin.up:[],
-                # Spin.down:[]}
-
-                d = pmg_bands.get_vbm()
-
-                iv_up = max(d["band_index"][PmgSpin.up])
-                homo_up = abipy_eigens[0, :, iv_up].max()
-                homo = homo_up
-
+                atol = 1e-4
+                occupied_up = (abipy_eigens[0] <= fermie + atol)
+                iv_up = np.where(occupied_up.any(axis=0))[0].max()
                 nelect = (iv_up + 1) * 2
-                # print("iv_up", iv_up, "nelect: ", nelect)
 
                 if pmg_bands.is_spin_polarized:
-                    vbands_down = d["band_index"][PmgSpin.down]
-                    iv_down = None
-                    if vbands_down:
-                        iv_down = max(vbands_down)
-                        homo_down = abipy_eigens[1, :, iv_down].max()
-                        homo = max(homo_up, homo_down)
-                    nelect = np.count_nonzero(abipy_eigens[:, 0, :] <= homo)
+                    occupied_down = (abipy_eigens[1] <= fermie + atol)
+                    iv_down = np.where(occupied_down.any(axis=0))[0].max()
+                    homo_up = abipy_eigens[0, :, iv_up].max()
+                    homo_down = abipy_eigens[1, :, iv_down].max()
+                    homo = max(homo_up, homo_down)
+                    nelect = np.count_nonzero(abipy_eigens[:, 0, :] <= homo + atol)
 
                     # cprint("Using approximated method to get nelect in metals: {nelect}", color="yellow")
 

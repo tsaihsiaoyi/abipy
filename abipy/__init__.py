@@ -18,9 +18,15 @@ __version__ = release.version
 import os
 import sys
 
-# Automatically set global mock environment variable if running tests via pytest
+# Automatically set global mock environment variable if running tests
 # and real API connectivity check is not explicitly requested.
-is_testing = "pytest" in sys.modules or any("pytest" in arg for arg in sys.argv)
+is_testing = (
+    "pytest" in sys.modules or
+    "_pytest" in sys.modules or
+    "unittest" in sys.modules or
+    any(any(k in arg for k in ("pytest", "unittest", "test_", "setup.py")) for arg in sys.argv) or
+    "PYTEST_CURRENT_TEST" in os.environ
+)
 if is_testing and os.environ.get("ABIPY_REAL_API_TEST") is None:
     os.environ["ABIPY_MOCK_API"] = "true"
 
@@ -28,4 +34,9 @@ if os.environ.get("ABIPY_MOCK_API") == "true":
     import pymatgen.ext.cod
     from abipy.core.restapi import MockCOD
     pymatgen.ext.cod.COD = MockCOD
+
+    import pymatgen.ext.matproj
+    from abipy.core.restapi import MockMPRester
+    pymatgen.ext.matproj.MPRester = MockMPRester
+
 
