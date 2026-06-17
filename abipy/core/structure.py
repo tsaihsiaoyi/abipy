@@ -96,7 +96,10 @@ def mp_search(chemsys_formula_id):
     chemsys_formula_id = chemsys_formula_id.replace(" ", "")
 
     structures, mpids, data = [], [], None
-    from pymatgen.ext.matproj import MPRestError
+    try:
+        from pymatgen.ext.matproj import MPRestError
+    except (ImportError, ModuleNotFoundError):
+        MPRestError = Exception
 
     from abipy.core import restapi
 

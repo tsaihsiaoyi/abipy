@@ -14,6 +14,7 @@ pymatgen
 monty
 netCDF4
 matplotlib
+mp-api
 seaborn
 plotly
 ipython

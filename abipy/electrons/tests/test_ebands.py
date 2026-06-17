@@ -585,7 +585,10 @@ class ElectronBandsTest(AbipyTest):
 class ElectronBandsFromRestApi(AbipyTest):
     def test_from_mpid(self):
         """Testing interpolation of SnO2 band energies from MP database."""
-        if self.test_mprester():
+        from abipy.core.restapi import HAS_MP_API
+        if not HAS_MP_API:
+            raise self.SkipTest("get_bandstructure_by_material_id requires the new mp-api package.")
+        if self.is_test_mprester():
             with self.assertRaises(ValueError):
                 abilab.ElectronBands.from_mpid("foobar")
 
@@ -613,7 +616,10 @@ class ElectronBandsFromRestApi(AbipyTest):
 
     def test_ebands_from_mpid_magnetic_semiconductor_nelect_automatically_computed(self):
         """https://github.com/abinit/abipy/issues/232"""
-        if self.test_mprester():
+        from abipy.core.restapi import HAS_MP_API
+        if not HAS_MP_API:
+            raise self.SkipTest("get_bandstructure_by_material_id requires the new mp-api package.")
+        if self.is_test_mprester():
             ebands = ElectronBands.from_mpid("mp-565814")
             assert ebands.nsppol == 2
             self.assert_almost_equal(ebands.direct_gaps[0].energy, 3.6776999999999997)

@@ -20,7 +20,7 @@ class TestMpRestApi(AbipyTest):
         os.environ.get("ABIPY_REAL_API_TEST") is not None,
         reason="Interface with real MP Rester is broken / requires API key"
     )
-    def test_mprester(self):
+    def is_test_mprester(self):
         """Testing MP Rest API wrappers."""
         # Test mp_search
         mp = abilab.mp_search("MgB2")

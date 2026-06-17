@@ -12,7 +12,12 @@ from pprint import pprint
 
 import pandas as pd
 from monty.string import marquee
-from pymatgen.ext.matproj import MPRester
+try:
+    from mp_api.client import MPRester
+    HAS_MP_API = True
+except ImportError:
+    from pymatgen.ext.matproj import MPRester
+    HAS_MP_API = False
 
 from abipy.core.mixins import NotebookWriter
 from abipy.tools.printing import print_dataframe
@@ -215,8 +220,16 @@ class MockMPRester:
 
 
 if os.environ.get("ABIPY_MOCK_API") == "true":
-    import pymatgen.ext.matproj
-    pymatgen.ext.matproj.MPRester = MockMPRester
+    try:
+        import pymatgen.ext.matproj
+        pymatgen.ext.matproj.MPRester = MockMPRester
+    except (ImportError, ModuleNotFoundError):
+        pass
+    try:
+        import mp_api.client
+        mp_api.client.MPRester = MockMPRester
+    except (ImportError, ModuleNotFoundError):
+        pass
 
 
 def get_mprester():

@@ -354,7 +354,7 @@ class AbipyTest(PymatgenTest):
             raise unittest.SkipTest("This test requires Abinit version %s %s" % (op, version))
 
     @staticmethod
-    def test_mprester():
+    def is_test_mprester():
         """Skip MP rester tests."""
         # raise unittest.SkipTest("MPRester tests have been disabled")
         return True
