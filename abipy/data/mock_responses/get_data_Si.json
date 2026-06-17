@@ -1,0 +1,690 @@
+[
+    {
+        "material_id": "mp-aaaditqj",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   4.86259289\n_cell_length_b   4.86259289\n_cell_length_c   3.99896561\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   140.41316655\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si4\n_cell_volume   60.25474153\n_cell_formula_units_Z   4\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.88731734  0.11268266  0.75000000  1.0\n  Si  Si1  1  0.61151741  0.38848259  0.75000000  1.0\n  Si  Si2  1  0.11268266  0.88731734  0.25000000  1.0\n  Si  Si3  1  0.38848259  0.61151741  0.25000000  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.6645676274999985,
+        "energy_per_atom": -8.1091969675,
+        "formation_energy_per_atom": 0.6645676274999985,
+        "nsites": 4,
+        "volume": 60.25474153424655,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 1e-07
+    },
+    {
+        "material_id": "mp-aaafdvbl",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   5.46879917\n_cell_length_b   5.46879917\n_cell_length_c   3.47753237\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   143.24870055\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si4\n_cell_volume   62.23077097\n_cell_formula_units_Z   4\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.90613985  0.09386015  0.75000000  1.0\n  Si  Si1  1  0.66462325  0.33537675  0.75000000  1.0\n  Si  Si2  1  0.09386015  0.90613985  0.25000000  1.0\n  Si  Si3  1  0.33537675  0.66462325  0.25000000  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.44883388250000067,
+        "energy_per_atom": -8.324930712499999,
+        "formation_energy_per_atom": 0.44883388250000067,
+        "nsites": 4,
+        "volume": 62.2307709707008,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 1.6e-06
+    },
+    {
+        "material_id": "mp-aaacdhjp",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   8.70406569\n_cell_length_b   8.70406569\n_cell_length_c   8.70406569\n_cell_angle_alpha   109.47122063\n_cell_angle_beta   109.47122063\n_cell_angle_gamma   109.47122063\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si23\n_cell_volume   507.62685496\n_cell_formula_units_Z   23\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.83065879  0.55862766  0.55862766  1.0\n  Si  Si1  1  0.16934121  0.72796787  0.72796787  1.0\n  Si  Si2  1  -0.00000000  0.44137234  0.27203213  1.0\n  Si  Si3  1  0.55862766  0.55862766  0.83065879  1.0\n  Si  Si4  1  -0.00000000  0.27203213  0.44137234  1.0\n  Si  Si5  1  0.72796787  0.72796787  0.16934121  1.0\n  Si  Si6  1  0.44137234  0.27203213  0.00000000  1.0\n  Si  Si7  1  0.27203213  0.44137234  -0.00000000  1.0\n  Si  Si8  1  0.55862766  0.83065879  0.55862766  1.0\n  Si  Si9  1  0.27203213  -0.00000000  0.44137234  1.0\n  Si  Si10  1  0.44137234  -0.00000000  0.27203213  1.0\n  Si  Si11  1  0.72796787  0.16934121  0.72796787  1.0\n  Si  Si12  1  -0.00000000  -0.00000000  0.00000000  1.0\n  Si  Si13  1  0.72848124  0.72848124  0.72848124  1.0\n  Si  Si14  1  0.27151876  0.00000000  0.00000000  1.0\n  Si  Si15  1  0.00000000  0.27151876  -0.00000000  1.0\n  Si  Si16  1  -0.00000000  0.00000000  0.27151876  1.0\n  Si  Si17  1  0.25000000  0.75000000  0.50000000  1.0\n  Si  Si18  1  0.75000000  0.25000000  0.50000000  1.0\n  Si  Si19  1  0.75000000  0.50000000  0.25000000  1.0\n  Si  Si20  1  0.25000000  0.50000000  0.75000000  1.0\n  Si  Si21  1  0.50000000  0.25000000  0.75000000  1.0\n  Si  Si22  1  0.50000000  0.75000000  0.25000000  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.10747738456521638,
+        "energy_per_atom": -8.666287210434783,
+        "formation_energy_per_atom": 0.10747738456521708,
+        "nsites": 23,
+        "volume": 507.626854956001,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 1.3309000000000006,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaacdhjq",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   10.18046007\n_cell_length_b   10.18046007\n_cell_length_c   10.18046007\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   90.00000000\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si46\n_cell_volume   1055.12087294\n_cell_formula_units_Z   46\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.00000000  0.88288043  0.30796247  1.0\n  Si  Si1  1  -0.00000000  0.11711957  0.69203753  1.0\n  Si  Si2  1  -0.00000000  0.11711957  0.30796247  1.0\n  Si  Si3  1  0.00000000  0.88288043  0.69203753  1.0\n  Si  Si4  1  0.30796247  0.00000000  0.88288043  1.0\n  Si  Si5  1  0.38288043  0.50000000  0.19203753  1.0\n  Si  Si6  1  0.69203753  0.00000000  0.11711957  1.0\n  Si  Si7  1  0.61711957  0.50000000  0.80796247  1.0\n  Si  Si8  1  0.30796247  0.00000000  0.11711957  1.0\n  Si  Si9  1  0.61711957  0.50000000  0.19203753  1.0\n  Si  Si10  1  0.69203753  0.00000000  0.88288043  1.0\n  Si  Si11  1  0.38288043  0.50000000  0.80796247  1.0\n  Si  Si12  1  0.88288043  0.30796247  -0.00000000  1.0\n  Si  Si13  1  0.50000000  0.80796247  0.61711957  1.0\n  Si  Si14  1  0.11711957  0.69203753  -0.00000000  1.0\n  Si  Si15  1  0.50000000  0.19203753  0.38288043  1.0\n  Si  Si16  1  0.88288043  0.69203753  -0.00000000  1.0\n  Si  Si17  1  0.50000000  0.19203753  0.61711957  1.0\n  Si  Si18  1  0.11711957  0.30796247  -0.00000000  1.0\n  Si  Si19  1  0.50000000  0.80796247  0.38288043  1.0\n  Si  Si20  1  0.19203753  0.38288043  0.50000000  1.0\n  Si  Si21  1  0.80796247  0.61711957  0.50000000  1.0\n  Si  Si22  1  0.19203753  0.61711957  0.50000000  1.0\n  Si  Si23  1  0.80796247  0.38288043  0.50000000  1.0\n  Si  Si24  1  0.25000000  0.50000000  -0.00000000  1.0\n  Si  Si25  1  0.75000000  0.50000000  -0.00000000  1.0\n  Si  Si26  1  -0.00000000  0.25000000  0.50000000  1.0\n  Si  Si27  1  0.00000000  0.75000000  0.50000000  1.0\n  Si  Si28  1  0.50000000  0.00000000  0.25000000  1.0\n  Si  Si29  1  0.50000000  0.00000000  0.75000000  1.0\n  Si  Si30  1  0.81633162  0.81633162  0.81633162  1.0\n  Si  Si31  1  0.18366838  0.18366838  0.18366838  1.0\n  Si  Si32  1  0.18366838  0.18366838  0.81633162  1.0\n  Si  Si33  1  0.18366838  0.81633162  0.18366838  1.0\n  Si  Si34  1  0.31633162  0.31633162  0.68366838  1.0\n  Si  Si35  1  0.81633162  0.81633162  0.18366838  1.0\n  Si  Si36  1  0.81633162  0.18366838  0.81633162  1.0\n  Si  Si37  1  0.68366838  0.68366838  0.31633162  1.0\n  Si  Si38  1  0.81633162  0.18366838  0.18366838  1.0\n  Si  Si39  1  0.68366838  0.68366838  0.68366838  1.0\n  Si  Si40  1  0.18366838  0.81633162  0.81633162  1.0\n  Si  Si41  1  0.31633162  0.31633162  0.31633162  1.0\n  Si  Si42  1  0.31633162  0.68366838  0.31633162  1.0\n  Si  Si43  1  0.68366838  0.31633162  0.68366838  1.0\n  Si  Si44  1  0.68366838  0.31633162  0.31633162  1.0\n  Si  Si45  1  0.31633162  0.68366838  0.68366838  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.09184994826086879,
+        "energy_per_atom": -8.68191464673913,
+        "formation_energy_per_atom": 0.09184994826086924,
+        "nsites": 46,
+        "volume": 1055.1208729391324,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 1.3094000000000001,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaacefwc",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   3.97462300\n_cell_length_b   5.45513699\n_cell_length_c   9.01450197\n_cell_angle_alpha   106.17302309\n_cell_angle_beta   89.29697547\n_cell_angle_gamma   111.23949568\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si8\n_cell_volume   174.10769029\n_cell_formula_units_Z   8\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.09474000  0.90998800  0.91766700  1.0\n  Si  Si1  1  0.00072400  0.27071300  0.94028900  1.0\n  Si  Si2  1  0.56659500  0.24435100  0.75928200  1.0\n  Si  Si3  1  0.12570700  0.99016400  0.37154100  1.0\n  Si  Si4  1  0.84100800  0.87114700  0.19835500  1.0\n  Si  Si5  1  0.28671500  0.52458200  0.31767000  1.0\n  Si  Si6  1  0.56787400  0.64399100  0.48867800  1.0\n  Si  Si7  1  0.50925300  0.56651000  0.99990800  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 1.9596229937499992,
+        "energy_per_atom": -6.81414160125,
+        "formation_energy_per_atom": 1.9596229937499992,
+        "nsites": 8,
+        "volume": 174.1076902939462,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 0.0020746
+    },
+    {
+        "material_id": "mp-aaacewcu",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   3.84477132\n_cell_length_b   5.08062223\n_cell_length_c   5.08062223\n_cell_angle_alpha   81.76877790\n_cell_angle_beta   67.76688585\n_cell_angle_gamma   67.76688585\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si4\n_cell_volume   85.03542034\n_cell_formula_units_Z   4\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.17880106  0.64239788  0.00000000  1.0\n  Si  Si1  1  0.82119894  0.35760212  -0.00000000  1.0\n  Si  Si2  1  0.82119894  -0.00000000  0.35760212  1.0\n  Si  Si3  1  0.17880106  -0.00000000  0.64239788  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.116633199999999,
+        "energy_per_atom": -8.657131395,
+        "formation_energy_per_atom": 0.116633199999999,
+        "nsites": 4,
+        "volume": 85.03542034009838,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.26069999999999993,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaaceyyj",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   4.99073639\n_cell_length_b   4.99073639\n_cell_length_c   3.99175300\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   141.84515027\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si4\n_cell_volume   61.42328595\n_cell_formula_units_Z   4\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.89585000  0.10415000  0.75000000  1.0\n  Si  Si1  1  0.62496900  0.37503100  0.75000000  1.0\n  Si  Si2  1  0.10415000  0.89585000  0.25000000  1.0\n  Si  Si3  1  0.37503100  0.62496900  0.25000000  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.4898279624999997,
+        "energy_per_atom": -8.2839366325,
+        "formation_energy_per_atom": 0.4898279624999997,
+        "nsites": 4,
+        "volume": 61.42328594825708,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 9.76e-05
+    },
+    {
+        "material_id": "mp-aaacfsie",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   2.62115688\n_cell_length_b   2.62115688\n_cell_length_c   2.62115688\n_cell_angle_alpha   109.47122063\n_cell_angle_beta   109.47122063\n_cell_angle_gamma   109.47122063\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si1\n_cell_volume   13.86299778\n_cell_formula_units_Z   1\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  -0.00000000  0.00000000  -0.00000000  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.5254954999999999,
+        "energy_per_atom": -8.248269095,
+        "formation_energy_per_atom": 0.5254954999999999,
+        "nsites": 1,
+        "volume": 13.86299777852534,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaaciczr",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   2.64065970\n_cell_length_b   2.65272978\n_cell_length_c   2.65272978\n_cell_angle_alpha   75.65676556\n_cell_angle_beta   60.15040099\n_cell_angle_gamma   60.15040099\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si1\n_cell_volume   13.97887182\n_cell_formula_units_Z   1\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.50000000  0.00000000  0.50000000  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.4840721299999995,
+        "energy_per_atom": -8.289692465,
+        "formation_energy_per_atom": 0.4840721299999995,
+        "nsites": 1,
+        "volume": 13.978871817111228,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaacjaps",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   5.77826558\n_cell_length_b   5.77826558\n_cell_length_c   5.77826558\n_cell_angle_alpha   109.47122063\n_cell_angle_beta   109.47122063\n_cell_angle_gamma   109.47122063\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si6\n_cell_volume   148.51509826\n_cell_formula_units_Z   6\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.50000000  0.75000000  0.25000000  1.0\n  Si  Si1  1  0.75000000  0.50000000  0.25000000  1.0\n  Si  Si2  1  0.25000000  0.75000000  0.50000000  1.0\n  Si  Si3  1  0.25000000  0.50000000  0.75000000  1.0\n  Si  Si4  1  0.50000000  0.25000000  0.75000000  1.0\n  Si  Si5  1  0.75000000  0.25000000  0.50000000  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.22239860833333225,
+        "energy_per_atom": -8.551365986666667,
+        "formation_energy_per_atom": 0.22239860833333225,
+        "nsites": 6,
+        "volume": 148.51509825534572,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.14390000000000036,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaacjkpl",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   3.84593083\n_cell_length_b   6.33300792\n_cell_length_c   7.17668911\n_cell_angle_alpha   96.52403067\n_cell_angle_beta   105.54208898\n_cell_angle_gamma   90.00000000\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si8\n_cell_volume   167.23079840\n_cell_formula_units_Z   8\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.05552936  0.87396351  0.11105773  1.0\n  Si  Si1  1  0.94447064  0.12603649  0.88894227  1.0\n  Si  Si2  1  0.55899985  0.65339544  0.11799771  1.0\n  Si  Si3  1  0.44100015  0.34660456  0.88200229  1.0\n  Si  Si4  1  0.21274317  0.05730781  0.42548434  1.0\n  Si  Si5  1  0.78725683  0.94269219  0.57451566  1.0\n  Si  Si6  1  0.72710984  0.58557765  0.45421767  1.0\n  Si  Si7  1  0.27289016  0.41442235  0.54578233  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.08220610625000013,
+        "energy_per_atom": -8.69155848875,
+        "formation_energy_per_atom": 0.08220610625000013,
+        "nsites": 8,
+        "volume": 167.23079840226276,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.2735000000000003,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaacjlcz",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   5.07791981\n_cell_length_b   5.07791981\n_cell_length_c   5.18306700\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   118.99725284\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si8\n_cell_volume   116.89321424\n_cell_formula_units_Z   8\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.34438000  0.34438000  0.82587000  1.0\n  Si  Si1  1  0.65562000  0.65562000  0.17413000  1.0\n  Si  Si2  1  0.15562000  0.15562000  0.32587000  1.0\n  Si  Si3  1  0.84438000  0.84438000  0.67413000  1.0\n  Si  Si4  1  0.70571500  0.29428500  0.50000000  1.0\n  Si  Si5  1  0.20571500  0.79428500  0.00000000  1.0\n  Si  Si6  1  0.29428500  0.70571500  0.50000000  1.0\n  Si  Si7  1  0.79428500  0.20571500  0.00000000  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.42791178374999994,
+        "energy_per_atom": -8.34585281125,
+        "formation_energy_per_atom": 0.42791178374999994,
+        "nsites": 8,
+        "volume": 116.89321424262552,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 7.11e-05
+    },
+    {
+        "material_id": "mp-aaackgld",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   2.71556366\n_cell_length_b   2.71556469\n_cell_length_c   19.63078101\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   119.99999920\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si9\n_cell_volume   125.36847832\n_cell_formula_units_Z   9\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.00000000  0.00000000  -0.00000000  1.0\n  Si  Si1  1  0.33333300  0.66666700  0.88920834  1.0\n  Si  Si2  1  0.66666700  0.33333300  0.11079166  1.0\n  Si  Si3  1  0.66666700  0.33333300  0.33333300  1.0\n  Si  Si4  1  -0.00000000  0.00000000  0.22254134  1.0\n  Si  Si5  1  0.33333300  0.66666700  0.44412566  1.0\n  Si  Si6  1  0.33333300  0.66666700  0.66666700  1.0\n  Si  Si7  1  0.66666700  0.33333300  0.55587434  1.0\n  Si  Si8  1  -0.00000000  0.00000000  0.77745866  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.5177497300000002,
+        "energy_per_atom": -8.256014865,
+        "formation_energy_per_atom": 0.5177497299999997,
+        "nsites": 9,
+        "volume": 125.36847831882837,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 6e-07
+    },
+    {
+        "material_id": "mp-aaackift",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   3.82886495\n_cell_length_b   5.68473769\n_cell_length_c   12.67273019\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   109.68003941\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si12\n_cell_volume   259.72367947\n_cell_formula_units_Z   12\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.24273283  0.48546665  0.94510656  1.0\n  Si  Si1  1  0.75726717  0.51453335  0.05489344  1.0\n  Si  Si2  1  0.24273283  0.48546665  0.55489344  1.0\n  Si  Si3  1  0.75726717  0.51453335  0.44510656  1.0\n  Si  Si4  1  0.57131495  0.14262890  0.15727091  1.0\n  Si  Si5  1  0.42868505  0.85737110  0.84272909  1.0\n  Si  Si6  1  0.57131495  0.14262890  0.34272909  1.0\n  Si  Si7  1  0.42868505  0.85737110  0.65727091  1.0\n  Si  Si8  1  0.02872941  0.05745783  0.90937010  1.0\n  Si  Si9  1  0.97127059  0.94254217  0.09062990  1.0\n  Si  Si10  1  0.02872941  0.05745783  0.59062990  1.0\n  Si  Si11  1  0.97127059  0.94254217  0.40937010  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.11054831833333267,
+        "energy_per_atom": -8.663216276666667,
+        "formation_energy_per_atom": 0.11054831833333267,
+        "nsites": 12,
+        "volume": 259.7236794724789,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.5013000000000005,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaacltmd",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   5.38632364\n_cell_length_b   4.99306507\n_cell_length_c   6.88934799\n_cell_angle_alpha   69.43330295\n_cell_angle_beta   109.94676695\n_cell_angle_gamma   96.59353651\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si8\n_cell_volume   163.06526777\n_cell_formula_units_Z   8\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.97728030  0.23597232  0.11732634  1.0\n  Si  Si1  1  0.79847627  0.55648959  0.73945655  1.0\n  Si  Si2  1  0.42168071  0.24498104  0.30961421  1.0\n  Si  Si3  1  0.78991518  0.92624781  0.89679295  1.0\n  Si  Si4  1  0.76915083  0.55025868  0.24134155  1.0\n  Si  Si5  1  0.44468611  0.24907867  0.65381084  1.0\n  Si  Si6  1  0.77958068  0.94964987  0.39480353  1.0\n  Si  Si7  1  0.00408392  0.25475503  0.62456503  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.37250966749999925,
+        "energy_per_atom": -8.4012549275,
+        "formation_energy_per_atom": 0.37250966749999925,
+        "nsites": 8,
+        "volume": 163.06526777122875,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 1e-07
+    },
+    {
+        "material_id": "mp-aaacltxr",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   5.08721147\n_cell_length_b   5.08721132\n_cell_length_c   4.25383911\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   119.99999475\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si6\n_cell_volume   95.33915194\n_cell_formula_units_Z   6\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.66736260  0.83368030  0.25000000  1.0\n  Si  Si1  1  0.83368030  0.16631970  0.75000000  1.0\n  Si  Si2  1  0.16631970  0.33263740  0.25000000  1.0\n  Si  Si3  1  0.83368030  0.66736260  0.75000000  1.0\n  Si  Si4  1  0.33263740  0.16631970  0.75000000  1.0\n  Si  Si5  1  0.16631970  0.83368030  0.25000000  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.4537423366666662,
+        "energy_per_atom": -8.320022258333333,
+        "formation_energy_per_atom": 0.4537423366666656,
+        "nsites": 6,
+        "volume": 95.33915194426095,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 0.0001163
+    },
+    {
+        "material_id": "mp-aaacqcqz",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   10.17112977\n_cell_length_b   10.17112977\n_cell_length_c   10.34639782\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   119.99577381\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si40\n_cell_volume   926.99349910\n_cell_formula_units_Z   40\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.29053379  0.08105850  0.68764395  1.0\n  Si  Si1  1  0.70946621  0.91894150  0.68764395  1.0\n  Si  Si2  1  0.91894150  0.70946621  0.31235605  1.0\n  Si  Si3  1  0.08105850  0.29053379  0.31235605  1.0\n  Si  Si4  1  0.70946621  0.91894150  0.31235605  1.0\n  Si  Si5  1  0.29053379  0.08105850  0.31235605  1.0\n  Si  Si6  1  0.08105850  0.29053379  0.68764395  1.0\n  Si  Si7  1  0.91894150  0.70946621  0.68764395  1.0\n  Si  Si8  1  0.11948774  0.49997746  0.81322743  1.0\n  Si  Si9  1  0.88051226  0.50002254  0.81322743  1.0\n  Si  Si10  1  0.50002254  0.88051226  0.18677257  1.0\n  Si  Si11  1  0.49997746  0.11948774  0.18677257  1.0\n  Si  Si12  1  0.88051226  0.50002254  0.18677257  1.0\n  Si  Si13  1  0.11948774  0.49997746  0.18677257  1.0\n  Si  Si14  1  0.49997746  0.11948774  0.81322743  1.0\n  Si  Si15  1  0.50002254  0.88051226  0.81322743  1.0\n  Si  Si16  1  0.11945400  0.11945400  0.81320223  1.0\n  Si  Si17  1  0.88054600  0.88054600  0.81320223  1.0\n  Si  Si18  1  0.88054600  0.88054600  0.18679777  1.0\n  Si  Si19  1  0.11945400  0.11945400  0.18679777  1.0\n  Si  Si20  1  0.36766728  0.63233272  0.50000000  1.0\n  Si  Si21  1  0.63233272  0.36766728  0.50000000  1.0\n  Si  Si22  1  0.29068327  0.70931673  0.68762969  1.0\n  Si  Si23  1  0.70931673  0.29068327  0.68762969  1.0\n  Si  Si24  1  0.29068327  0.70931673  0.31237031  1.0\n  Si  Si25  1  0.70931673  0.29068327  0.31237031  1.0\n  Si  Si26  1  0.16676342  0.83323658  0.61219109  1.0\n  Si  Si27  1  0.83323658  0.16676342  0.61219109  1.0\n  Si  Si28  1  0.16676342  0.83323658  0.38780891  1.0\n  Si  Si29  1  0.83323658  0.16676342  0.38780891  1.0\n  Si  Si30  1  0.36740583  0.23494524  0.50000000  1.0\n  Si  Si31  1  0.63259417  0.76505476  0.50000000  1.0\n  Si  Si32  1  0.76505476  0.63259417  0.50000000  1.0\n  Si  Si33  1  0.23494524  0.36740583  0.50000000  1.0\n  Si  Si34  1  0.25763201  0.25763201  -0.00000000  1.0\n  Si  Si35  1  0.74236799  0.74236799  -0.00000000  1.0\n  Si  Si36  1  0.25770943  0.49997396  -0.00000000  1.0\n  Si  Si37  1  0.74229057  0.50002604  -0.00000000  1.0\n  Si  Si38  1  0.50002604  0.74229057  -0.00000000  1.0\n  Si  Si39  1  0.49997396  0.25770943  -0.00000000  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.11045900649999929,
+        "energy_per_atom": -8.6633055885,
+        "formation_energy_per_atom": 0.11045900649999965,
+        "nsites": 40,
+        "volume": 926.9934990971336,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 1.1288860812763701,
+        "total_magnetization": 3e-07
+    },
+    {
+        "material_id": "mp-aaacqgzu",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   9.82752687\n_cell_length_b   14.74034577\n_cell_length_c   14.74034577\n_cell_angle_alpha   118.39081307\n_cell_angle_beta   93.69838506\n_cell_angle_gamma   86.30161494\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si82\n_cell_volume   1873.17465786\n_cell_formula_units_Z   82\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.10096820  0.45502430  0.34660559  1.0\n  Si  Si1  1  0.39903180  0.34660559  0.45502430  1.0\n  Si  Si2  1  0.89903180  0.54497570  0.65339441  1.0\n  Si  Si3  1  0.60096820  0.65339441  0.54497570  1.0\n  Si  Si4  1  0.10615234  0.59909161  0.32125617  1.0\n  Si  Si5  1  0.39384766  0.32125617  0.59909161  1.0\n  Si  Si6  1  0.89384766  0.40090839  0.67874383  1.0\n  Si  Si7  1  0.60615234  0.67874383  0.40090839  1.0\n  Si  Si8  1  0.23359941  0.72402229  0.45677832  1.0\n  Si  Si9  1  0.26640059  0.45677832  0.72402229  1.0\n  Si  Si10  1  0.76640059  0.27597771  0.54322168  1.0\n  Si  Si11  1  0.73359941  0.54322168  0.27597771  1.0\n  Si  Si12  1  0.11908908  0.88436915  0.54646986  1.0\n  Si  Si13  1  0.38091092  0.54646986  0.88436915  1.0\n  Si  Si14  1  0.88091092  0.11563085  0.45353014  1.0\n  Si  Si15  1  0.61908908  0.45353014  0.11563085  1.0\n  Si  Si16  1  0.14038119  0.55468083  0.65658947  1.0\n  Si  Si17  1  0.35961881  0.65658947  0.55468083  1.0\n  Si  Si18  1  0.85961881  0.44531917  0.34341053  1.0\n  Si  Si19  1  0.64038119  0.34341053  0.44531917  1.0\n  Si  Si20  1  0.99276552  0.95499324  0.82376775  1.0\n  Si  Si21  1  0.50723448  0.82376775  0.95499324  1.0\n  Si  Si22  1  0.00723448  0.04500676  0.17623225  1.0\n  Si  Si23  1  0.49276552  0.17623225  0.04500676  1.0\n  Si  Si24  1  0.17797895  0.93026713  0.71893429  1.0\n  Si  Si25  1  0.32202105  0.71893429  0.93026713  1.0\n  Si  Si26  1  0.82202105  0.06973287  0.28106571  1.0\n  Si  Si27  1  0.67797895  0.28106571  0.06973287  1.0\n  Si  Si28  1  0.99508179  0.82342067  0.87313414  1.0\n  Si  Si29  1  0.50491821  0.87313414  0.82342067  1.0\n  Si  Si30  1  0.00491821  0.17657933  0.12686586  1.0\n  Si  Si31  1  0.49508179  0.12686586  0.17657933  1.0\n  Si  Si32  1  0.31250848  0.79405864  0.72029653  1.0\n  Si  Si33  1  0.18749152  0.72029653  0.79405864  1.0\n  Si  Si34  1  0.68749152  0.20594136  0.27970347  1.0\n  Si  Si35  1  0.81250848  0.27970347  0.20594136  1.0\n  Si  Si36  1  0.09621925  0.35122878  0.88440352  1.0\n  Si  Si37  1  0.40378075  0.88440352  0.35122878  1.0\n  Si  Si38  1  0.90378075  0.64877122  0.11559648  1.0\n  Si  Si39  1  0.59621925  0.11559648  0.64877122  1.0\n  Si  Si40  1  0.10379613  0.34777597  0.72509290  1.0\n  Si  Si41  1  0.39620387  0.72509290  0.34777597  1.0\n  Si  Si42  1  0.89620387  0.65222403  0.27490710  1.0\n  Si  Si43  1  0.60379613  0.27490710  0.65222403  1.0\n  Si  Si44  1  0.26657205  0.60102928  0.21343810  1.0\n  Si  Si45  1  0.23342795  0.21343810  0.60102928  1.0\n  Si  Si46  1  0.73342795  0.39897072  0.78656190  1.0\n  Si  Si47  1  0.76657205  0.78656190  0.39897072  1.0\n  Si  Si48  1  0.37863608  0.45007788  0.09713559  1.0\n  Si  Si49  1  0.12136392  0.09713559  0.45007788  1.0\n  Si  Si50  1  0.62136392  0.54992212  0.90286441  1.0\n  Si  Si51  1  0.87863608  0.90286441  0.54992212  1.0\n  Si  Si52  1  0.25345246  0.48669799  0.97518073  1.0\n  Si  Si53  1  0.24654754  0.97518073  0.48669799  1.0\n  Si  Si54  1  0.74654754  0.51330201  0.02481927  1.0\n  Si  Si55  1  0.75345246  0.02481927  0.51330201  1.0\n  Si  Si56  1  0.14162206  0.64038238  0.09404845  1.0\n  Si  Si57  1  0.35837794  0.09404845  0.64038238  1.0\n  Si  Si58  1  0.85837794  0.35961762  0.90595155  1.0\n  Si  Si59  1  0.64162206  0.90595155  0.35961762  1.0\n  Si  Si60  1  0.18239456  0.29299130  0.21180929  1.0\n  Si  Si61  1  0.31760544  0.21180929  0.29299130  1.0\n  Si  Si62  1  0.81760544  0.70700870  0.78819071  1.0\n  Si  Si63  1  0.68239456  0.78819071  0.70700870  1.0\n  Si  Si64  1  0.30313813  0.29205233  0.07579112  1.0\n  Si  Si65  1  0.19686187  0.07579112  0.29205233  1.0\n  Si  Si66  1  0.69686187  0.70794767  0.92420888  1.0\n  Si  Si67  1  0.80313813  0.92420888  0.70794767  1.0\n  Si  Si68  1  0.99755497  0.13170784  0.94916148  1.0\n  Si  Si69  1  0.50244503  0.94916148  0.13170784  1.0\n  Si  Si70  1  0.00244503  0.86829216  0.05083852  1.0\n  Si  Si71  1  0.49755497  0.05083852  0.86829216  1.0\n  Si  Si72  1  0.17434180  0.21458577  0.91757246  1.0\n  Si  Si73  1  0.32565820  0.91757246  0.21458577  1.0\n  Si  Si74  1  0.82565820  0.78541423  0.08242754  1.0\n  Si  Si75  1  0.67434180  0.08242754  0.78541423  1.0\n  Si  Si76  1  0.30091862  0.08063414  0.78627195  1.0\n  Si  Si77  1  0.19908138  0.78627195  0.08063414  1.0\n  Si  Si78  1  0.69908138  0.91936586  0.21372805  1.0\n  Si  Si79  1  0.80091862  0.21372805  0.91936586  1.0\n  Si  Si80  1  0.25000000  0.49802317  0.49802317  1.0\n  Si  Si81  1  0.75000000  0.50197683  0.50197683  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.12887432573170798,
+        "energy_per_atom": -8.644890269268291,
+        "formation_energy_per_atom": 0.12887432573170815,
+        "nsites": 82,
+        "volume": 1873.1746578633101,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 1.085,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaacqiju",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   10.76329056\n_cell_length_b   10.76329056\n_cell_length_c   10.76329056\n_cell_angle_alpha   109.47122063\n_cell_angle_beta   109.47122063\n_cell_angle_gamma   109.47122063\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si41\n_cell_volume   959.87195311\n_cell_formula_units_Z   41\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.78659388  0.39175378  0.13262899  1.0\n  Si  Si1  1  0.39484010  0.74087421  0.60824622  1.0\n  Si  Si2  1  0.65396589  0.86737101  0.25912579  1.0\n  Si  Si3  1  0.65396589  0.25912579  0.86737101  1.0\n  Si  Si4  1  0.78659388  0.13262899  0.39175378  1.0\n  Si  Si5  1  0.39484010  0.60824622  0.74087421  1.0\n  Si  Si6  1  0.25912579  0.65396589  0.86737101  1.0\n  Si  Si7  1  0.13262899  0.78659388  0.39175378  1.0\n  Si  Si8  1  0.60824622  0.39484010  0.74087421  1.0\n  Si  Si9  1  0.39175378  0.78659388  0.13262899  1.0\n  Si  Si10  1  0.74087421  0.39484010  0.60824622  1.0\n  Si  Si11  1  0.86737101  0.65396589  0.25912579  1.0\n  Si  Si12  1  0.74087421  0.60824622  0.39484010  1.0\n  Si  Si13  1  0.86737101  0.25912579  0.65396589  1.0\n  Si  Si14  1  0.39175378  0.13262899  0.78659388  1.0\n  Si  Si15  1  0.60824622  0.74087421  0.39484010  1.0\n  Si  Si16  1  0.25912579  0.86737101  0.65396589  1.0\n  Si  Si17  1  0.13262899  0.39175378  0.78659388  1.0\n  Si  Si18  1  0.21340612  0.34603411  0.60515990  1.0\n  Si  Si19  1  0.60515990  0.21340612  0.34603411  1.0\n  Si  Si20  1  0.34603411  0.60515990  0.21340612  1.0\n  Si  Si21  1  0.34603411  0.21340612  0.60515990  1.0\n  Si  Si22  1  0.21340612  0.60515990  0.34603411  1.0\n  Si  Si23  1  0.60515990  0.34603411  0.21340612  1.0\n  Si  Si24  1  -0.00000000  -0.00000000  0.21736945  1.0\n  Si  Si25  1  -0.00000000  0.21736945  -0.00000000  1.0\n  Si  Si26  1  0.78263055  0.78263055  0.78263055  1.0\n  Si  Si27  1  0.21736945  0.00000000  0.00000000  1.0\n  Si  Si28  1  0.00000000  0.00000000  -0.00000000  1.0\n  Si  Si29  1  -0.00000000  0.35932015  0.22356876  1.0\n  Si  Si30  1  0.64067985  0.86424861  0.64067985  1.0\n  Si  Si31  1  0.77643124  0.77643124  0.13575139  1.0\n  Si  Si32  1  0.77643124  0.13575139  0.77643124  1.0\n  Si  Si33  1  -0.00000000  0.22356876  0.35932015  1.0\n  Si  Si34  1  0.64067985  0.64067985  0.86424861  1.0\n  Si  Si35  1  0.13575139  0.77643124  0.77643124  1.0\n  Si  Si36  1  0.22356876  -0.00000000  0.35932015  1.0\n  Si  Si37  1  0.35932015  -0.00000000  0.22356876  1.0\n  Si  Si38  1  0.86424861  0.64067985  0.64067985  1.0\n  Si  Si39  1  0.35932015  0.22356876  -0.00000000  1.0\n  Si  Si40  1  0.22356876  0.35932015  -0.00000000  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.143261035243901,
+        "energy_per_atom": -8.630503559756098,
+        "formation_energy_per_atom": 0.14326103524390224,
+        "nsites": 41,
+        "volume": 959.8719531108837,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 1.0877738509269723,
+        "total_magnetization": 2e-07
+    },
+    {
+        "material_id": "mp-aaacqjjg",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   17.64551021\n_cell_length_b   17.64551021\n_cell_length_c   17.64551021\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   90.00000000\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si232\n_cell_volume   5494.17718047\n_cell_formula_units_Z   232\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.26252059  0.84590610  0.41813264  1.0\n  Si  Si1  1  0.73747941  0.34590610  0.08186736  1.0\n  Si  Si2  1  0.23747941  0.15409390  0.91813264  1.0\n  Si  Si3  1  0.76252059  0.65409390  0.58186736  1.0\n  Si  Si4  1  0.41813264  0.26252059  0.84590610  1.0\n  Si  Si5  1  0.08186736  0.73747941  0.34590610  1.0\n  Si  Si6  1  0.91813264  0.23747941  0.15409390  1.0\n  Si  Si7  1  0.58186736  0.76252059  0.65409390  1.0\n  Si  Si8  1  0.84590610  0.41813264  0.26252059  1.0\n  Si  Si9  1  0.34590610  0.08186736  0.73747941  1.0\n  Si  Si10  1  0.15409390  0.91813264  0.23747941  1.0\n  Si  Si11  1  0.65409390  0.58186736  0.76252059  1.0\n  Si  Si12  1  0.73747941  0.15409390  0.58186736  1.0\n  Si  Si13  1  0.26252059  0.65409390  0.91813264  1.0\n  Si  Si14  1  0.76252059  0.84590610  0.08186736  1.0\n  Si  Si15  1  0.23747941  0.34590610  0.41813264  1.0\n  Si  Si16  1  0.58186736  0.73747941  0.15409390  1.0\n  Si  Si17  1  0.91813264  0.26252059  0.65409390  1.0\n  Si  Si18  1  0.08186736  0.76252059  0.84590610  1.0\n  Si  Si19  1  0.41813264  0.23747941  0.34590610  1.0\n  Si  Si20  1  0.15409390  0.58186736  0.73747941  1.0\n  Si  Si21  1  0.65409390  0.91813264  0.26252059  1.0\n  Si  Si22  1  0.84590610  0.08186736  0.76252059  1.0\n  Si  Si23  1  0.34590610  0.41813264  0.23747941  1.0\n  Si  Si24  1  0.89409314  0.81567394  0.40424134  1.0\n  Si  Si25  1  0.10590686  0.31567394  0.09575866  1.0\n  Si  Si26  1  0.60590686  0.18432606  0.90424134  1.0\n  Si  Si27  1  0.39409314  0.68432606  0.59575866  1.0\n  Si  Si28  1  0.40424134  0.89409314  0.81567394  1.0\n  Si  Si29  1  0.09575866  0.10590686  0.31567394  1.0\n  Si  Si30  1  0.90424134  0.60590686  0.18432606  1.0\n  Si  Si31  1  0.59575866  0.39409314  0.68432606  1.0\n  Si  Si32  1  0.81567394  0.40424134  0.89409314  1.0\n  Si  Si33  1  0.31567394  0.09575866  0.10590686  1.0\n  Si  Si34  1  0.18432606  0.90424134  0.60590686  1.0\n  Si  Si35  1  0.68432606  0.59575866  0.39409314  1.0\n  Si  Si36  1  0.10590686  0.18432606  0.59575866  1.0\n  Si  Si37  1  0.89409314  0.68432606  0.90424134  1.0\n  Si  Si38  1  0.39409314  0.81567394  0.09575866  1.0\n  Si  Si39  1  0.60590686  0.31567394  0.40424134  1.0\n  Si  Si40  1  0.59575866  0.10590686  0.18432606  1.0\n  Si  Si41  1  0.90424134  0.89409314  0.68432606  1.0\n  Si  Si42  1  0.09575866  0.39409314  0.81567394  1.0\n  Si  Si43  1  0.40424134  0.60590686  0.31567394  1.0\n  Si  Si44  1  0.18432606  0.59575866  0.10590686  1.0\n  Si  Si45  1  0.68432606  0.90424134  0.89409314  1.0\n  Si  Si46  1  0.81567394  0.09575866  0.39409314  1.0\n  Si  Si47  1  0.31567394  0.40424134  0.60590686  1.0\n  Si  Si48  1  0.39191016  0.80758605  0.40159267  1.0\n  Si  Si49  1  0.60808984  0.30758605  0.09840733  1.0\n  Si  Si50  1  0.10808984  0.19241395  0.90159267  1.0\n  Si  Si51  1  0.89191016  0.69241395  0.59840733  1.0\n  Si  Si52  1  0.40159267  0.39191016  0.80758605  1.0\n  Si  Si53  1  0.09840733  0.60808984  0.30758605  1.0\n  Si  Si54  1  0.90159267  0.10808984  0.19241395  1.0\n  Si  Si55  1  0.59840733  0.89191016  0.69241395  1.0\n  Si  Si56  1  0.80758605  0.40159267  0.39191016  1.0\n  Si  Si57  1  0.30758605  0.09840733  0.60808984  1.0\n  Si  Si58  1  0.19241395  0.90159267  0.10808984  1.0\n  Si  Si59  1  0.69241395  0.59840733  0.89191016  1.0\n  Si  Si60  1  0.60808984  0.19241395  0.59840733  1.0\n  Si  Si61  1  0.39191016  0.69241395  0.90159267  1.0\n  Si  Si62  1  0.89191016  0.80758605  0.09840733  1.0\n  Si  Si63  1  0.10808984  0.30758605  0.40159267  1.0\n  Si  Si64  1  0.59840733  0.60808984  0.19241395  1.0\n  Si  Si65  1  0.90159267  0.39191016  0.69241395  1.0\n  Si  Si66  1  0.09840733  0.89191016  0.80758605  1.0\n  Si  Si67  1  0.40159267  0.10808984  0.30758605  1.0\n  Si  Si68  1  0.19241395  0.59840733  0.60808984  1.0\n  Si  Si69  1  0.69241395  0.90159267  0.39191016  1.0\n  Si  Si70  1  0.80758605  0.09840733  0.89191016  1.0\n  Si  Si71  1  0.30758605  0.40159267  0.10808984  1.0\n  Si  Si72  1  0.97321625  0.80257858  0.29673975  1.0\n  Si  Si73  1  0.02678375  0.30257858  0.20326025  1.0\n  Si  Si74  1  0.52678375  0.19742142  0.79673975  1.0\n  Si  Si75  1  0.47321625  0.69742142  0.70326025  1.0\n  Si  Si76  1  0.29673975  0.97321625  0.80257858  1.0\n  Si  Si77  1  0.20326025  0.02678375  0.30257858  1.0\n  Si  Si78  1  0.79673975  0.52678375  0.19742142  1.0\n  Si  Si79  1  0.70326025  0.47321625  0.69742142  1.0\n  Si  Si80  1  0.80257858  0.29673975  0.97321625  1.0\n  Si  Si81  1  0.30257858  0.20326025  0.02678375  1.0\n  Si  Si82  1  0.19742142  0.79673975  0.52678375  1.0\n  Si  Si83  1  0.69742142  0.70326025  0.47321625  1.0\n  Si  Si84  1  0.02678375  0.19742142  0.70326025  1.0\n  Si  Si85  1  0.97321625  0.69742142  0.79673975  1.0\n  Si  Si86  1  0.47321625  0.80257858  0.20326025  1.0\n  Si  Si87  1  0.52678375  0.30257858  0.29673975  1.0\n  Si  Si88  1  0.70326025  0.02678375  0.19742142  1.0\n  Si  Si89  1  0.79673975  0.97321625  0.69742142  1.0\n  Si  Si90  1  0.20326025  0.47321625  0.80257858  1.0\n  Si  Si91  1  0.29673975  0.52678375  0.30257858  1.0\n  Si  Si92  1  0.19742142  0.70326025  0.02678375  1.0\n  Si  Si93  1  0.69742142  0.79673975  0.97321625  1.0\n  Si  Si94  1  0.80257858  0.20326025  0.47321625  1.0\n  Si  Si95  1  0.30257858  0.29673975  0.52678375  1.0\n  Si  Si96  1  0.76350186  0.78632246  0.38973145  1.0\n  Si  Si97  1  0.23649814  0.28632246  0.11026855  1.0\n  Si  Si98  1  0.73649814  0.21367754  0.88973145  1.0\n  Si  Si99  1  0.26350186  0.71367754  0.61026855  1.0\n  Si  Si100  1  0.38973145  0.76350186  0.78632246  1.0\n  Si  Si101  1  0.11026855  0.23649814  0.28632246  1.0\n  Si  Si102  1  0.88973145  0.73649814  0.21367754  1.0\n  Si  Si103  1  0.61026855  0.26350186  0.71367754  1.0\n  Si  Si104  1  0.78632246  0.38973145  0.76350186  1.0\n  Si  Si105  1  0.28632246  0.11026855  0.23649814  1.0\n  Si  Si106  1  0.21367754  0.88973145  0.73649814  1.0\n  Si  Si107  1  0.71367754  0.61026855  0.26350186  1.0\n  Si  Si108  1  0.23649814  0.21367754  0.61026855  1.0\n  Si  Si109  1  0.76350186  0.71367754  0.88973145  1.0\n  Si  Si110  1  0.26350186  0.78632246  0.11026855  1.0\n  Si  Si111  1  0.73649814  0.28632246  0.38973145  1.0\n  Si  Si112  1  0.61026855  0.23649814  0.21367754  1.0\n  Si  Si113  1  0.88973145  0.76350186  0.71367754  1.0\n  Si  Si114  1  0.11026855  0.26350186  0.78632246  1.0\n  Si  Si115  1  0.38973145  0.73649814  0.28632246  1.0\n  Si  Si116  1  0.21367754  0.61026855  0.23649814  1.0\n  Si  Si117  1  0.71367754  0.88973145  0.76350186  1.0\n  Si  Si118  1  0.78632246  0.11026855  0.26350186  1.0\n  Si  Si119  1  0.28632246  0.38973145  0.73649814  1.0\n  Si  Si120  1  0.95888420  0.77128406  0.51317626  1.0\n  Si  Si121  1  0.04111580  0.27128406  0.98682374  1.0\n  Si  Si122  1  0.54111580  0.22871594  0.01317626  1.0\n  Si  Si123  1  0.45888420  0.72871594  0.48682374  1.0\n  Si  Si124  1  0.51317626  0.95888420  0.77128406  1.0\n  Si  Si125  1  0.98682374  0.04111580  0.27128406  1.0\n  Si  Si126  1  0.01317626  0.54111580  0.22871594  1.0\n  Si  Si127  1  0.48682374  0.45888420  0.72871594  1.0\n  Si  Si128  1  0.77128406  0.51317626  0.95888420  1.0\n  Si  Si129  1  0.27128406  0.98682374  0.04111580  1.0\n  Si  Si130  1  0.22871594  0.01317626  0.54111580  1.0\n  Si  Si131  1  0.72871594  0.48682374  0.45888420  1.0\n  Si  Si132  1  0.04111580  0.22871594  0.48682374  1.0\n  Si  Si133  1  0.95888420  0.72871594  0.01317626  1.0\n  Si  Si134  1  0.45888420  0.77128406  0.98682374  1.0\n  Si  Si135  1  0.54111580  0.27128406  0.51317626  1.0\n  Si  Si136  1  0.48682374  0.04111580  0.22871594  1.0\n  Si  Si137  1  0.01317626  0.95888420  0.72871594  1.0\n  Si  Si138  1  0.98682374  0.45888420  0.77128406  1.0\n  Si  Si139  1  0.51317626  0.54111580  0.27128406  1.0\n  Si  Si140  1  0.22871594  0.48682374  0.04111580  1.0\n  Si  Si141  1  0.72871594  0.01317626  0.95888420  1.0\n  Si  Si142  1  0.77128406  0.98682374  0.45888420  1.0\n  Si  Si143  1  0.27128406  0.51317626  0.54111580  1.0\n  Si  Si144  1  0.58324592  0.76840874  0.51848985  1.0\n  Si  Si145  1  0.41675408  0.26840874  0.98151015  1.0\n  Si  Si146  1  0.91675408  0.23159126  0.01848985  1.0\n  Si  Si147  1  0.08324592  0.73159126  0.48151015  1.0\n  Si  Si148  1  0.51848985  0.58324592  0.76840874  1.0\n  Si  Si149  1  0.98151015  0.41675408  0.26840874  1.0\n  Si  Si150  1  0.01848985  0.91675408  0.23159126  1.0\n  Si  Si151  1  0.48151015  0.08324592  0.73159126  1.0\n  Si  Si152  1  0.76840874  0.51848985  0.58324592  1.0\n  Si  Si153  1  0.26840874  0.98151015  0.41675408  1.0\n  Si  Si154  1  0.23159126  0.01848985  0.91675408  1.0\n  Si  Si155  1  0.73159126  0.48151015  0.08324592  1.0\n  Si  Si156  1  0.41675408  0.23159126  0.48151015  1.0\n  Si  Si157  1  0.58324592  0.73159126  0.01848985  1.0\n  Si  Si158  1  0.08324592  0.76840874  0.98151015  1.0\n  Si  Si159  1  0.91675408  0.26840874  0.51848985  1.0\n  Si  Si160  1  0.48151015  0.41675408  0.23159126  1.0\n  Si  Si161  1  0.01848985  0.58324592  0.73159126  1.0\n  Si  Si162  1  0.98151015  0.08324592  0.76840874  1.0\n  Si  Si163  1  0.51848985  0.91675408  0.26840874  1.0\n  Si  Si164  1  0.23159126  0.48151015  0.41675408  1.0\n  Si  Si165  1  0.73159126  0.01848985  0.58324592  1.0\n  Si  Si166  1  0.76840874  0.98151015  0.08324592  1.0\n  Si  Si167  1  0.26840874  0.51848985  0.91675408  1.0\n  Si  Si168  1  0.08424498  0.60421484  0.52664035  1.0\n  Si  Si169  1  0.91575502  0.10421484  0.97335965  1.0\n  Si  Si170  1  0.41575502  0.39578516  0.02664035  1.0\n  Si  Si171  1  0.58424498  0.89578516  0.47335965  1.0\n  Si  Si172  1  0.52664035  0.08424498  0.60421484  1.0\n  Si  Si173  1  0.97335965  0.91575502  0.10421484  1.0\n  Si  Si174  1  0.02664035  0.41575502  0.39578516  1.0\n  Si  Si175  1  0.47335965  0.58424498  0.89578516  1.0\n  Si  Si176  1  0.60421484  0.52664035  0.08424498  1.0\n  Si  Si177  1  0.10421484  0.97335965  0.91575502  1.0\n  Si  Si178  1  0.39578516  0.02664035  0.41575502  1.0\n  Si  Si179  1  0.89578516  0.47335965  0.58424498  1.0\n  Si  Si180  1  0.91575502  0.39578516  0.47335965  1.0\n  Si  Si181  1  0.08424498  0.89578516  0.02664035  1.0\n  Si  Si182  1  0.58424498  0.60421484  0.97335965  1.0\n  Si  Si183  1  0.41575502  0.10421484  0.52664035  1.0\n  Si  Si184  1  0.47335965  0.91575502  0.39578516  1.0\n  Si  Si185  1  0.02664035  0.08424498  0.89578516  1.0\n  Si  Si186  1  0.97335965  0.58424498  0.60421484  1.0\n  Si  Si187  1  0.52664035  0.41575502  0.10421484  1.0\n  Si  Si188  1  0.39578516  0.47335965  0.91575502  1.0\n  Si  Si189  1  0.89578516  0.02664035  0.08424498  1.0\n  Si  Si190  1  0.60421484  0.97335965  0.58424498  1.0\n  Si  Si191  1  0.10421484  0.52664035  0.41575502  1.0\n  Si  Si192  1  0.45535316  0.60628586  0.43737206  1.0\n  Si  Si193  1  0.54464684  0.10628586  0.06262794  1.0\n  Si  Si194  1  0.04464684  0.39371414  0.93737206  1.0\n  Si  Si195  1  0.95535316  0.89371414  0.56262794  1.0\n  Si  Si196  1  0.43737206  0.45535316  0.60628586  1.0\n  Si  Si197  1  0.06262794  0.54464684  0.10628586  1.0\n  Si  Si198  1  0.93737206  0.04464684  0.39371414  1.0\n  Si  Si199  1  0.56262794  0.95535316  0.89371414  1.0\n  Si  Si200  1  0.60628586  0.43737206  0.45535316  1.0\n  Si  Si201  1  0.10628586  0.06262794  0.54464684  1.0\n  Si  Si202  1  0.39371414  0.93737206  0.04464684  1.0\n  Si  Si203  1  0.89371414  0.56262794  0.95535316  1.0\n  Si  Si204  1  0.54464684  0.39371414  0.56262794  1.0\n  Si  Si205  1  0.45535316  0.89371414  0.93737206  1.0\n  Si  Si206  1  0.95535316  0.60628586  0.06262794  1.0\n  Si  Si207  1  0.04464684  0.10628586  0.43737206  1.0\n  Si  Si208  1  0.56262794  0.54464684  0.39371414  1.0\n  Si  Si209  1  0.93737206  0.45535316  0.89371414  1.0\n  Si  Si210  1  0.06262794  0.95535316  0.60628586  1.0\n  Si  Si211  1  0.43737206  0.04464684  0.10628586  1.0\n  Si  Si212  1  0.39371414  0.56262794  0.54464684  1.0\n  Si  Si213  1  0.89371414  0.93737206  0.45535316  1.0\n  Si  Si214  1  0.60628586  0.06262794  0.95535316  1.0\n  Si  Si215  1  0.10628586  0.43737206  0.04464684  1.0\n  Si  Si216  1  0.18965523  0.81034477  0.31034477  1.0\n  Si  Si217  1  0.81034477  0.31034477  0.18965523  1.0\n  Si  Si218  1  0.31034477  0.18965523  0.81034477  1.0\n  Si  Si219  1  0.68965523  0.68965523  0.68965523  1.0\n  Si  Si220  1  0.81034477  0.18965523  0.68965523  1.0\n  Si  Si221  1  0.18965523  0.68965523  0.81034477  1.0\n  Si  Si222  1  0.68965523  0.81034477  0.18965523  1.0\n  Si  Si223  1  0.31034477  0.31034477  0.31034477  1.0\n  Si  Si224  1  0.76602592  0.76602592  0.76602592  1.0\n  Si  Si225  1  0.23397408  0.26602592  0.73397408  1.0\n  Si  Si226  1  0.73397408  0.23397408  0.26602592  1.0\n  Si  Si227  1  0.26602592  0.73397408  0.23397408  1.0\n  Si  Si228  1  0.23397408  0.23397408  0.23397408  1.0\n  Si  Si229  1  0.76602592  0.73397408  0.26602592  1.0\n  Si  Si230  1  0.26602592  0.76602592  0.73397408  1.0\n  Si  Si231  1  0.73397408  0.26602592  0.76602592  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.12115314543103395,
+        "energy_per_atom": -8.652611449568965,
+        "formation_energy_per_atom": 0.12115314543103456,
+        "nsites": 232,
+        "volume": 5494.177180471114,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 1.0106999999999995,
+        "total_magnetization": 0.0003396
+    },
+    {
+        "material_id": "mp-aaacqlfl",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   9.93654149\n_cell_length_b   9.93653337\n_cell_length_c   15.99433626\n_cell_angle_alpha   90.00000556\n_cell_angle_beta   89.99997619\n_cell_angle_gamma   119.99995448\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si58\n_cell_volume   1367.62552932\n_cell_formula_units_Z   58\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.37951877  0.99895726  0.29529711  1.0\n  Si  Si1  1  0.00104274  0.38056152  0.29529811  1.0\n  Si  Si2  1  0.61943848  0.62048023  0.29529811  1.0\n  Si  Si3  1  0.37951877  0.38056252  0.29529711  1.0\n  Si  Si4  1  0.61943848  0.99895826  0.29529811  1.0\n  Si  Si5  1  0.00104274  0.62048023  0.29529811  1.0\n  Si  Si6  1  0.62048123  0.00104274  0.70470289  1.0\n  Si  Si7  1  0.99895726  0.61943848  0.70470189  1.0\n  Si  Si8  1  0.38056152  0.37951977  0.70470189  1.0\n  Si  Si9  1  0.62048123  0.61943748  0.70470289  1.0\n  Si  Si10  1  0.38056152  0.00104174  0.70470189  1.0\n  Si  Si11  1  0.99895726  0.37951977  0.70470189  1.0\n  Si  Si12  1  0.24465572  0.24413910  0.17366897  1.0\n  Si  Si13  1  0.75586090  0.00051662  0.17366897  1.0\n  Si  Si14  1  0.99948338  0.75534528  0.17366897  1.0\n  Si  Si15  1  0.24465572  0.00051662  0.17366897  1.0\n  Si  Si16  1  0.99948338  0.24413810  0.17366897  1.0\n  Si  Si17  1  0.75586090  0.75534428  0.17366897  1.0\n  Si  Si18  1  0.75534428  0.75586090  0.82633103  1.0\n  Si  Si19  1  0.24413910  0.99948338  0.82633103  1.0\n  Si  Si20  1  0.00051662  0.24465472  0.82633103  1.0\n  Si  Si21  1  0.75534428  0.99948338  0.82633103  1.0\n  Si  Si22  1  0.00051662  0.75586190  0.82633103  1.0\n  Si  Si23  1  0.24413910  0.24465572  0.82633103  1.0\n  Si  Si24  1  0.42111112  0.08758108  0.05813743  1.0\n  Si  Si25  1  0.91241792  0.33352904  0.05813743  1.0\n  Si  Si26  1  0.66646996  0.57888888  0.05813743  1.0\n  Si  Si27  1  0.42111112  0.33352904  0.05813743  1.0\n  Si  Si28  1  0.66647096  0.08758208  0.05813743  1.0\n  Si  Si29  1  0.91241792  0.57888988  0.05813743  1.0\n  Si  Si30  1  0.57888888  0.91241892  0.94186257  1.0\n  Si  Si31  1  0.08758208  0.66647096  0.94186257  1.0\n  Si  Si32  1  0.33353004  0.42111112  0.94186257  1.0\n  Si  Si33  1  0.57888888  0.66647096  0.94186257  1.0\n  Si  Si34  1  0.33352904  0.91241792  0.94186257  1.0\n  Si  Si35  1  0.08758208  0.42111012  0.94186257  1.0\n  Si  Si36  1  0.26685981  0.13342991  0.49950390  1.0\n  Si  Si37  1  0.86657009  0.13343091  0.49950390  1.0\n  Si  Si38  1  0.86657009  0.73313919  0.49950390  1.0\n  Si  Si39  1  0.73314019  0.86657009  0.50049610  1.0\n  Si  Si40  1  0.13342991  0.86656909  0.50049610  1.0\n  Si  Si41  1  0.13342991  0.26686081  0.50049610  1.0\n  Si  Si42  1  0.41740026  0.20869963  0.62160491  1.0\n  Si  Si43  1  0.79129937  0.20870063  0.62160491  1.0\n  Si  Si44  1  0.79129937  0.58259774  0.62160491  1.0\n  Si  Si45  1  0.58259974  0.79130037  0.37839509  1.0\n  Si  Si46  1  0.20870063  0.79129937  0.37839509  1.0\n  Si  Si47  1  0.20870063  0.41740226  0.37839509  1.0\n  Si  Si48  1  0.41717528  0.20858764  0.37706533  1.0\n  Si  Si49  1  0.79141136  0.20858864  0.37706533  1.0\n  Si  Si50  1  0.79141136  0.58282172  0.37706533  1.0\n  Si  Si51  1  0.58282472  0.79141236  0.62293467  1.0\n  Si  Si52  1  0.20858864  0.79141136  0.62293467  1.0\n  Si  Si53  1  0.20858864  0.41717828  0.62293467  1.0\n  Si  Si54  1  0.66666500  0.33333200  0.42724304  1.0\n  Si  Si55  1  0.33333500  0.66666800  0.57275696  1.0\n  Si  Si56  1  0.66666500  0.33333300  0.57129058  1.0\n  Si  Si57  1  0.33333500  0.66666700  0.42870942  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.14423974724137878,
+        "energy_per_atom": -8.62952484775862,
+        "formation_energy_per_atom": 0.14423974724137903,
+        "nsites": 58,
+        "volume": 1367.625529316279,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.7877999999999998,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaacqmtq",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   10.36662954\n_cell_length_b   10.36662717\n_cell_length_c   16.97027249\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   119.99996436\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si68\n_cell_volume   1579.40919510\n_cell_formula_units_Z   68\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.95006076  0.66941597  0.56452266  1.0\n  Si  Si1  1  0.71935521  0.04993924  0.56452366  1.0\n  Si  Si2  1  0.33058503  0.28064479  0.56452266  1.0\n  Si  Si3  1  0.71935321  0.66941397  0.56452366  1.0\n  Si  Si4  1  0.33058603  0.04993924  0.56452366  1.0\n  Si  Si5  1  0.95006076  0.28064579  0.56452366  1.0\n  Si  Si6  1  0.04993924  0.33058403  0.43547534  1.0\n  Si  Si7  1  0.28064479  0.95006076  0.43547534  1.0\n  Si  Si8  1  0.66941597  0.71935521  0.43547534  1.0\n  Si  Si9  1  0.28064679  0.33058603  0.43547534  1.0\n  Si  Si10  1  0.66941497  0.95006076  0.43547534  1.0\n  Si  Si11  1  0.04993924  0.71935421  0.43547534  1.0\n  Si  Si12  1  0.04994024  0.33058403  0.06452466  1.0\n  Si  Si13  1  0.28064479  0.95005976  0.06452466  1.0\n  Si  Si14  1  0.66941497  0.71935521  0.06452466  1.0\n  Si  Si15  1  0.28064679  0.33058603  0.06452466  1.0\n  Si  Si16  1  0.66941397  0.95005976  0.06452466  1.0\n  Si  Si17  1  0.04994024  0.71935421  0.06452466  1.0\n  Si  Si18  1  0.95005976  0.66941597  0.93547734  1.0\n  Si  Si19  1  0.71935521  0.04994024  0.93547634  1.0\n  Si  Si20  1  0.33058503  0.28064479  0.93547634  1.0\n  Si  Si21  1  0.71935321  0.66941397  0.93547634  1.0\n  Si  Si22  1  0.33058603  0.04994024  0.93547634  1.0\n  Si  Si23  1  0.95005976  0.28064579  0.93547634  1.0\n  Si  Si24  1  0.91572454  0.45786277  0.86478307  1.0\n  Si  Si25  1  0.54213923  0.08427546  0.86478307  1.0\n  Si  Si26  1  0.54213723  0.45786077  0.86478307  1.0\n  Si  Si27  1  0.08427546  0.54213723  0.13521793  1.0\n  Si  Si28  1  0.45786077  0.91572454  0.13521793  1.0\n  Si  Si29  1  0.45786277  0.54213923  0.13521793  1.0\n  Si  Si30  1  0.08427646  0.54213723  0.36478107  1.0\n  Si  Si31  1  0.45786077  0.91572354  0.36478107  1.0\n  Si  Si32  1  0.45786277  0.54214023  0.36478107  1.0\n  Si  Si33  1  0.91572354  0.45786277  0.63521793  1.0\n  Si  Si34  1  0.54213923  0.08427646  0.63521793  1.0\n  Si  Si35  1  0.54213723  0.45785977  0.63521793  1.0\n  Si  Si36  1  0.87645037  0.12354863  0.36130919  1.0\n  Si  Si37  1  0.24709825  0.12354963  0.36130919  1.0\n  Si  Si38  1  0.87645037  0.75290175  0.36130919  1.0\n  Si  Si39  1  0.12354963  0.87645137  0.63868881  1.0\n  Si  Si40  1  0.75290175  0.87645037  0.63868881  1.0\n  Si  Si41  1  0.12354963  0.24709825  0.63868881  1.0\n  Si  Si42  1  0.12354963  0.87645137  0.86131119  1.0\n  Si  Si43  1  0.75290175  0.87645037  0.86131119  1.0\n  Si  Si44  1  0.12354963  0.24709825  0.86131119  1.0\n  Si  Si45  1  0.87645037  0.12354863  0.13869081  1.0\n  Si  Si46  1  0.24709825  0.12354963  0.13868981  1.0\n  Si  Si47  1  0.87645037  0.75290175  0.13868981  1.0\n  Si  Si48  1  0.66666700  0.33333300  0.81965040  1.0\n  Si  Si49  1  0.33333300  0.66666700  0.18035160  1.0\n  Si  Si50  1  0.33333300  0.66666700  0.31964840  1.0\n  Si  Si51  1  0.66666700  0.33333300  0.68035060  1.0\n  Si  Si52  1  -0.00000000  -0.00000000  0.81830178  1.0\n  Si  Si53  1  -0.00000000  -0.00000000  0.18169922  1.0\n  Si  Si54  1  -0.00000000  -0.00000000  0.31829978  1.0\n  Si  Si55  1  -0.00000000  -0.00000000  0.68169922  1.0\n  Si  Si56  1  0.93042857  0.46521428  0.25000000  1.0\n  Si  Si57  1  0.53478672  0.06957143  0.25000000  1.0\n  Si  Si58  1  0.53478472  0.46521328  0.25000000  1.0\n  Si  Si59  1  0.06957243  0.53478572  0.75000000  1.0\n  Si  Si60  1  0.46521228  0.93042757  0.75000000  1.0\n  Si  Si61  1  0.46521428  0.53478772  0.75000000  1.0\n  Si  Si62  1  0.79765372  0.20234828  0.25000000  1.0\n  Si  Si63  1  0.40469355  0.20234628  0.25000000  1.0\n  Si  Si64  1  0.79765172  0.59530645  0.25000000  1.0\n  Si  Si65  1  0.20234628  0.79765172  0.75000000  1.0\n  Si  Si66  1  0.59530545  0.79765272  0.75000000  1.0\n  Si  Si67  1  0.20234928  0.40469455  0.75000000  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.08439319661764699,
+        "energy_per_atom": -8.689371398382352,
+        "formation_energy_per_atom": 0.08439319661764658,
+        "nsites": 68,
+        "volume": 1579.409195104524,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 1.3630000000000004,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaacqndm",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   10.08158717\n_cell_length_b   10.08158717\n_cell_length_c   24.05659392\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   90.00000000\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si106\n_cell_volume   2445.07371226\n_cell_formula_units_Z   106\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.18415477  0.31700781  0.97124775  1.0\n  Si  Si1  1  0.81584523  0.68299219  0.97124775  1.0\n  Si  Si2  1  0.68415477  0.81700781  0.52875225  1.0\n  Si  Si3  1  0.31584523  0.18299219  0.52875225  1.0\n  Si  Si4  1  0.81584523  0.31700781  0.97124775  1.0\n  Si  Si5  1  0.18415477  0.68299219  0.97124775  1.0\n  Si  Si6  1  0.31584523  0.81700781  0.52875225  1.0\n  Si  Si7  1  0.68415477  0.18299219  0.52875225  1.0\n  Si  Si8  1  0.68299219  0.18415477  0.02875225  1.0\n  Si  Si9  1  0.31700781  0.81584523  0.02875225  1.0\n  Si  Si10  1  0.18299219  0.68415477  0.47124775  1.0\n  Si  Si11  1  0.81700781  0.31584523  0.47124775  1.0\n  Si  Si12  1  0.31700781  0.18415477  0.02875225  1.0\n  Si  Si13  1  0.68299219  0.81584523  0.02875225  1.0\n  Si  Si14  1  0.81700781  0.68415477  0.47124775  1.0\n  Si  Si15  1  0.18299219  0.31584523  0.47124775  1.0\n  Si  Si16  1  0.37841260  0.29375652  0.11157577  1.0\n  Si  Si17  1  0.62158740  0.70624348  0.11157577  1.0\n  Si  Si18  1  0.87841260  0.79375652  0.38842423  1.0\n  Si  Si19  1  0.12158740  0.20624348  0.38842423  1.0\n  Si  Si20  1  0.62158740  0.29375652  0.11157577  1.0\n  Si  Si21  1  0.37841260  0.70624348  0.11157577  1.0\n  Si  Si22  1  0.12158740  0.79375652  0.38842423  1.0\n  Si  Si23  1  0.87841260  0.20624348  0.38842423  1.0\n  Si  Si24  1  0.70624348  0.37841260  0.88842423  1.0\n  Si  Si25  1  0.29375652  0.62158740  0.88842423  1.0\n  Si  Si26  1  0.20624348  0.87841260  0.61157577  1.0\n  Si  Si27  1  0.79375652  0.12158740  0.61157577  1.0\n  Si  Si28  1  0.29375652  0.37841260  0.88842423  1.0\n  Si  Si29  1  0.70624348  0.62158740  0.88842423  1.0\n  Si  Si30  1  0.79375652  0.87841260  0.61157577  1.0\n  Si  Si31  1  0.20624348  0.12158740  0.61157577  1.0\n  Si  Si32  1  0.25439914  0.17908696  0.18310153  1.0\n  Si  Si33  1  0.74560086  0.82091304  0.18310153  1.0\n  Si  Si34  1  0.75439914  0.67908696  0.31689847  1.0\n  Si  Si35  1  0.24560086  0.32091304  0.31689847  1.0\n  Si  Si36  1  0.74560086  0.17908696  0.18310153  1.0\n  Si  Si37  1  0.25439914  0.82091304  0.18310153  1.0\n  Si  Si38  1  0.24560086  0.67908696  0.31689847  1.0\n  Si  Si39  1  0.75439914  0.32091304  0.31689847  1.0\n  Si  Si40  1  0.82091304  0.25439914  0.81689847  1.0\n  Si  Si41  1  0.17908696  0.74560086  0.81689847  1.0\n  Si  Si42  1  0.32091304  0.75439914  0.68310153  1.0\n  Si  Si43  1  0.67908696  0.24560086  0.68310153  1.0\n  Si  Si44  1  0.17908696  0.25439914  0.81689847  1.0\n  Si  Si45  1  0.82091304  0.74560086  0.81689847  1.0\n  Si  Si46  1  0.67908696  0.75439914  0.68310153  1.0\n  Si  Si47  1  0.32091304  0.24560086  0.68310153  1.0\n  Si  Si48  1  0.11735716  0.31939091  0.23506585  1.0\n  Si  Si49  1  0.88264284  0.68060909  0.23506585  1.0\n  Si  Si50  1  0.61735716  0.81939091  0.26493415  1.0\n  Si  Si51  1  0.38264284  0.18060909  0.26493415  1.0\n  Si  Si52  1  0.88264284  0.31939091  0.23506585  1.0\n  Si  Si53  1  0.11735716  0.68060909  0.23506585  1.0\n  Si  Si54  1  0.38264284  0.81939091  0.26493415  1.0\n  Si  Si55  1  0.61735716  0.18060909  0.26493415  1.0\n  Si  Si56  1  0.68060909  0.11735716  0.76493415  1.0\n  Si  Si57  1  0.31939091  0.88264284  0.76493415  1.0\n  Si  Si58  1  0.18060909  0.61735716  0.73506585  1.0\n  Si  Si59  1  0.81939091  0.38264284  0.73506585  1.0\n  Si  Si60  1  0.31939091  0.11735716  0.76493415  1.0\n  Si  Si61  1  0.68060909  0.88264284  0.76493415  1.0\n  Si  Si62  1  0.81939091  0.61735716  0.73506585  1.0\n  Si  Si63  1  0.18060909  0.38264284  0.73506585  1.0\n  Si  Si64  1  0.18957200  -0.00000000  0.05407742  1.0\n  Si  Si65  1  0.81042800  -0.00000000  0.05407742  1.0\n  Si  Si66  1  0.68957200  0.50000000  0.44592258  1.0\n  Si  Si67  1  0.31042800  0.50000000  0.44592258  1.0\n  Si  Si68  1  0.00000000  0.18957200  0.94592258  1.0\n  Si  Si69  1  0.00000000  0.81042800  0.94592258  1.0\n  Si  Si70  1  0.50000000  0.68957200  0.55407742  1.0\n  Si  Si71  1  0.50000000  0.31042800  0.55407742  1.0\n  Si  Si72  1  0.12844859  -0.00000000  0.14799428  1.0\n  Si  Si73  1  0.87155141  -0.00000000  0.14799428  1.0\n  Si  Si74  1  0.62844859  0.50000000  0.35200572  1.0\n  Si  Si75  1  0.37155141  0.50000000  0.35200572  1.0\n  Si  Si76  1  0.00000000  0.12844859  0.85200572  1.0\n  Si  Si77  1  0.00000000  0.87155141  0.85200572  1.0\n  Si  Si78  1  0.50000000  0.62844859  0.64799428  1.0\n  Si  Si79  1  0.50000000  0.37155141  0.64799428  1.0\n  Si  Si80  1  0.11968938  0.50000000  0.02486341  1.0\n  Si  Si81  1  0.88031062  0.50000000  0.02486341  1.0\n  Si  Si82  1  0.61968938  -0.00000000  0.47513659  1.0\n  Si  Si83  1  0.38031062  -0.00000000  0.47513659  1.0\n  Si  Si84  1  0.50000000  0.11968938  0.97513659  1.0\n  Si  Si85  1  0.50000000  0.88031062  0.97513659  1.0\n  Si  Si86  1  0.00000000  0.61968938  0.52486341  1.0\n  Si  Si87  1  0.00000000  0.38031062  0.52486341  1.0\n  Si  Si88  1  0.26505106  0.50000000  0.10357899  1.0\n  Si  Si89  1  0.73494894  0.50000000  0.10357899  1.0\n  Si  Si90  1  0.76505106  -0.00000000  0.39642101  1.0\n  Si  Si91  1  0.23494894  -0.00000000  0.39642101  1.0\n  Si  Si92  1  0.50000000  0.26505106  0.89642101  1.0\n  Si  Si93  1  0.50000000  0.73494894  0.89642101  1.0\n  Si  Si94  1  0.00000000  0.76505106  0.60357899  1.0\n  Si  Si95  1  0.00000000  0.23494894  0.60357899  1.0\n  Si  Si96  1  0.11657999  0.50000000  0.17699671  1.0\n  Si  Si97  1  0.88342001  0.50000000  0.17699671  1.0\n  Si  Si98  1  0.61657999  -0.00000000  0.32300329  1.0\n  Si  Si99  1  0.38342001  -0.00000000  0.32300329  1.0\n  Si  Si100  1  0.50000000  0.11657999  0.82300329  1.0\n  Si  Si101  1  0.50000000  0.88342001  0.82300329  1.0\n  Si  Si102  1  0.00000000  0.61657999  0.67699671  1.0\n  Si  Si103  1  0.00000000  0.38342001  0.67699671  1.0\n  Si  Si104  1  0.50000000  0.50000000  0.50000000  1.0\n  Si  Si105  1  0.00000000  -0.00000000  -0.00000000  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.17888546537735728,
+        "energy_per_atom": -8.594879129622642,
+        "formation_energy_per_atom": 0.17888546537735778,
+        "nsites": 106,
+        "volume": 2445.0737122623686,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.2359,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaacqnzv",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   9.98082303\n_cell_length_b   10.53754465\n_cell_length_c   10.53754465\n_cell_angle_alpha   105.14085040\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   90.00000000\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si46\n_cell_volume   1069.79733461\n_cell_formula_units_Z   46\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.05912873  0.33181036  0.09356950  1.0\n  Si  Si1  1  0.94087127  0.90643050  0.66818964  1.0\n  Si  Si2  1  0.44087127  0.33181036  0.09356950  1.0\n  Si  Si3  1  0.55912873  0.90643050  0.66818964  1.0\n  Si  Si4  1  0.94087127  0.66818964  0.90643050  1.0\n  Si  Si5  1  0.05912873  0.09356950  0.33181036  1.0\n  Si  Si6  1  0.55912873  0.66818964  0.90643050  1.0\n  Si  Si7  1  0.44087127  0.09356950  0.33181036  1.0\n  Si  Si8  1  0.12670205  0.55155602  0.19944938  1.0\n  Si  Si9  1  0.87329795  0.80055062  0.44844398  1.0\n  Si  Si10  1  0.37329795  0.55155602  0.19944938  1.0\n  Si  Si11  1  0.62670205  0.80055062  0.44844398  1.0\n  Si  Si12  1  0.87329795  0.44844398  0.80055062  1.0\n  Si  Si13  1  0.12670205  0.19944938  0.55155602  1.0\n  Si  Si14  1  0.62670205  0.44844398  0.80055062  1.0\n  Si  Si15  1  0.37329795  0.19944938  0.55155602  1.0\n  Si  Si16  1  0.05916875  0.72600048  0.11066368  1.0\n  Si  Si17  1  0.94083125  0.88933632  0.27399952  1.0\n  Si  Si18  1  0.44083125  0.72600048  0.11066368  1.0\n  Si  Si19  1  0.55916875  0.88933632  0.27399952  1.0\n  Si  Si20  1  0.94083125  0.27399952  0.88933632  1.0\n  Si  Si21  1  0.05916875  0.11066368  0.72600048  1.0\n  Si  Si22  1  0.55916875  0.27399952  0.88933632  1.0\n  Si  Si23  1  0.44083125  0.11066368  0.72600048  1.0\n  Si  Si24  1  -0.00000000  0.60092342  0.39907658  1.0\n  Si  Si25  1  0.50000000  0.60092342  0.39907658  1.0\n  Si  Si26  1  -0.00000000  0.39907658  0.60092342  1.0\n  Si  Si27  1  0.50000000  0.39907658  0.60092342  1.0\n  Si  Si28  1  0.93943148  0.24823437  0.24823437  1.0\n  Si  Si29  1  0.06056852  0.75176563  0.75176563  1.0\n  Si  Si30  1  0.56056852  0.24823437  0.24823437  1.0\n  Si  Si31  1  0.43943148  0.75176563  0.75176563  1.0\n  Si  Si32  1  0.86878562  0.42119853  0.42119853  1.0\n  Si  Si33  1  0.13121438  0.57880147  0.57880147  1.0\n  Si  Si34  1  0.63121438  0.42119853  0.42119853  1.0\n  Si  Si35  1  0.36878562  0.57880147  0.57880147  1.0\n  Si  Si36  1  0.75000000  0.92865192  0.16033429  1.0\n  Si  Si37  1  0.25000000  0.83966571  0.07134808  1.0\n  Si  Si38  1  0.25000000  0.07134808  0.83966571  1.0\n  Si  Si39  1  0.75000000  0.16033429  0.92865192  1.0\n  Si  Si40  1  0.75000000  0.94252582  0.80091282  1.0\n  Si  Si41  1  0.25000000  0.19908718  0.05747418  1.0\n  Si  Si42  1  0.25000000  0.05747418  0.19908718  1.0\n  Si  Si43  1  0.75000000  0.80091282  0.94252582  1.0\n  Si  Si44  1  0.75000000  0.14396255  0.14396255  1.0\n  Si  Si45  1  0.25000000  0.85603745  0.85603745  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.12913409456521663,
+        "energy_per_atom": -8.644630500434783,
+        "formation_energy_per_atom": 0.12913409456521663,
+        "nsites": 46,
+        "volume": 1069.7973346059107,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 1.3948999999999998,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaacsvqb",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   12.53983493\n_cell_length_b   12.33642402\n_cell_length_c   12.53708731\n_cell_angle_alpha   77.15858093\n_cell_angle_beta   101.53703375\n_cell_angle_gamma   106.47195180\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si100\n_cell_volume   1793.76493767\n_cell_formula_units_Z   100\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.08752743  0.21920418  0.41840535  1.0\n  Si  Si1  1  0.12374435  0.76088472  0.34543906  1.0\n  Si  Si2  1  0.69802860  0.27198740  0.37719247  1.0\n  Si  Si3  1  0.69986870  0.01795748  0.31896847  1.0\n  Si  Si4  1  0.05178415  0.03241105  0.57617957  1.0\n  Si  Si5  1  0.27033138  0.50255163  0.34158663  1.0\n  Si  Si6  1  0.86658270  0.91392376  0.73405891  1.0\n  Si  Si7  1  0.79875566  0.80552817  0.49695109  1.0\n  Si  Si8  1  0.43063200  0.35797324  0.51809613  1.0\n  Si  Si9  1  0.41173550  0.50529481  0.61677853  1.0\n  Si  Si10  1  0.59264631  0.30021695  0.61675537  1.0\n  Si  Si11  1  0.14628977  0.60777597  0.55928681  1.0\n  Si  Si12  1  0.59743782  0.94699898  0.04497197  1.0\n  Si  Si13  1  0.72115050  0.05831426  0.62190152  1.0\n  Si  Si14  1  0.48897520  0.29466378  0.87711936  1.0\n  Si  Si15  1  0.86662992  0.19844270  0.18845005  1.0\n  Si  Si16  1  0.32767285  0.07470159  0.69527317  1.0\n  Si  Si17  1  0.56513138  0.26786614  0.09229231  1.0\n  Si  Si18  1  0.43436396  0.85717213  0.27059618  1.0\n  Si  Si19  1  0.22787294  0.49342794  0.99244315  1.0\n  Si  Si20  1  0.61023508  0.57510798  0.61646832  1.0\n  Si  Si21  1  0.52982519  0.77533028  0.18154035  1.0\n  Si  Si22  1  0.44856038  0.00335588  0.47994219  1.0\n  Si  Si23  1  0.72661590  0.59242900  0.48129268  1.0\n  Si  Si24  1  0.50673934  0.17320567  0.33362439  1.0\n  Si  Si25  1  0.85287257  0.00729743  0.53338044  1.0\n  Si  Si26  1  0.02268786  0.55747859  0.15249949  1.0\n  Si  Si27  1  0.36105294  0.28122931  0.70430863  1.0\n  Si  Si28  1  0.90991746  0.38475000  0.07373771  1.0\n  Si  Si29  1  0.20192248  0.44672743  0.52196358  1.0\n  Si  Si30  1  0.73899011  0.39377797  0.51330855  1.0\n  Si  Si31  1  0.59735508  0.63035632  0.31911680  1.0\n  Si  Si32  1  0.62811075  0.77479658  0.57413869  1.0\n  Si  Si33  1  0.00654520  0.83421730  0.18724773  1.0\n  Si  Si34  1  0.91978551  0.58752084  0.79483066  1.0\n  Si  Si35  1  0.18894739  0.32489078  0.70936660  1.0\n  Si  Si36  1  0.97162106  0.78406397  0.71224113  1.0\n  Si  Si37  1  0.67793078  0.58778654  0.18643726  1.0\n  Si  Si38  1  0.66377361  0.86225792  0.73064789  1.0\n  Si  Si39  1  0.80548642  0.77315846  0.17072342  1.0\n  Si  Si40  1  0.37444359  0.13773066  0.99500429  1.0\n  Si  Si41  1  0.56017753  0.90584410  0.42843939  1.0\n  Si  Si42  1  0.22958144  0.87919497  0.07210716  1.0\n  Si  Si43  1  0.22418614  0.04595253  0.51696001  1.0\n  Si  Si44  1  0.20971012  0.67340965  0.12356523  1.0\n  Si  Si45  1  0.28071361  0.70293693  0.32321654  1.0\n  Si  Si46  1  0.78247785  0.87288700  0.30443505  1.0\n  Si  Si47  1  0.65575850  0.31622492  0.80592406  1.0\n  Si  Si48  1  0.93764313  0.97173566  0.91331495  1.0\n  Si  Si49  1  0.00375640  0.35720629  0.46293180  1.0\n  Si  Si50  1  0.59292212  0.99851470  0.80842734  1.0\n  Si  Si51  1  0.25113156  0.93711456  0.39728882  1.0\n  Si  Si52  1  0.53227096  0.10175489  0.63192019  1.0\n  Si  Si53  1  0.86672416  0.17891070  0.72768963  1.0\n  Si  Si54  1  0.18756009  0.51215582  0.74641110  1.0\n  Si  Si55  1  0.73158225  0.42041273  0.05406125  1.0\n  Si  Si56  1  0.98420878  0.93317486  0.32745853  1.0\n  Si  Si57  1  0.98221587  0.30833168  0.95456184  1.0\n  Si  Si58  1  0.12667619  0.63432197  0.93333649  1.0\n  Si  Si59  1  0.74185000  0.60332251  0.94059867  1.0\n  Si  Si60  1  0.40052885  0.82221745  0.63574704  1.0\n  Si  Si61  1  0.39908802  0.95537437  0.98628507  1.0\n  Si  Si62  1  0.84270309  0.17812460  0.38730071  1.0\n  Si  Si63  1  0.72234867  0.51947046  0.78404713  1.0\n  Si  Si64  1  0.00014232  0.44190042  0.77915493  1.0\n  Si  Si65  1  0.04800574  0.03468818  0.09770359  1.0\n  Si  Si66  1  0.08237825  0.87078898  0.91479702  1.0\n  Si  Si67  1  0.44254006  0.72758002  0.90340715  1.0\n  Si  Si68  1  0.94858806  0.50883684  0.32413011  1.0\n  Si  Si69  1  0.14195333  0.03574656  0.76410152  1.0\n  Si  Si70  1  0.45272386  0.33736412  0.21235463  1.0\n  Si  Si71  1  0.05813051  0.16722274  0.81203895  1.0\n  Si  Si72  1  0.37756382  0.89932090  0.81141284  1.0\n  Si  Si73  1  0.74596217  0.16216514  0.85815188  1.0\n  Si  Si74  1  0.50209890  0.51313337  0.08204269  1.0\n  Si  Si75  1  0.03489630  0.13141661  0.25322050  1.0\n  Si  Si76  1  0.34628952  0.67378688  0.52190885  1.0\n  Si  Si77  1  0.65974590  0.11195513  0.13435093  1.0\n  Si  Si78  1  0.76235885  0.43434846  0.24418221  1.0\n  Si  Si79  1  0.14022135  0.32255685  0.10337962  1.0\n  Si  Si80  1  0.28470044  0.38026720  0.89647571  1.0\n  Si  Si81  1  0.00676779  0.83303929  0.52057407  1.0\n  Si  Si82  1  0.38497346  0.60861872  0.76310041  1.0\n  Si  Si83  1  0.19522584  0.80010474  0.60093215  1.0\n  Si  Si84  1  0.76354942  0.89696269  0.00377794  1.0\n  Si  Si85  1  0.95381067  0.67122055  0.97272337  1.0\n  Si  Si86  1  0.43921600  0.05582616  0.19143328  1.0\n  Si  Si87  1  0.28114367  0.23565774  0.41535307  1.0\n  Si  Si88  1  0.38504957  0.63683359  0.07981390  1.0\n  Si  Si89  1  0.19231443  0.18863631  0.98517036  1.0\n  Si  Si90  1  0.23886395  0.02260112  0.20120121  1.0\n  Si  Si91  1  0.26880448  0.22175688  0.22316749  1.0\n  Si  Si92  1  0.64285820  0.75010410  0.90935107  1.0\n  Si  Si93  1  0.44533663  0.46714384  0.33608494  1.0\n  Si  Si94  1  0.10444419  0.39115201  0.25444052  1.0\n  Si  Si95  1  0.86969825  0.11537219  0.02220872  1.0\n  Si  Si96  1  0.91029775  0.35981181  0.61515265  1.0\n  Si  Si97  1  0.17299480  0.79279820  0.79173270  1.0\n  Si  Si98  1  0.97801345  0.64118741  0.44907311  1.0\n  Si  Si99  1  0.47996495  0.47837010  0.89918704  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.34929145859999977,
+        "energy_per_atom": -8.4244731364,
+        "formation_energy_per_atom": 0.3492914585999995,
+        "nsites": 100,
+        "volume": 1793.7649376717561,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 8e-07
+    },
+    {
+        "material_id": "mp-aaacsvrn",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   11.69287432\n_cell_length_b   13.41867354\n_cell_length_c   12.67417055\n_cell_angle_alpha   97.64455553\n_cell_angle_beta   80.60118483\n_cell_angle_gamma   82.55712765\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si100\n_cell_volume   1921.07377325\n_cell_formula_units_Z   100\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.89617373  0.56727924  0.24038935  1.0\n  Si  Si1  1  0.04272748  0.51778955  0.59892362  1.0\n  Si  Si2  1  0.37047316  0.87516718  0.56377512  1.0\n  Si  Si3  1  0.62212624  0.45266546  0.21570281  1.0\n  Si  Si4  1  0.41547191  0.84404743  0.12301209  1.0\n  Si  Si5  1  0.39135441  0.18655944  0.72942823  1.0\n  Si  Si6  1  0.86109830  0.65875793  0.85917050  1.0\n  Si  Si7  1  0.61816076  0.01615978  0.24552570  1.0\n  Si  Si8  1  0.63337820  0.92457125  0.38579889  1.0\n  Si  Si9  1  0.49063368  0.56476233  0.96998461  1.0\n  Si  Si10  1  0.71391084  0.35344756  0.89189758  1.0\n  Si  Si11  1  0.36667930  0.40294565  0.46208878  1.0\n  Si  Si12  1  0.83329009  0.91027198  0.39114947  1.0\n  Si  Si13  1  0.64316371  0.74405792  0.67599543  1.0\n  Si  Si14  1  0.63682608  0.18864318  0.31092031  1.0\n  Si  Si15  1  0.38394854  0.13105560  0.51153060  1.0\n  Si  Si16  1  0.17818853  0.57956208  0.39423175  1.0\n  Si  Si17  1  0.42764939  0.35792305  0.77247262  1.0\n  Si  Si18  1  0.49768476  0.26156291  0.47534570  1.0\n  Si  Si19  1  0.41511200  0.76608344  0.28005968  1.0\n  Si  Si20  1  0.96504572  0.04389800  0.37287571  1.0\n  Si  Si21  1  0.89230579  0.12059375  0.94471692  1.0\n  Si  Si22  1  0.92499963  0.37272683  0.64929697  1.0\n  Si  Si23  1  0.04301085  0.89369151  0.57274518  1.0\n  Si  Si24  1  0.31276844  0.06772340  0.34989933  1.0\n  Si  Si25  1  0.05492310  0.71154665  0.84896614  1.0\n  Si  Si26  1  0.89680671  0.24263896  0.82793210  1.0\n  Si  Si27  1  0.32922968  0.11650333  0.88756353  1.0\n  Si  Si28  1  0.50703720  0.99170655  0.55168051  1.0\n  Si  Si29  1  0.73072878  0.65019508  0.02064014  1.0\n  Si  Si30  1  0.84889029  0.78892494  0.65592143  1.0\n  Si  Si31  1  0.85853731  0.50710591  0.54176602  1.0\n  Si  Si32  1  0.76313439  0.84265790  0.89622995  1.0\n  Si  Si33  1  0.40200970  0.54284275  0.80824584  1.0\n  Si  Si34  1  0.08353703  0.74954315  0.23625262  1.0\n  Si  Si35  1  0.60721726  0.75771394  0.32709436  1.0\n  Si  Si36  1  0.71836057  0.42113364  0.72439536  1.0\n  Si  Si37  1  0.44576286  0.01514756  0.17554070  1.0\n  Si  Si38  1  0.27614622  0.84551464  0.74017349  1.0\n  Si  Si39  1  0.77813077  0.70184664  0.19015701  1.0\n  Si  Si40  1  0.41382903  0.33213413  0.08871211  1.0\n  Si  Si41  1  0.17793281  0.98702969  0.65350601  1.0\n  Si  Si42  1  0.63110884  0.05392720  0.66829354  1.0\n  Si  Si43  1  0.26281095  0.90413303  0.03032343  1.0\n  Si  Si44  1  0.07170619  0.31364108  0.33129400  1.0\n  Si  Si45  1  0.17346707  0.07668086  0.09675378  1.0\n  Si  Si46  1  0.20962695  0.16104743  0.65518982  1.0\n  Si  Si47  1  0.05110789  0.49653484  0.10088063  1.0\n  Si  Si48  1  0.17883940  0.42653679  0.79127203  1.0\n  Si  Si49  1  0.97439749  0.48254593  0.79499795  1.0\n  Si  Si50  1  0.19949948  0.58870417  0.89019910  1.0\n  Si  Si51  1  0.05000284  0.21413181  0.56949609  1.0\n  Si  Si52  1  0.54212595  0.11793473  0.85352673  1.0\n  Si  Si53  1  0.86552572  0.35493398  0.40825926  1.0\n  Si  Si54  1  0.29704202  0.90257875  0.40054220  1.0\n  Si  Si55  1  0.96514835  0.41082153  0.96496570  1.0\n  Si  Si56  1  0.52870959  0.29602350  0.90673386  1.0\n  Si  Si57  1  0.50438346  0.61952656  0.67088756  1.0\n  Si  Si58  1  0.09509458  0.85548223  0.95750641  1.0\n  Si  Si59  1  0.11246167  0.12203448  0.93405684  1.0\n  Si  Si60  1  0.66130038  0.49327825  0.03185580  1.0\n  Si  Si61  1  0.83821204  0.17142116  0.13986717  1.0\n  Si  Si62  1  0.74652290  0.59450074  0.71862314  1.0\n  Si  Si63  1  0.88726426  0.15123642  0.65743154  1.0\n  Si  Si64  1  0.87518851  0.96812580  0.83290803  1.0\n  Si  Si65  1  0.68693881  0.18352234  0.03047068  1.0\n  Si  Si66  1  0.57454655  0.04910540  0.01413442  1.0\n  Si  Si67  1  0.98782368  0.06662320  0.19293133  1.0\n  Si  Si68  1  0.47803451  0.52017797  0.37995662  1.0\n  Si  Si69  1  0.90062177  0.82530025  0.21059493  1.0\n  Si  Si70  1  0.10331583  0.88643386  0.38039918  1.0\n  Si  Si71  1  0.05474951  0.74584522  0.66927530  1.0\n  Si  Si72  1  0.35659312  0.51868024  0.10783069  1.0\n  Si  Si73  1  0.21970780  0.63906137  0.56583439  1.0\n  Si  Si74  1  0.27242754  0.21931242  0.06555181  1.0\n  Si  Si75  1  0.84410911  0.97789684  0.65593037  1.0\n  Si  Si76  1  0.80341663  0.42875504  0.26600684  1.0\n  Si  Si77  1  0.57132611  0.83783779  0.85097867  1.0\n  Si  Si78  1  0.41288890  0.68790325  0.53775175  1.0\n  Si  Si79  1  0.85207221  0.75899331  0.46970326  1.0\n  Si  Si80  1  0.61822673  0.51887669  0.50719522  1.0\n  Si  Si81  1  0.54726174  0.73027132  0.98602395  1.0\n  Si  Si82  1  0.93073774  0.93492908  0.08573907  1.0\n  Si  Si83  1  0.09703502  0.33233845  0.14496094  1.0\n  Si  Si84  1  0.09518744  0.27254329  0.84371846  1.0\n  Si  Si85  1  0.29009984  0.49298965  0.64117821  1.0\n  Si  Si86  1  0.73307242  0.94860121  0.06997265  1.0\n  Si  Si87  1  0.37730541  0.93377995  0.86698224  1.0\n  Si  Si88  1  0.70787324  0.19217928  0.59845101  1.0\n  Si  Si89  1  0.11391731  0.15330757  0.38239896  1.0\n  Si  Si90  1  0.67137007  0.68772066  0.47719201  1.0\n  Si  Si91  1  0.79820657  0.18904791  0.41598726  1.0\n  Si  Si92  1  0.18073456  0.61265034  0.08360540  1.0\n  Si  Si93  1  0.57278898  0.29129047  0.18201330  1.0\n  Si  Si94  1  0.35039885  0.60548916  0.28292226  1.0\n  Si  Si95  1  0.90702527  0.32115602  0.11000593  1.0\n  Si  Si96  1  0.17056329  0.41671142  0.43830740  1.0\n  Si  Si97  1  0.58300159  0.34676086  0.62129775  1.0\n  Si  Si98  1  0.00238840  0.64795352  0.35581991  1.0\n  Si  Si99  1  0.08334169  0.96794150  0.83021497  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.3167515176000002,
+        "energy_per_atom": -8.4570130774,
+        "formation_energy_per_atom": 0.3167515175999995,
+        "nsites": 100,
+        "volume": 1921.0737732472721,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0030999999999998806,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaacsvsg",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   12.67697625\n_cell_length_b   12.18200854\n_cell_length_c   12.22570930\n_cell_angle_alpha   80.75985292\n_cell_angle_beta   104.32595059\n_cell_angle_gamma   78.83199162\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si100\n_cell_volume   1750.97284719\n_cell_formula_units_Z   100\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.27798844  0.06499344  0.18427782  1.0\n  Si  Si1  1  0.18099966  0.64511156  0.43049691  1.0\n  Si  Si2  1  0.37995240  0.19412205  0.10897196  1.0\n  Si  Si3  1  0.65500346  0.31855935  0.34607659  1.0\n  Si  Si4  1  0.80979808  0.54173349  0.02290520  1.0\n  Si  Si5  1  0.15276783  0.70156617  0.61483955  1.0\n  Si  Si6  1  0.54284012  0.00693368  0.76808946  1.0\n  Si  Si7  1  0.12503345  0.51149940  0.63738192  1.0\n  Si  Si8  1  0.63711633  0.82683421  0.60455260  1.0\n  Si  Si9  1  0.68320196  0.74332517  0.96862091  1.0\n  Si  Si10  1  0.32545355  0.94346428  0.91709285  1.0\n  Si  Si11  1  0.94081600  0.32872679  0.66378674  1.0\n  Si  Si12  1  0.24136946  0.29762538  0.61376620  1.0\n  Si  Si13  1  0.80208038  0.26181353  0.10848262  1.0\n  Si  Si14  1  0.57466734  0.99509036  0.96818214  1.0\n  Si  Si15  1  0.25101007  0.88655743  0.73822593  1.0\n  Si  Si16  1  0.07811046  0.63005746  0.88691154  1.0\n  Si  Si17  1  0.60666477  0.13933207  0.40431642  1.0\n  Si  Si18  1  0.71910227  0.05581904  0.77707635  1.0\n  Si  Si19  1  0.51337073  0.83743782  0.05317905  1.0\n  Si  Si20  1  0.98107673  0.73950827  0.69591672  1.0\n  Si  Si21  1  0.48245826  0.86378905  0.67342633  1.0\n  Si  Si22  1  0.00295177  0.62301583  0.21082928  1.0\n  Si  Si23  1  0.34112020  0.89377565  0.12359087  1.0\n  Si  Si24  1  0.48293199  0.67104081  0.75188962  1.0\n  Si  Si25  1  0.85743768  0.64798270  0.57095228  1.0\n  Si  Si26  1  0.71274736  0.42567369  0.91039271  1.0\n  Si  Si27  1  0.44360602  0.74776317  0.40566027  1.0\n  Si  Si28  1  0.67610897  0.27995955  0.79227741  1.0\n  Si  Si29  1  0.25915154  0.06664993  0.62666584  1.0\n  Si  Si30  1  0.64145467  0.66619797  0.51802517  1.0\n  Si  Si31  1  0.09055948  0.85886848  0.13198633  1.0\n  Si  Si32  1  0.43425109  0.11329065  0.43487718  1.0\n  Si  Si33  1  0.99985832  0.45563924  0.34605604  1.0\n  Si  Si34  1  0.07912946  0.05784173  0.13674741  1.0\n  Si  Si35  1  0.76109589  0.75912432  0.80388755  1.0\n  Si  Si36  1  0.06849598  0.36392823  0.04734606  1.0\n  Si  Si37  1  0.05378594  0.00521803  0.67523922  1.0\n  Si  Si38  1  0.03357770  0.97853684  0.34737936  1.0\n  Si  Si39  1  0.12575012  0.18958718  0.98546749  1.0\n  Si  Si40  1  0.87432590  0.16328544  0.61222979  1.0\n  Si  Si41  1  0.36993041  0.64521679  0.55166079  1.0\n  Si  Si42  1  0.43112040  0.94875582  0.35305958  1.0\n  Si  Si43  1  0.12069499  0.18810246  0.68720045  1.0\n  Si  Si44  1  0.55850152  0.91284084  0.23431224  1.0\n  Si  Si45  1  0.64190543  0.47620853  0.43939703  1.0\n  Si  Si46  1  0.32770850  0.45549859  0.66140345  1.0\n  Si  Si47  1  0.65465290  0.06535736  0.23697642  1.0\n  Si  Si48  1  0.73791574  0.37152964  0.63328153  1.0\n  Si  Si49  1  0.41759999  0.15207542  0.61721570  1.0\n  Si  Si50  1  0.84330229  0.83687115  0.45388764  1.0\n  Si  Si51  1  0.79865554  0.13991394  0.96102320  1.0\n  Si  Si52  1  0.69557131  0.74392328  0.34440239  1.0\n  Si  Si53  1  0.72679980  0.96137258  0.52974368  1.0\n  Si  Si54  1  0.84549961  0.22017358  0.40947819  1.0\n  Si  Si55  1  0.20017041  0.35770813  0.40874735  1.0\n  Si  Si56  1  0.68792399  0.57657007  0.26266594  1.0\n  Si  Si57  1  0.53055302  0.40844291  0.16006892  1.0\n  Si  Si58  1  0.38011770  0.69851048  0.22247801  1.0\n  Si  Si59  1  0.95710858  0.63728930  0.00680066  1.0\n  Si  Si60  1  0.63389433  0.53618272  0.70030879  1.0\n  Si  Si61  1  0.22377594  0.61253992  0.22962185  1.0\n  Si  Si62  1  0.57211536  0.35500139  0.99306681  1.0\n  Si  Si63  1  0.96754454  0.12081647  0.90621028  1.0\n  Si  Si64  1  0.09957545  0.45897332  0.82121078  1.0\n  Si  Si65  1  0.38501294  0.44830527  0.86575891  1.0\n  Si  Si66  1  0.94055989  0.39180535  0.84817555  1.0\n  Si  Si67  1  0.49731445  0.31267703  0.65089531  1.0\n  Si  Si68  1  0.16707157  0.08004411  0.42934843  1.0\n  Si  Si69  1  0.21961520  0.48307011  0.08978417  1.0\n  Si  Si70  1  0.38221360  0.34268446  0.21508391  1.0\n  Si  Si71  1  0.58488225  0.59562043  0.95533266  1.0\n  Si  Si72  1  0.77549404  0.95672177  0.03630847  1.0\n  Si  Si73  1  0.54500812  0.16343178  0.04296151  1.0\n  Si  Si74  1  0.26437715  0.64697537  0.97375378  1.0\n  Si  Si75  1  0.95884788  0.48387446  0.52366522  1.0\n  Si  Si76  1  0.99838815  0.24144429  0.16917873  1.0\n  Si  Si77  1  0.81566254  0.86939392  0.24415028  1.0\n  Si  Si78  1  0.81801444  0.57878603  0.75452383  1.0\n  Si  Si79  1  0.48154642  0.47874863  0.50835190  1.0\n  Si  Si80  1  0.30107253  0.67657426  0.78889093  1.0\n  Si  Si81  1  0.29752744  0.87848022  0.54933403  1.0\n  Si  Si82  1  0.02261112  0.88506790  0.53446399  1.0\n  Si  Si83  1  0.84045417  0.10124695  0.27547199  1.0\n  Si  Si84  1  0.92521992  0.84064102  0.99018523  1.0\n  Si  Si85  1  0.50899575  0.61258617  0.12099845  1.0\n  Si  Si86  1  0.24946251  0.14778706  0.87293853  1.0\n  Si  Si87  1  0.81945784  0.43319013  0.20920339  1.0\n  Si  Si88  1  0.84603008  0.90473243  0.73046190  1.0\n  Si  Si89  1  0.02117822  0.79000031  0.29187744  1.0\n  Si  Si90  1  0.79542009  0.69640887  0.17023494  1.0\n  Si  Si91  1  0.24652988  0.20092900  0.31632612  1.0\n  Si  Si92  1  0.19055404  0.83542081  0.98843714  1.0\n  Si  Si93  1  0.27307995  0.35293816  0.95360259  1.0\n  Si  Si94  1  0.34056220  0.44127414  0.36122152  1.0\n  Si  Si95  1  0.22194869  0.82831961  0.35026666  1.0\n  Si  Si96  1  0.01466130  0.94255568  0.85452166  1.0\n  Si  Si97  1  0.38435290  0.25316906  0.81533512  1.0\n  Si  Si98  1  0.67493228  0.19749624  0.60175700  1.0\n  Si  Si99  1  0.01017191  0.25060278  0.36486834  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.3662740677000009,
+        "energy_per_atom": -8.407490527299998,
+        "formation_energy_per_atom": 0.36627406769999993,
+        "nsites": 100,
+        "volume": 1750.9728471941326,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 4e-07
+    },
+    {
+        "material_id": "mp-aaacsvuf",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   12.89176596\n_cell_length_b   12.81884769\n_cell_length_c   12.93019737\n_cell_angle_alpha   106.27269514\n_cell_angle_beta   71.41883148\n_cell_angle_gamma   103.76042124\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si100\n_cell_volume   1918.19224543\n_cell_formula_units_Z   100\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.88367216  0.34077908  0.16884092  1.0\n  Si  Si1  1  0.05893169  0.68277319  0.61002357  1.0\n  Si  Si2  1  0.12024604  0.46128018  0.72673095  1.0\n  Si  Si3  1  0.85218179  0.45060208  0.35060514  1.0\n  Si  Si4  1  0.90392497  0.93803044  0.99114893  1.0\n  Si  Si5  1  0.48576999  0.94073777  0.24200919  1.0\n  Si  Si6  1  0.36613887  0.67417087  0.80208492  1.0\n  Si  Si7  1  0.29604740  0.71755752  0.13451895  1.0\n  Si  Si8  1  0.56708087  0.60135385  0.50349866  1.0\n  Si  Si9  1  0.59045323  0.87514291  0.92703014  1.0\n  Si  Si10  1  0.95336359  0.97540246  0.75982529  1.0\n  Si  Si11  1  0.63983974  0.15117216  0.65323547  1.0\n  Si  Si12  1  0.35068652  0.09191437  0.63070925  1.0\n  Si  Si13  1  0.72543844  0.80136089  0.64307447  1.0\n  Si  Si14  1  0.52849516  0.42463289  0.72189401  1.0\n  Si  Si15  1  0.43271614  0.70878823  0.36526230  1.0\n  Si  Si16  1  0.71724107  0.32337994  0.11969353  1.0\n  Si  Si17  1  0.04483998  0.52429022  0.33113433  1.0\n  Si  Si18  1  0.04057059  0.00506167  0.57265557  1.0\n  Si  Si19  1  0.12624809  0.79762056  0.15985747  1.0\n  Si  Si20  1  0.60004544  0.63898927  0.97772020  1.0\n  Si  Si21  1  0.08888058  0.05667167  0.30729415  1.0\n  Si  Si22  1  0.08759775  0.09920320  0.05098635  1.0\n  Si  Si23  1  0.33642513  0.31164598  0.20723934  1.0\n  Si  Si24  1  0.61725550  0.58788997  0.66276593  1.0\n  Si  Si25  1  0.05696460  0.57906078  0.90394005  1.0\n  Si  Si26  1  0.36400737  0.55238187  0.10254512  1.0\n  Si  Si27  1  0.42720556  0.43461367  0.91534512  1.0\n  Si  Si28  1  0.42740137  0.86623636  0.08001511  1.0\n  Si  Si29  1  0.90543167  0.77468920  0.73037660  1.0\n  Si  Si30  1  0.83849681  0.72777772  0.90506631  1.0\n  Si  Si31  1  0.86677596  0.08533583  0.93592169  1.0\n  Si  Si32  1  0.53724123  0.06540087  0.51659800  1.0\n  Si  Si33  1  0.65223367  0.88406769  0.22701170  1.0\n  Si  Si34  1  0.99870465  0.18218596  0.57072498  1.0\n  Si  Si35  1  0.93341556  0.75569569  0.16331299  1.0\n  Si  Si36  1  0.02449008  0.22399793  0.32823892  1.0\n  Si  Si37  1  0.39510509  0.81553999  0.70518448  1.0\n  Si  Si38  1  0.31364694  0.13654660  0.37154377  1.0\n  Si  Si39  1  0.15948737  0.98084220  0.11889989  1.0\n  Si  Si40  1  0.92234855  0.93683083  0.27232843  1.0\n  Si  Si41  1  0.06821547  0.71323637  0.42926097  1.0\n  Si  Si42  1  0.30918343  0.94779078  0.38527564  1.0\n  Si  Si43  1  0.09527309  0.01809332  0.86024634  1.0\n  Si  Si44  1  0.78608064  0.98287056  0.43694326  1.0\n  Si  Si45  1  0.59775548  0.88951312  0.42927043  1.0\n  Si  Si46  1  0.16779372  0.48271759  0.97629573  1.0\n  Si  Si47  1  0.15268847  0.85941621  0.86115082  1.0\n  Si  Si48  1  0.84988203  0.94471582  0.57037153  1.0\n  Si  Si49  1  0.33499220  0.95444399  0.86865076  1.0\n  Si  Si50  1  0.27053646  0.74426846  0.33577710  1.0\n  Si  Si51  1  0.76041955  0.08635667  0.71977577  1.0\n  Si  Si52  1  0.46902100  0.28990224  0.41808507  1.0\n  Si  Si53  1  0.96309005  0.42954884  0.01641801  1.0\n  Si  Si54  1  0.76428901  0.30552332  0.44933985  1.0\n  Si  Si55  1  0.08472369  0.41027836  0.42470867  1.0\n  Si  Si56  1  0.53258693  0.61690860  0.17498693  1.0\n  Si  Si57  1  0.50689754  0.42347716  0.15068043  1.0\n  Si  Si58  1  0.69420520  0.82557295  0.02422823  1.0\n  Si  Si59  1  0.99371887  0.75196759  0.96771207  1.0\n  Si  Si60  1  0.83266958  0.41235214  0.72518115  1.0\n  Si  Si61  1  0.38749557  0.56352054  0.46946263  1.0\n  Si  Si62  1  0.58589752  0.39423463  0.28238497  1.0\n  Si  Si63  1  0.16098729  0.31534711  0.82710714  1.0\n  Si  Si64  1  0.57629633  0.11514687  0.20992134  1.0\n  Si  Si65  1  0.28153817  0.28124806  0.91876939  1.0\n  Si  Si66  1  0.82490804  0.00663517  0.18688175  1.0\n  Si  Si67  1  0.61731882  0.05147237  0.88311984  1.0\n  Si  Si68  1  0.41021852  0.38648764  0.60686982  1.0\n  Si  Si69  1  0.34994639  0.11919124  0.81811843  1.0\n  Si  Si70  1  0.53091925  0.17513475  0.84374485  1.0\n  Si  Si71  1  0.68544515  0.33606044  0.64175346  1.0\n  Si  Si72  1  0.21764654  0.67214775  0.96664293  1.0\n  Si  Si73  1  0.53800681  0.69054617  0.83956334  1.0\n  Si  Si74  1  0.20105085  0.27576871  0.10740744  1.0\n  Si  Si75  1  0.01107538  0.49111296  0.62092520  1.0\n  Si  Si76  1  0.75224650  0.63879015  0.19349020  1.0\n  Si  Si77  1  0.17015429  0.46078347  0.15322772  1.0\n  Si  Si78  1  0.72644488  0.50055005  0.90258466  1.0\n  Si  Si79  1  0.81194175  0.64052442  0.60342055  1.0\n  Si  Si80  1  0.93756633  0.18118152  0.18122769  1.0\n  Si  Si81  1  0.86059551  0.72363184  0.44718218  1.0\n  Si  Si82  1  0.21738080  0.94435270  0.57886808  1.0\n  Si  Si83  1  0.56374747  0.36244820  0.95034393  1.0\n  Si  Si84  1  0.69225557  0.13762340  0.03310679  1.0\n  Si  Si85  1  0.27220358  0.39503362  0.40165368  1.0\n  Si  Si86  1  0.21756678  0.79750832  0.66327730  1.0\n  Si  Si87  1  0.96853929  0.25667820  0.88828590  1.0\n  Si  Si88  1  0.79184631  0.48470072  0.04653823  1.0\n  Si  Si89  1  0.86536092  0.17451165  0.46605792  1.0\n  Si  Si90  1  0.60947746  0.18856874  0.39033637  1.0\n  Si  Si91  1  0.19032239  0.25174436  0.50486933  1.0\n  Si  Si92  1  0.88871686  0.25491598  0.74851145  1.0\n  Si  Si93  1  0.57078331  0.79338361  0.56993147  1.0\n  Si  Si94  1  0.72190818  0.55853627  0.34885256  1.0\n  Si  Si95  1  0.12085601  0.90071307  0.36071270  1.0\n  Si  Si96  1  0.41103746  0.15381445  0.18676684  1.0\n  Si  Si97  1  0.31041557  0.53517485  0.65681324  1.0\n  Si  Si98  1  0.35144475  0.00084957  0.05322396  1.0\n  Si  Si99  1  0.26693381  0.24334180  0.64624174  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.3103144008999994,
+        "energy_per_atom": -8.4634501941,
+        "formation_energy_per_atom": 0.31031440089999934,
+        "nsites": 100,
+        "volume": 1918.192245426189,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.027599999999999625,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaacswby",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   12.40890494\n_cell_length_b   12.68144231\n_cell_length_c   12.61042510\n_cell_angle_alpha   100.57689881\n_cell_angle_beta   97.77001428\n_cell_angle_gamma   81.03513706\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si100\n_cell_volume   1915.22057266\n_cell_formula_units_Z   100\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.10741590  0.92897358  0.48987046  1.0\n  Si  Si1  1  0.07250490  0.43040674  0.54768075  1.0\n  Si  Si2  1  0.34115849  0.40541743  0.69702304  1.0\n  Si  Si3  1  0.66273768  0.34127785  0.73078018  1.0\n  Si  Si4  1  0.22649202  0.00449643  0.39755873  1.0\n  Si  Si5  1  0.42064090  0.06228509  0.20620509  1.0\n  Si  Si6  1  0.89491607  0.63544797  0.78131884  1.0\n  Si  Si7  1  0.66332989  0.02777760  0.62705427  1.0\n  Si  Si8  1  0.21596282  0.69133626  0.71584105  1.0\n  Si  Si9  1  0.61319604  0.37866152  0.55478787  1.0\n  Si  Si10  1  0.78265403  0.32437399  0.47608638  1.0\n  Si  Si11  1  0.93008507  0.02741934  0.46423009  1.0\n  Si  Si12  1  0.69900643  0.96971341  0.93317123  1.0\n  Si  Si13  1  0.47774809  0.82931637  0.77223173  1.0\n  Si  Si14  1  0.32835063  0.71618396  0.03130209  1.0\n  Si  Si15  1  0.69667730  0.10623258  0.39952046  1.0\n  Si  Si16  1  0.34024514  0.40036650  0.49253960  1.0\n  Si  Si17  1  0.37405162  0.27700598  0.82545803  1.0\n  Si  Si18  1  0.51678543  0.16504724  0.12259697  1.0\n  Si  Si19  1  0.07220518  0.51731581  0.01468705  1.0\n  Si  Si20  1  0.41944944  0.09360698  0.76618842  1.0\n  Si  Si21  1  0.85320364  0.99675667  0.06781192  1.0\n  Si  Si22  1  0.88764785  0.46632094  0.47159614  1.0\n  Si  Si23  1  0.88960304  0.77192083  0.56325264  1.0\n  Si  Si24  1  0.26121598  0.13201815  0.56375065  1.0\n  Si  Si25  1  0.50644748  0.75953293  0.01580485  1.0\n  Si  Si26  1  0.84342731  0.18033771  0.90092101  1.0\n  Si  Si27  1  0.11509440  0.00856637  0.06422030  1.0\n  Si  Si28  1  0.96144876  0.95798181  0.24323211  1.0\n  Si  Si29  1  0.38550879  0.52887892  0.99736739  1.0\n  Si  Si30  1  0.05626342  0.81348807  0.66551009  1.0\n  Si  Si31  1  0.34176495  0.74181966  0.46964131  1.0\n  Si  Si32  1  0.57112080  0.26786636  0.85373625  1.0\n  Si  Si33  1  0.98425051  0.68904026  0.09535817  1.0\n  Si  Si34  1  0.96827329  0.37674086  0.02140667  1.0\n  Si  Si35  1  0.80264463  0.19322827  0.09617380  1.0\n  Si  Si36  1  0.14780272  0.73905689  0.43521243  1.0\n  Si  Si37  1  0.19642191  0.78187224  0.89681949  1.0\n  Si  Si38  1  0.66958944  0.81594160  0.80578253  1.0\n  Si  Si39  1  0.71719052  0.58408569  0.14846052  1.0\n  Si  Si40  1  0.55319243  0.51847843  0.30558795  1.0\n  Si  Si41  1  0.68487858  0.17963796  0.23451416  1.0\n  Si  Si42  1  0.41705163  0.91864019  0.94451564  1.0\n  Si  Si43  1  0.35784381  0.84880323  0.34093222  1.0\n  Si  Si44  1  0.50806573  0.71083226  0.20219257  1.0\n  Si  Si45  1  0.40543880  0.88240299  0.60555765  1.0\n  Si  Si46  1  0.95180597  0.20775555  0.45373959  1.0\n  Si  Si47  1  0.83437402  0.76138909  0.37653886  1.0\n  Si  Si48  1  0.88612347  0.99343897  0.79376492  1.0\n  Si  Si49  1  0.92938264  0.31758584  0.17604396  1.0\n  Si  Si50  1  0.65360076  0.50494344  0.85161349  1.0\n  Si  Si51  1  0.16443297  0.38918135  0.39581941  1.0\n  Si  Si52  1  0.50452223  0.08801407  0.39889507  1.0\n  Si  Si53  1  0.74116516  0.66050964  0.87745987  1.0\n  Si  Si54  1  0.46467812  0.04928475  0.57416259  1.0\n  Si  Si55  1  0.78640820  0.71657059  0.06798142  1.0\n  Si  Si56  1  0.94283566  0.62633846  0.25983777  1.0\n  Si  Si57  1  0.09281165  0.25574056  0.59212679  1.0\n  Si  Si58  1  0.25840288  0.44610652  0.06999961  1.0\n  Si  Si59  1  0.54090149  0.90101400  0.16657609  1.0\n  Si  Si60  1  0.71968653  0.84368031  0.63930593  1.0\n  Si  Si61  1  0.51554641  0.06273999  0.94350058  1.0\n  Si  Si62  1  0.01220968  0.31721174  0.75361992  1.0\n  Si  Si63  1  0.65422213  0.32327406  0.03077687  1.0\n  Si  Si64  1  0.83765492  0.47581138  0.27310392  1.0\n  Si  Si65  1  0.77134155  0.44163052  0.00015853  1.0\n  Si  Si66  1  0.04575710  0.06924231  0.89703585  1.0\n  Si  Si67  1  0.65774448  0.69760978  0.36019548  1.0\n  Si  Si68  1  0.28684965  0.07243725  0.04358196  1.0\n  Si  Si69  1  0.08011719  0.79005193  0.25233639  1.0\n  Si  Si70  1  0.41457937  0.66037969  0.72079871  1.0\n  Si  Si71  1  0.04827158  0.25133908  0.31521288  1.0\n  Si  Si72  1  0.03936760  0.83424073  0.00305500  1.0\n  Si  Si73  1  0.68185118  0.09742771  0.81529867  1.0\n  Si  Si74  1  0.55076705  0.49293239  0.11406784  1.0\n  Si  Si75  1  0.10359707  0.06745627  0.25384281  1.0\n  Si  Si76  1  0.54661129  0.87209037  0.35105100  1.0\n  Si  Si77  1  0.70050491  0.37035770  0.30878322  1.0\n  Si  Si78  1  0.39840809  0.55026490  0.41168450  1.0\n  Si  Si79  1  0.83079344  0.61510361  0.59426168  1.0\n  Si  Si80  1  0.26121439  0.00239332  0.68618164  1.0\n  Si  Si81  1  0.06142633  0.00295686  0.67807824  1.0\n  Si  Si82  1  0.04117197  0.50119362  0.82223730  1.0\n  Si  Si83  1  0.26188960  0.73893829  0.20070387  1.0\n  Si  Si84  1  0.48803238  0.28225811  0.42506057  1.0\n  Si  Si85  1  0.16828498  0.51734952  0.70530346  1.0\n  Si  Si86  1  0.64698308  0.68567503  0.54464462  1.0\n  Si  Si87  1  0.52614426  0.56995189  0.57541769  1.0\n  Si  Si88  1  0.80154150  0.93521627  0.32547824  1.0\n  Si  Si89  1  0.27145499  0.25680623  0.97687437  1.0\n  Si  Si90  1  0.45426887  0.52119521  0.82687050  1.0\n  Si  Si91  1  0.84209197  0.24780602  0.73556000  1.0\n  Si  Si92  1  0.11692630  0.56162128  0.34170285  1.0\n  Si  Si93  1  0.50516459  0.32745216  0.25109935  1.0\n  Si  Si94  1  0.26694719  0.56116195  0.24563330  1.0\n  Si  Si95  1  0.08278593  0.24739895  0.91031833  1.0\n  Si  Si96  1  0.84496950  0.07219796  0.62809159  1.0\n  Si  Si97  1  0.95950267  0.81222790  0.81949224  1.0\n  Si  Si98  1  0.72539034  0.90325161  0.13837740  1.0\n  Si  Si99  1  0.22401121  0.95664533  0.85956349  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.31691021610000014,
+        "energy_per_atom": -8.4568543789,
+        "formation_energy_per_atom": 0.3169102160999989,
+        "nsites": 100,
+        "volume": 1915.2205726555178,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 6e-07
+    },
+    {
+        "material_id": "mp-aaacueap",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   6.75212663\n_cell_length_b   6.75212655\n_cell_length_c   2.47393307\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   120.00000042\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si6\n_cell_volume   97.67866774\n_cell_formula_units_Z   6\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.15338759  0.73153571  0.00000000  1.0\n  Si  Si1  1  0.26846429  0.42185189  -0.00000000  1.0\n  Si  Si2  1  0.57814811  0.84661241  0.00000000  1.0\n  Si  Si3  1  0.84661241  0.26846429  -0.00000000  1.0\n  Si  Si4  1  0.73153571  0.57814811  0.00000000  1.0\n  Si  Si5  1  0.42185189  0.15338759  -0.00000000  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.3600444750000005,
+        "energy_per_atom": -8.413720119999999,
+        "formation_energy_per_atom": 0.36004447499999986,
+        "nsites": 6,
+        "volume": 97.67866774258873,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 1.5e-06
+    },
+    {
+        "material_id": "mp-aaadbwta",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   3.97462300\n_cell_length_b   5.45513699\n_cell_length_c   9.01450197\n_cell_angle_alpha   106.17302309\n_cell_angle_beta   89.29697547\n_cell_angle_gamma   111.23949568\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si8\n_cell_volume   174.10769029\n_cell_formula_units_Z   8\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.09474000  0.82765500  0.91766700  1.0\n  Si  Si1  1  0.00072400  0.21100200  0.94028900  1.0\n  Si  Si2  1  0.56659500  0.00363400  0.75928200  1.0\n  Si  Si3  1  0.12570700  0.36170500  0.37154100  1.0\n  Si  Si4  1  0.84100800  0.06950100  0.19835500  1.0\n  Si  Si5  1  0.28671500  0.84225300  0.31767000  1.0\n  Si  Si6  1  0.56787400  0.13266900  0.48867800  1.0\n  Si  Si7  1  0.50925300  0.56641800  0.99990800  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 1.2507520099999994,
+        "energy_per_atom": -7.523012585,
+        "formation_energy_per_atom": 1.2507520099999994,
+        "nsites": 8,
+        "volume": 174.1076902939462,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 6e-07
+    },
+    {
+        "material_id": "mp-aaaaaabb",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   2.70232266\n_cell_length_b   2.70232186\n_cell_length_c   2.70232219\n_cell_angle_alpha   60.00000760\n_cell_angle_beta   60.00001743\n_cell_angle_gamma   60.00000850\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si1\n_cell_volume   13.95392928\n_cell_formula_units_Z   1\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.00000000  0.00000000  -0.00000000  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.5315660099999988,
+        "energy_per_atom": -8.242198585,
+        "formation_energy_per_atom": 0.5315660099999988,
+        "nsites": 1,
+        "volume": 13.953929284682244,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaaaaabi",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   2.62054355\n_cell_length_b   2.62054208\n_cell_length_c   2.46635439\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   119.99998154\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si1\n_cell_volume   14.66792607\n_cell_formula_units_Z   1\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.00000000  0.00000000  0.00000000  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.305300729999999,
+        "energy_per_atom": -8.468463865,
+        "formation_energy_per_atom": 0.305300729999999,
+        "nsites": 1,
+        "volume": 14.667926068037133,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 1e-07
+    },
+    {
+        "material_id": "mp-aaaaaado",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   2.65853078\n_cell_length_b   3.60745856\n_cell_length_c   3.60745936\n_cell_angle_alpha   82.19654710\n_cell_angle_beta   68.37828065\n_cell_angle_gamma   68.37828147\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si2\n_cell_volume   29.89999910\n_cell_formula_units_Z   2\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.37500000  0.25000000  0.75000000  1.0\n  Si  Si1  1  0.62500000  0.75000000  0.25000000  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.2887398000000001,
+        "energy_per_atom": -8.485024795,
+        "formation_energy_per_atom": 0.2887398000000001,
+        "nsites": 2,
+        "volume": 29.899999100890987,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaaaaaef",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   3.59756044\n_cell_length_b   3.59756044\n_cell_length_c   5.23708898\n_cell_angle_alpha   108.14483113\n_cell_angle_beta   108.14483113\n_cell_angle_gamma   95.35414494\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si4\n_cell_volume   59.83270967\n_cell_formula_units_Z   4\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.72739428  0.27260572  0.00000000  1.0\n  Si  Si1  1  0.27260572  0.72739428  0.00000000  1.0\n  Si  Si2  1  0.77976930  0.77976930  0.55953860  1.0\n  Si  Si3  1  0.22023070  0.22023070  0.44046140  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.29561939749999944,
+        "energy_per_atom": -8.4781451975,
+        "formation_energy_per_atom": 0.29561939749999944,
+        "nsites": 4,
+        "volume": 59.83270966734666,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 2e-07
+    },
+    {
+        "material_id": "mp-aaaaaaft",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   3.84927840\n_cell_length_b   3.84927941\n_cell_length_c   3.84927800\n_cell_angle_alpha   60.00001213\n_cell_angle_beta   60.00000347\n_cell_angle_gamma   60.00001098\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si2\n_cell_volume   40.32952685\n_cell_formula_units_Z   2\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.87500000  0.87500000  0.87500000  1.0\n  Si  Si1  1  0.12500000  0.12500000  0.12500000  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.0,
+        "energy_per_atom": -8.773764595,
+        "formation_energy_per_atom": -0.5,
+        "nsites": 2,
+        "volume": 40.32952684741405,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.6102999999999996,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaaaaagm",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   5.76396198\n_cell_length_b   5.76396198\n_cell_length_c   5.76396198\n_cell_angle_alpha   109.47122063\n_cell_angle_beta   109.47122063\n_cell_angle_gamma   109.47122063\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si8\n_cell_volume   147.41491670\n_cell_formula_units_Z   8\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.20311400  0.00000000  0.00000000  1.0\n  Si  Si1  1  0.00000000  0.70311400  0.50000000  1.0\n  Si  Si2  1  0.50000000  0.50000000  0.20311400  1.0\n  Si  Si3  1  0.29688600  0.79688600  0.29688600  1.0\n  Si  Si4  1  0.79688600  0.00000000  0.00000000  1.0\n  Si  Si5  1  0.00000000  0.29688600  0.50000000  1.0\n  Si  Si6  1  0.50000000  0.50000000  0.79688600  1.0\n  Si  Si7  1  0.70311400  0.20311400  0.70311400  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.16002051874999879,
+        "energy_per_atom": -8.61374407625,
+        "formation_energy_per_atom": 0.16002051874999879,
+        "nsites": 8,
+        "volume": 147.41491670461855,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 4.08e-05
+    },
+    {
+        "material_id": "mp-aaaaaagj",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   3.83132107\n_cell_length_b   3.83131386\n_cell_length_c   6.33262200\n_cell_angle_alpha   90.00070882\n_cell_angle_beta   89.99931893\n_cell_angle_gamma   119.99994035\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si4\n_cell_volume   80.50275362\n_cell_formula_units_Z   4\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.66668300  0.33331700  0.50001200  1.0\n  Si  Si1  1  0.00001500  0.99998500  0.00000900  1.0\n  Si  Si2  1  0.66668300  0.33331800  0.87399300  1.0\n  Si  Si3  1  0.00002000  0.99998100  0.37398600  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.01360687000000027,
+        "energy_per_atom": -8.760157725,
+        "formation_energy_per_atom": 0.01360687000000027,
+        "nsites": 4,
+        "volume": 80.50275361604727,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.45250000000000057,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaaaaptp",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   2.66557737\n_cell_length_b   2.66557765\n_cell_length_c   4.50626927\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   120.00000836\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si2\n_cell_volume   27.72875466\n_cell_formula_units_Z   2\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.33333300  0.66666700  0.25000000  1.0\n  Si  Si1  1  0.66666700  0.33333300  0.75000000  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.5129497950000008,
+        "energy_per_atom": -8.260814799999999,
+        "formation_energy_per_atom": 0.5129497950000008,
+        "nsites": 2,
+        "volume": 27.728754656287357,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 4.7e-06
+    },
+    {
+        "material_id": "mp-aaaaaxzw",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   10.37830198\n_cell_length_b   10.37830198\n_cell_length_c   10.37830198\n_cell_angle_alpha   60.00000000\n_cell_angle_beta   60.00000000\n_cell_angle_gamma   60.00000000\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si34\n_cell_volume   790.43090544\n_cell_formula_units_Z   34\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.50000000  0.50000000  0.50000000  1.0\n  Si  Si1  1  0.75000000  0.75000000  0.75000000  1.0\n  Si  Si2  1  0.38925729  0.38925729  0.38925729  1.0\n  Si  Si3  1  0.41777186  0.86074271  0.86074271  1.0\n  Si  Si4  1  0.86074271  0.41777186  0.86074271  1.0\n  Si  Si5  1  0.86074271  0.86074271  0.41777186  1.0\n  Si  Si6  1  0.38925729  0.83222814  0.38925729  1.0\n  Si  Si7  1  0.38925729  0.38925729  0.83222814  1.0\n  Si  Si8  1  0.83222814  0.38925729  0.38925729  1.0\n  Si  Si9  1  0.86074271  0.86074271  0.86074271  1.0\n  Si  Si10  1  0.36435640  0.75323992  0.75323992  1.0\n  Si  Si11  1  0.12083523  0.49676008  0.88564360  1.0\n  Si  Si12  1  0.49676008  0.12083523  0.49676008  1.0\n  Si  Si13  1  0.49676008  0.49676008  0.12083523  1.0\n  Si  Si14  1  0.12083523  0.88564360  0.49676008  1.0\n  Si  Si15  1  0.49676008  0.88564360  0.12083523  1.0\n  Si  Si16  1  0.49676008  0.12083523  0.88564360  1.0\n  Si  Si17  1  0.75323992  0.36435640  0.75323992  1.0\n  Si  Si18  1  0.75323992  0.75323992  0.36435640  1.0\n  Si  Si19  1  0.36435640  0.12916477  0.75323992  1.0\n  Si  Si20  1  0.36435640  0.75323992  0.12916477  1.0\n  Si  Si21  1  0.75323992  0.12916477  0.75323992  1.0\n  Si  Si22  1  0.12916477  0.36435640  0.75323992  1.0\n  Si  Si23  1  0.12916477  0.75323992  0.36435640  1.0\n  Si  Si24  1  0.75323992  0.75323992  0.12916477  1.0\n  Si  Si25  1  0.88564360  0.12083523  0.49676008  1.0\n  Si  Si26  1  0.88564360  0.49676008  0.12083523  1.0\n  Si  Si27  1  0.12083523  0.49676008  0.49676008  1.0\n  Si  Si28  1  0.88564360  0.49676008  0.49676008  1.0\n  Si  Si29  1  0.49676008  0.88564360  0.49676008  1.0\n  Si  Si30  1  0.49676008  0.49676008  0.88564360  1.0\n  Si  Si31  1  0.75323992  0.36435640  0.12916477  1.0\n  Si  Si32  1  0.75323992  0.12916477  0.36435640  1.0\n  Si  Si33  1  0.12916477  0.75323992  0.75323992  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.39319308941176345,
+        "energy_per_atom": -8.380571505588236,
+        "formation_energy_per_atom": 0.3931930894117637,
+        "nsites": 34,
+        "volume": 790.4309054414421,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.5334000000000003,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaabgnlo",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   5.75924370\n_cell_length_b   5.75924457\n_cell_length_c   5.75924622\n_cell_angle_alpha   109.84536823\n_cell_angle_beta   109.84536609\n_cell_angle_gamma   109.84537281\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si8\n_cell_volume   144.98047198\n_cell_formula_units_Z   8\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.01710242  0.71491061  0.51876050  1.0\n  Si  Si1  1  0.98289758  0.28508839  0.48123950  1.0\n  Si  Si2  1  0.71284515  0.71284515  0.71284515  1.0\n  Si  Si3  1  0.28508839  0.48123950  0.98289758  1.0\n  Si  Si4  1  0.48123950  0.98289758  0.28508839  1.0\n  Si  Si5  1  0.71491061  0.51876050  0.01710242  1.0\n  Si  Si6  1  0.28715485  0.28715485  0.28715485  1.0\n  Si  Si7  1  0.51876050  0.01710242  0.71491061  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.19694103500000004,
+        "energy_per_atom": -8.57682356,
+        "formation_energy_per_atom": 0.19694103500000004,
+        "nsites": 8,
+        "volume": 144.98047197598675,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 0.0
+    },
+    {
+        "material_id": "mp-aaabkrrx",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   5.45513625\n_cell_length_b   3.97462346\n_cell_length_c   9.14468512\n_cell_angle_alpha   78.22843373\n_cell_angle_beta   108.78166373\n_cell_angle_gamma   111.23949886\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si8\n_cell_volume   174.10767850\n_cell_formula_units_Z   8\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.82765500  0.09474000  0.08233300  1.0\n  Si  Si1  1  0.21100200  0.00072400  0.05971100  1.0\n  Si  Si2  1  0.00363400  0.56659500  0.24071800  1.0\n  Si  Si3  1  0.36170500  0.12570700  0.62845900  1.0\n  Si  Si4  1  0.06950100  0.84100800  0.80164500  1.0\n  Si  Si5  1  0.84225300  0.28671500  0.68233000  1.0\n  Si  Si6  1  0.13266900  0.56787400  0.51132200  1.0\n  Si  Si7  1  0.56641800  0.50925300  0.00009200  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.415119279999999,
+        "energy_per_atom": -8.358645315,
+        "formation_energy_per_atom": 0.415119279999999,
+        "nsites": 8,
+        "volume": 174.10767849877462,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 0.0010976
+    },
+    {
+        "material_id": "mp-aaabmmal",
+        "cif": "# generated using pymatgen\ndata_Si\n_symmetry_space_group_name_H-M   'P 1'\n_cell_length_a   4.93489400\n_cell_length_b   5.39174145\n_cell_length_c   7.13719988\n_cell_angle_alpha   92.41209685\n_cell_angle_beta   109.81078297\n_cell_angle_gamma   114.30823166\n_symmetry_Int_Tables_number   1\n_chemical_formula_structural   Si\n_chemical_formula_sum   Si8\n_cell_volume   159.13142938\n_cell_formula_units_Z   8\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Si  Si0  1  0.71280300  0.04764700  0.84091900  1.0\n  Si  Si1  1  0.58984200  0.10000700  0.25531000  1.0\n  Si  Si2  1  0.46193900  0.57963500  0.67382300  1.0\n  Si  Si3  1  0.17370500  0.26764900  0.14692800  1.0\n  Si  Si4  1  0.23373900  0.14102000  0.76030700  1.0\n  Si  Si5  1  0.07905900  0.55414500  0.35612200  1.0\n  Si  Si6  1  0.72910900  0.33465300  0.59369500  1.0\n  Si  Si7  1  0.07466100  0.99039000  0.39518600  1.0\n",
+        "pretty_formula": "Si",
+        "e_above_hull": 0.44703532249999967,
+        "energy_per_atom": -8.3267292725,
+        "formation_energy_per_atom": 0.44703532249999967,
+        "nsites": 8,
+        "volume": 159.13142937906494,
+        "spacegroup": {
+            "symbol": "",
+            "number": 0
+        },
+        "band_gap": 0.0,
+        "total_magnetization": 0.0001129
+    }
+]

@@ -43,23 +43,38 @@ class MockCOD:
     def get_structure_by_formula(self, formula, **kwargs):
         from abipy.core.structure import Structure
         import abipy.data as abidata
-        if "Si" in formula:
-            s = Structure.from_file(abidata.cif_file("si.cif"))
-            sg = "Fd-3m"
-        elif "MgB2" in formula:
-            s = Structure.from_file(abidata.cif_file("mgb2.cif"))
-            sg = "P6/mmm"
-        else:
-            s = Structure.from_file(abidata.cif_file("al.cif"))
-            sg = "Fm-3m"
-        return [{"structure": s, "cod_id": 1000026, "sg": sg}]
+        import os
+        import json
+        mock_dir = os.path.join(os.path.dirname(abidata.__file__), "mock_responses")
+        
+        file_path = os.path.join(mock_dir, f"cod_formula_{formula}.json")
+        if not os.path.exists(file_path):
+            raise FileNotFoundError(f"Mock COD formula file not found: {file_path}")
+            
+        with open(file_path) as f:
+            data = json.load(f)
+            for item in data:
+                item["structure"] = Structure.from_dict(item["structure"])
+            return data
 
     def get_structure_by_id(self, cod_id, **kwargs):
         from abipy.core.structure import Structure
         import abipy.data as abidata
-        if str(cod_id) == "1526507":
-            return Structure.from_file(abidata.cif_file("si.cif"))
-        return Structure.from_file(abidata.cif_file("al.cif"))
+        import os
+        import json
+        mock_dir = os.path.join(os.path.dirname(abidata.__file__), "mock_responses")
+        
+        file_path = os.path.join(mock_dir, f"cod_id_{cod_id}.json")
+        if not os.path.exists(file_path):
+            file_path = os.path.join(mock_dir, "cod_id_default.json")
+            
+        if not os.path.exists(file_path):
+            raise FileNotFoundError(f"Mock COD id file not found: {file_path}")
+            
+        with open(file_path) as f:
+            d = json.load(f)
+            return Structure.from_dict(d)
+
 
 # Automatically set global mock environment variable if running tests via pytest
 # and real API connectivity check is not explicitly requested.
@@ -81,53 +96,85 @@ class MockMPRester:
     def __exit__(self, exc_type, exc_val, exc_tb):
         pass
 
-    def get_data(self, chemsys_formula_id, prop=None):
+    def get_data(self, chemsys_formula_id, prop=None, *args, **kwargs):
         import abipy.data as abidata
+        import os
+        import json
+        mock_dir = os.path.join(os.path.dirname(abidata.__file__), "mock_responses")
+        
+        # Determine formula
         if "MgB2" in chemsys_formula_id:
-            cif_file = "mgb2.cif"
             formula = "MgB2"
-            sg_sym = "P6/mmm"
-            sg_num = 191
         elif "LiF" in chemsys_formula_id:
-            cif_file = "al.cif"
             formula = "LiF"
-            sg_sym = "Fm-3m"
-            sg_num = 225
-        else:
-            cif_file = "si.cif"
+        elif "Si" in chemsys_formula_id:
             formula = "Si"
-            sg_sym = "Fd-3m"
-            sg_num = 227
+        elif "Al" in chemsys_formula_id:
+            formula = "Al"
+        else:
+            formula = chemsys_formula_id
 
-        with open(abidata.cif_file(cif_file)) as f:
-            cif_str = f.read()
+        file_path = os.path.join(mock_dir, f"get_data_{formula}.json")
+        if not os.path.exists(file_path):
+            raise FileNotFoundError(f"Mock get_data file not found: {file_path}")
+            
+        with open(file_path) as f:
+            return json.load(f)
 
-        return [{
-            "material_id": "mp-763" if formula == "MgB2" else ("mp-149" if formula == "Si" else "mp-113"),
-            "cif": cif_str,
-            "pretty_formula": formula,
-            "e_above_hull": 0.0,
-            "energy_per_atom": -5.0,
-            "formation_energy_per_atom": -0.5,
-            "nsites": 3,
-            "volume": 28.0,
-            "spacegroup": {"symbol": sg_sym, "number": sg_num},
-            "band_gap": 0.0,
-            "total_magnetization": 0.0,
-        }]
-
-    def find_structure(self, structure):
+    def find_structure(self, structure, *args, **kwargs):
         return ["mp-134"]
 
-    def get_structure_by_material_id(self, material_id):
+    def _make_request(self, suburl, payload=None, method='GET', *args, **kwargs):
+        import re
+        m = re.search(r'/materials/([^/]+)/abinit_ddb', suburl)
+        if not m:
+            raise ValueError(f"Invalid mock suburl: {suburl}")
+        material_id = m.group(1)
+
+        import abipy.data as abidata
+        import os
+        mock_dir = os.path.join(os.path.dirname(abidata.__file__), "mock_responses")
+        file_path = os.path.join(mock_dir, f"ddb_{material_id}.txt")
+        if not os.path.exists(file_path):
+            raise FileNotFoundError(f"Mock DDB file not found: {file_path}")
+            
+        with open(file_path) as f:
+            return f.read()
+
+    def get_structure_by_material_id(self, material_id, *args, **kwargs):
         from abipy.core.structure import Structure
         import abipy.data as abidata
-        if material_id == "mp-149":
-            return Structure.from_file(abidata.cif_file("si.cif"))
-        elif material_id == "mp-134":
-            return Structure.from_file(abidata.cif_file("al.cif"))
-        else:
-            return Structure.from_file(abidata.cif_file("mgb2.cif"))
+        import os
+        import json
+        mock_dir = os.path.join(os.path.dirname(abidata.__file__), "mock_responses")
+        file_path = os.path.join(mock_dir, f"structure_{material_id}.json")
+        if not os.path.exists(file_path):
+            raise FileNotFoundError(f"Mock structure file not found: {file_path}")
+            
+        with open(file_path) as f:
+            d = json.load(f)
+            return Structure.from_dict(d)
+
+    def get_bandstructure_by_material_id(self, material_id, line_mode=True, *args, **kwargs):
+        from pymatgen.electronic_structure.bandstructure import BandStructureSymmLine
+        import abipy.data as abidata
+        import os
+        import json
+
+        mock_dir = os.path.join(os.path.dirname(abidata.__file__), "mock_responses")
+        file_path = os.path.join(mock_dir, f"bandstructure_{material_id}.json")
+        if not os.path.exists(file_path):
+            raise FileNotFoundError(f"Mock bandstructure file not found: {file_path}")
+            
+        with open(file_path) as f:
+            d = json.load(f)
+            if isinstance(d.get("efermi"), dict):
+                e = d["efermi"]
+                if "data" in e:
+                    d["efermi"] = float(e["data"])
+                elif "value" in e:
+                    d["efermi"] = float(e["value"])
+            return BandStructureSymmLine.from_dict(d)
 
 
 def get_mprester():
