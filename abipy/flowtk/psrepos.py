@@ -43,8 +43,30 @@ from tqdm import tqdm
 
 from abipy.tools.decorators import memoized_method
 
+
+class FallbackWarningPseudoTable(PseudoTable):
+    """
+    A PseudoTable subclass that issues a warning when a fallback pseudo is selected.
+    """
+
+    def select_symbols(self, symbols, ret_list=False):
+        import warnings
+
+        res = super().select_symbols(symbols, ret_list=ret_list)
+        pseudos_to_check = res if ret_list else list(res)
+        for p in pseudos_to_check:
+            if getattr(p, "_is_fallback", False) and not getattr(p, "_warning_issued", False):
+                warnings.warn(
+                    f"Stringent pseudopotential for element {p.symbol} not found in {getattr(p, '_repo_name', 'repository')}. "
+                    f"Falling back to standard: {p.basename}."
+                )
+                p._warning_issued = True
+        return res
+
+
 # Installation directory.
 REPOS_ROOT = os.environ.get("ABIPY_PSREPOS_ROOT", default=os.path.join(os.path.expanduser("~"), ".abinit", "pseudos"))
+
 
 
 def get_oncvpsp_pseudos(
@@ -426,22 +448,67 @@ class OncvpspRepo(PseudosRepo):
         pseudos = []
         with open(djson_path) as fh:
             djson = json.load(fh)
-            for symbol, d in djson["pseudos_metadata"].items():
+
+        metadata = djson["pseudos_metadata"]
+
+        # If we are loading stringent, we also load standard.djson to fill in any missing elements
+        if table_name == "stringent":
+            standard_path = os.path.join(self.dirpath, "standard.djson")
+            if os.path.exists(standard_path):
+                with open(standard_path) as fh:
+                    std_djson = json.load(fh)
+                std_metadata = std_djson["pseudos_metadata"]
+            else:
+                std_metadata = {}
+
+            # standard.djson contains the full set, so we iterate over all symbols present in standard or stringent
+            all_symbols = set(metadata.keys()).union(std_metadata.keys())
+        else:
+            std_metadata = {}
+            all_symbols = set(metadata.keys())
+
+        for symbol in sorted(all_symbols):
+            use_fallback = False
+            d = None
+
+            if table_name == "stringent":
+                if symbol in metadata:
+                    d = metadata[symbol]
+                    bname = d["basename"]
+                    pseudo_path = os.path.expanduser(os.path.join(self.dirpath, symbol, bname))
+                    if not os.path.exists(pseudo_path):
+                        use_fallback = True
+                else:
+                    use_fallback = True
+            else:
+                d = metadata[symbol]
+
+            if use_fallback:
+                if symbol in std_metadata:
+                    d = std_metadata[symbol]
+                else:
+                    d = None
+
+            if d is not None:
                 bname = d["basename"]
-                pseudo_path = os.path.join(self.dirpath, symbol, bname)
-                # print(f"Reading pseudo from {pseudo_path}")
-                # FIXME: Bug if ~ in pseudo_path
-                pseudo_path = os.path.expanduser(pseudo_path)
+                pseudo_path = os.path.expanduser(os.path.join(self.dirpath, symbol, bname))
                 pseudo = Pseudo.from_file(pseudo_path)
+                
+                # Tag fallback pseudos
+                if use_fallback:
+                    pseudo._is_fallback = True
+                    pseudo._repo_name = self.name
+                    pseudo._warning_issued = False
+                
                 # Attach a fake dojo_report
-                # TODO: This part should be rationalized/rewritten
                 hints = d["hints"]
                 dojo_report = {"hints": hints}
                 pseudo.dojo_report = dojo_report
-                # print(f"pseudo.filepath after {pseudo.filepath}")
                 pseudos.append(pseudo)
 
-        return PseudoTable(pseudos)
+        return FallbackWarningPseudoTable(pseudos)
+
+
 
 
 class JthRepo(PseudosRepo):
