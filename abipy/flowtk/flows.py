@@ -351,12 +351,29 @@ class Flow(Node, NodeContainer, MSONable):
         with FileLock(filepath), open(filepath, "rb") as fh:
             flow = pmg_pickle_load(fh)
 
+        # Sync global node ID counter with the max ID in the loaded flow
+        try:
+            from . import nodes
+            nodes.init_counter()
+            node_ids = {flow.node_id}
+            for w in flow:
+                node_ids.add(w.node_id)
+                for t in w:
+                    node_ids.add(t.node_id)
+                    for dep in t.deps:
+                        node_ids.add(dep.node.node_id)
+            max_id = max(node_ids)
+            if nodes._COUNTER is None or max_id > nodes._COUNTER:
+                nodes._COUNTER = max_id
+        except Exception as exc:
+            warnings.warn("Error while syncing global node ID counter: %s" % str(exc))
+
         # Check if versions match.
         if flow.VERSION != cls.VERSION:
             msg = "File flow version %s != latest version %s\n.Regenerate the flow to solve the problem " % (
                 flow.VERSION,
                 cls.VERSION,
-            )
+                )
             warnings.warn(msg)
 
         flow.set_spectator_mode(spectator_mode)
@@ -1997,9 +2014,8 @@ Use the `abirun.py FLOWDIR history` command to print the log files of the differ
 
     def build(self, *args, **kwargs) -> None:
         """Make directories and files of the `Flow`."""
-        # Allocate here if not done yet!
-        if not self.allocated:
-            self.allocate()
+        # Always allocate the flow to ensure newly added tasks are configured
+        self.allocate()
 
         self.indir.makedirs()
         self.outdir.makedirs()

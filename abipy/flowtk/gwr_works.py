@@ -44,6 +44,8 @@ class DirectDiagoWork(Work):
         gwr_task = GWR_TASK.HDIAGO_FULL if green_nband < 0 else GWR_TASK.HDIAGO
         work.scf_task = work.register_scf_task(scf_input)
         diago_input = scf_input.new_with_vars(optdriver=RUNL.GWR, gwr_task=gwr_task)
+        if green_nband > 0:
+            diago_input.set_vars(nband=green_nband)
         work.diago_task = work.register_gwr_task(diago_input, deps={work.scf_task: "DEN"})
 
         return work

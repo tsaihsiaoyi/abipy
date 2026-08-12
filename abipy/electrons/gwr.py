@@ -1773,10 +1773,10 @@ class GwrRobot(Robot, RobotWithEbands):
         if len(self.abifiles) in (0, 1):
             return
 
-        for label, gwr_file in self.items():
+        for label, gwr_file in list(self.items()):
             if gwr_file.completed:
                 continue
-            cprint("Ignoring {label} as GWR file is not completed", color="yellow")
+            cprint(f"Ignoring {label} as GWR file is not completed", color="yellow")
             self.pop_label(label)
 
         # Check dimensions and self-energy states and issue warning.

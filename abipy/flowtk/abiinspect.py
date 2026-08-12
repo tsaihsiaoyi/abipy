@@ -636,12 +636,13 @@ class YamlTokenizer(Iterator):
 
     def close(self) -> None:
         """Close the stream."""
-        try:
-            self.stream.close()
-        except Exception:
-            print("Exception in YAMLTokenizer.close()")
-            print("Python traceback:")
-            print(straceback())
+        if hasattr(self, "stream") and self.stream is not None:
+            try:
+                self.stream.close()
+            except Exception:
+                print("Exception in YAMLTokenizer.close()")
+                print("Python traceback:")
+                print(straceback())
 
     def seek(self, offset, whence=0):
         """

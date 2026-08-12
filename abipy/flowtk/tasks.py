@@ -668,10 +668,10 @@ qadapters:
         if _USER_CONFIG_TASKMANAGER is not None:
             return _USER_CONFIG_TASKMANAGER
 
-        # manager_path = os.getenv("ABIPY_TASK_MANAGER_PATH")
-        # if manager_path is not None:
-        #    _USER_CONFIG_TASKMANAGER = TaskManager.from_file(manager_path)
-        #    return _USER_CONFIG_TASKMANAGER
+        manager_path = os.getenv("ABIPY_TASK_MANAGER_PATH")
+        if manager_path is not None:
+            _USER_CONFIG_TASKMANAGER = TaskManager.from_file(manager_path)
+            return _USER_CONFIG_TASKMANAGER
 
         # Try in the current directory then in user configuration directory.
         try:
@@ -1917,6 +1917,14 @@ class Task(Node, metaclass=abc.ABCMeta):
         if self.mpiabort_file.exists:
             self.mpiabort_file.remove()
 
+        if getattr(self, "manager", None) and getattr(self.manager, "qadapter", None) and getattr(self.manager.qadapter, "ssh_host", None):
+            try:
+                q = self.manager.qadapter
+                r_dir = q.map_remote_path(self.workdir)
+                q.system(f"rm -f '{r_dir}/queue.qerr' '{r_dir}/queue.qout' '{r_dir}/run.err' '{r_dir}/run.log' '{r_dir}/__startlock__' '{r_dir}/__ABI_MPIABORTFILE__'")
+            except Exception:
+                pass
+
         self.set_status(self.S_INIT, msg="Reset on %s" % time.asctime())
         self.num_restarts = 0
         self.set_qjob(None)
@@ -2088,6 +2096,11 @@ class Task(Node, metaclass=abc.ABCMeta):
         This function checks the status of the task by inspecting the output and the
         error files produced by the application and by the queue manager.
         """
+        if self.status in (self.S_SUB, self.S_RUN) and self.manager.qadapter.ssh_host:
+            try:
+                self.manager.qadapter.rsync_from_remote(self.workdir)
+            except Exception as e:
+                self.history.warning("Failed to sync files from remote: %s" % str(e))
         # 1) check it the job is blocked.
         # 2) check if an error occurred when the job was submitted, TODO these problems can be solved
         # 3) check if main output file has been produced.
@@ -2246,7 +2259,7 @@ class Task(Node, metaclass=abc.ABCMeta):
         if err_msg:
             msg = "Found error message:\n %s" % str(err_msg)
             self.history.warning(msg)
-            # return self.set_status(self.S_QCRITICAL, msg=msg)
+            return self.set_status(self.S_ERROR, msg=msg)
 
         # 9) if we still haven't returned there is no indication of any error and the job can only still be running
         # but we should actually never land here, or we have delays in the file system ....

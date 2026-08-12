@@ -318,11 +318,14 @@ hardware:
         self.assertMultiLineEqual(
             s,
             """\
-#!/bin/bash
+#!/bin/bash -l
 
 #SBATCH --partition=Oban
 #SBATCH --job-name=job_name
-#SBATCH --ntasks=4
+#SBATCH --chdir=/launch_dir
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=4
+#SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=1024
 #SBATCH --time=0-0:10:0
 #SBATCH --account=user_account
@@ -335,6 +338,7 @@ echo ${SLURM_JOB_NODELIST}
 ulimit -s unlimited
 
 # Load Modules
+[ -f ~/.bash_profile ] && source ~/.bash_profile
 module --force purge
 module load intel/compilerpro/13.0.1.117 2>> mods.err
 module load fftw3/intel/3.3 2>> mods.err
@@ -523,3 +527,98 @@ mpirun  -n 3 executable < stdin > stdout 2> stderr
         )
         qad_exclusive.set_mpi_procs(50)
         aequal(qad_exclusive.get_select(), "1:ncpus=2:mem=48000mb:mpiprocs=2+2:ncpus=24:mem=48000mb:mpiprocs=24")
+
+
+class RemoteQueueAdapterTest(AbipyTest):
+    def test_remote_ssh(self):
+        qdict = {
+            "priority": 1,
+            "queue": {
+                "qtype": "slurm",
+                "qname": "Oban",
+                "ssh_host": "cluster.example.com",
+                "ssh_user": "testuser",
+                "local_workdir": "/local/flow",
+                "remote_workdir": "/remote/flow",
+                "ssh_config": "/path/to/ssh_config"
+            },
+            "limits": {
+                "timelimit": "2:00",
+                "min_cores": 1,
+                "max_cores": 24
+            },
+            "job": {
+                "mpi_runner": "mpirun"
+            },
+            "hardware": {
+                "num_nodes": 3,
+                "sockets_per_node": 2,
+                "cores_per_socket": 4,
+                "mem_per_node": "8 GB"
+            }
+        }
+        qad = make_qadapter(**qdict)
+        self.assertEqual(qad.ssh_host, "cluster.example.com")
+        self.assertEqual(qad.ssh_user, "testuser")
+        self.assertEqual(qad.local_workdir, "/local/flow")
+        self.assertEqual(qad.remote_workdir, "/remote/flow")
+        self.assertEqual(qad.ssh_config, "/path/to/ssh_config")
+
+        # Test path mapping translation
+        self.assertEqual(qad.map_remote_path("/local/flow/w0/t0/job.sh"), "/remote/flow/w0/t0/job.sh")
+        # Unmapped path because it's not starting with local_workdir
+        self.assertEqual(qad.map_remote_path("/other/path/job.sh"), "/other/path/job.sh")
+
+        # Test serialization/deserialization retains remote settings
+        qdict_serialized = qad.as_dict()
+        self.assertEqual(qdict_serialized["queue"]["ssh_host"], "cluster.example.com")
+        self.assertEqual(qdict_serialized["queue"]["ssh_user"], "testuser")
+        self.assertEqual(qdict_serialized["queue"]["local_workdir"], "/local/flow")
+        self.assertEqual(qdict_serialized["queue"]["remote_workdir"], "/remote/flow")
+        self.assertEqual(qdict_serialized["queue"]["ssh_config"], "/path/to/ssh_config")
+
+        self.assertEqual(qdict_serialized["queue"]["max_ssh_retries"], 5)
+
+        qad_deserialized = SlurmAdapter.from_dict(qdict_serialized)
+        self.assertEqual(qad_deserialized.ssh_host, "cluster.example.com")
+        self.assertEqual(qad_deserialized.ssh_user, "testuser")
+        self.assertEqual(qad_deserialized.local_workdir, "/local/flow")
+        self.assertEqual(qad_deserialized.remote_workdir, "/remote/flow")
+        self.assertEqual(qad_deserialized.ssh_config, "/path/to/ssh_config")
+        self.assertEqual(qad_deserialized.max_ssh_retries, 5)
+
+        # Test Popen redirection logic
+        from unittest.mock import patch
+        with patch("subprocess.Popen") as mock_popen:
+            qad.Popen(["sbatch", "/local/flow/w0/job.sh"])
+            mock_popen.assert_called_once()
+            called_args = mock_popen.call_args[0][0]
+            self.assertEqual(called_args[0], "ssh")
+            self.assertEqual(called_args[1], "-o")
+            self.assertEqual(called_args[2], "BatchMode=yes")
+            self.assertEqual(called_args[3], "-F")
+            self.assertEqual(called_args[4], "/path/to/ssh_config")
+            self.assertEqual(called_args[5], "testuser@cluster.example.com")
+            self.assertIn("sbatch /remote/flow/w0/job.sh", called_args[6])
+
+        with patch("subprocess.call") as mock_call:
+            mock_call.return_value = 0
+            qad.system("scancel 12345")
+            mock_call.assert_called_once()
+            called_args = mock_call.call_args[0][0]
+            self.assertEqual(called_args[0], "ssh")
+            self.assertEqual(called_args[1], "-o")
+            self.assertEqual(called_args[2], "BatchMode=yes")
+            self.assertEqual(called_args[3], "-F")
+            self.assertEqual(called_args[4], "/path/to/ssh_config")
+            self.assertEqual(called_args[5], "testuser@cluster.example.com")
+            self.assertIn("scancel 12345", called_args[6])
+
+        # Test max retries limit when network error (255) occurs repeatedly
+        with patch("subprocess.call") as mock_call, patch("time.sleep"):
+            mock_call.return_value = 255
+            qad.max_ssh_retries = 3
+            with self.assertRaises(qad.Error):
+                qad.system("scancel 12345")
+            self.assertEqual(mock_call.call_count, 3)
+

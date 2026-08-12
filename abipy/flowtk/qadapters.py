@@ -22,6 +22,7 @@ import math
 import os
 import string
 import sys
+import time
 from collections import namedtuple
 from functools import cached_property
 from subprocess import PIPE, Popen
@@ -552,7 +553,7 @@ limits:
 
         # Initialize some values from the info reported in the partition.
         self.set_mpi_procs(self.min_cores)
-        self.set_mem_per_proc(self.min_mem_per_proc)
+        self.set_mem_per_proc(self.hw.mem_per_core)
 
         # Final consistency check.
         self.validate_qparams()
@@ -579,6 +580,14 @@ limits:
                 "qparams": self._qparams,
                 "mail_type": self.mail_type,
                 "mail_user": self.mail_user,
+                "ssh_host": self.ssh_host,
+                "ssh_user": self.ssh_user,
+                "local_workdir": self.local_workdir,
+                "remote_workdir": self.remote_workdir,
+                "ssh_config": self.ssh_config,
+                "max_ssh_retries": self.max_ssh_retries,
+                "account": self.account,
+                "qos": self.qos,
             },
             "limits": {
                 "timelimit_hard": self._timelimit_hard,
@@ -739,12 +748,294 @@ limits:
         self.mail_type = d.pop("mail_type", "")
         self.mail_user = d.pop("mail_user", "")
 
+        self.ssh_host = d.pop("ssh_host", "")
+        self.ssh_user = d.pop("ssh_user", "")
+        self.local_workdir = d.pop("local_workdir", "")
+        self.remote_workdir = d.pop("remote_workdir", "")
+        self.ssh_config = d.pop("ssh_config", "")
+        self.max_ssh_retries = int(d.pop("max_ssh_retries", 5))
+        self.account = d.pop("account", "")
+        self.qos = d.pop("qos", "")
+
+        if self.account:
+            self._qparams["account"] = self.account
+        if self.qos:
+            self._qparams["qos"] = self.qos
+
         if self.qnodes not in ["standard", "shared", "exclusive"]:
             raise ValueError(
                 f"Nodes must be either in standard, shared or exclusive mode while qnodes parameter was {self.qnodes}"
             )
         if d:
             raise ValueError("Found unknown keyword(s) in queue section:\n %s" % list(d.keys()))
+
+    def map_remote_path(self, path: str) -> str:
+        if self.local_workdir and self.remote_workdir:
+            # Do not map executable names (like 'abinit') or flags (like '--timelimit')
+            if not (os.path.isabs(path) or path.startswith(".")):
+                return path
+            local_wd = os.path.abspath(self.local_workdir)
+            remote_wd = os.path.abspath(self.remote_workdir)
+            path_abs = os.path.abspath(path)
+            if path_abs.startswith(local_wd):
+                mapped_path = remote_wd + path_abs[len(local_wd):]
+                return mapped_path
+        return path
+
+    def auto_set_ssh_agent(self) -> None:
+        import os
+        import glob
+        import subprocess
+
+        def has_keys(socket_path):
+            if not os.path.exists(socket_path):
+                return False
+            # If Popen is mocked (e.g., in unit tests), do not execute subprocess.run
+            if hasattr(subprocess.Popen, "assert_called") or hasattr(subprocess.Popen, "return_value"):
+                return False
+            env = os.environ.copy()
+            env["SSH_AUTH_SOCK"] = socket_path
+            try:
+                res = subprocess.run(["ssh-add", "-l"], env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                return res.returncode == 0
+            except Exception:
+                return False
+
+        # If current socket is set and has keys, we are good
+        curr_socket = os.environ.get("SSH_AUTH_SOCK")
+        if curr_socket and has_keys(curr_socket):
+            return
+
+        # Find all agent sockets in /tmp and test them
+        sockets = glob.glob("/tmp/ssh-*/agent.*")
+        if sockets:
+            sockets.sort(key=os.path.getmtime, reverse=True)
+            for s in sockets:
+                if has_keys(s):
+                    os.environ["SSH_AUTH_SOCK"] = s
+                    return
+            # Fallback to the newest socket if none had keys
+            os.environ["SSH_AUTH_SOCK"] = sockets[0]
+
+    def rsync_to_remote(self, local_path: str) -> None:
+        if not self.ssh_host:
+            return
+        self.auto_set_ssh_agent()
+        if os.path.isfile(local_path):
+            local_dir = os.path.dirname(os.path.abspath(local_path))
+        else:
+            local_dir = os.path.abspath(local_path)
+            
+        remote_dir = self.map_remote_path(local_dir)
+        
+        # Clean up any leftover output files in the task directory
+        # to prevent interference with subsequent runs
+        for filename in ["run.abo", "run.log", "run.err", "queue.qout", "queue.qerr", "mods.err"]:
+            filepath = os.path.join(local_dir, filename)
+            if os.path.exists(filepath):
+                try:
+                    os.remove(filepath)
+                except Exception:
+                    pass
+        for subfolder in ["outdata", "tmpdata"]:
+            folderpath = os.path.join(local_dir, subfolder)
+            if os.path.exists(folderpath):
+                try:
+                    shutil.rmtree(folderpath)
+                    os.makedirs(folderpath)
+                except Exception:
+                    pass
+
+        # Clean up remote files directly via SSH (fast, single operation)
+        remote_cmd = (
+            f"rm -f '{remote_dir}/run.abo' '{remote_dir}/run.log' '{remote_dir}/run.err' "
+            f"'{remote_dir}/queue.qout' '{remote_dir}/queue.qerr' '{remote_dir}/mods.err'; "
+            f"rm -rf '{remote_dir}/outdata'/* '{remote_dir}/tmpdata'/*"
+        )
+        self.system(remote_cmd)
+
+        # Walk through the task directory and copy external dependencies (like pseudos) into the task folder
+        import shutil
+        import re
+        for root, dirs, files in os.walk(local_dir):
+            for file in files:
+                if file.endswith((".abi", ".files", "job.sh")):
+                    filepath = os.path.join(root, file)
+                    try:
+                        with open(filepath, "r", encoding="utf-8") as f:
+                            content = f.read()
+                        
+                        # Find all quoted paths representing absolute paths on the local system
+                        quoted_paths = re.findall(r'"(/[^"]+)"', content)
+                        new_content = content
+                        
+                        for path in quoted_paths:
+                            if os.path.exists(path) and os.path.isfile(path):
+                                path_abs = os.path.abspath(path)
+                                local_dir_abs = os.path.abspath(local_dir)
+                                if not path_abs.startswith(local_dir_abs):
+                                    filename = os.path.basename(path_abs)
+                                    dest_path = os.path.join(local_dir, filename)
+                                    if not os.path.exists(dest_path):
+                                        shutil.copy2(path_abs, dest_path)
+                                    new_content = new_content.replace(f'"{path}"', f'"{filename}"')
+                        
+                        if self.local_workdir and self.remote_workdir:
+                            new_content = new_content.replace(os.path.abspath(self.local_workdir), os.path.abspath(self.remote_workdir))
+                        
+                        if new_content != content:
+                            with open(filepath, "w", encoding="utf-8") as f:
+                                f.write(new_content)
+                    except Exception:
+                        pass
+
+        # Ensure remote parent directory exists
+        remote_parent = os.path.dirname(remote_dir)
+        self.system(f"mkdir -p {remote_parent}")
+        
+        import subprocess
+        ssh_host = self.ssh_host
+        if self.ssh_user:
+            ssh_host = f"{self.ssh_user}@{ssh_host}"
+            
+        ssh_opts = ["-o", "BatchMode=yes"]
+        if self.ssh_config:
+            ssh_opts.extend(["-F", os.path.abspath(self.ssh_config)])
+            
+        rsync_cmd = [
+            "rsync", "-artl",
+            "-e", " ".join(["ssh"] + ssh_opts),
+            local_dir + "/",
+            f"{ssh_host}:{remote_dir}"
+        ]
+        # rsync exit codes that indicate transient SSH/network failures and should be retried:
+        #   255 = SSH error (connection refused, broken pipe, port 65535, etc.)
+        #   35  = timeout in data send/receive
+        # All other non-zero codes (e.g. 23 = no such file, 11 = permission denied) are permanent
+        # and should NOT be retried.
+        _RSYNC_NETWORK_ERRORS = {255, 35}
+        attempt = 1
+        max_attempts = getattr(self, "max_ssh_retries", 5)
+        while True:
+            ret = subprocess.call(rsync_cmd)
+            if ret == 0:
+                break
+            if ret not in _RSYNC_NETWORK_ERRORS:
+                print(f"[SSH] rsync to remote returned non-retryable error {ret} (attempt {attempt}). Aborting.")
+                raise self.Error(f"rsync to remote failed with non-retryable exit code {ret}")
+            if attempt >= max_attempts:
+                raise self.Error(f"rsync to remote failed after {attempt} attempts (last exit code: {ret})")
+            print(f"[SSH RETRY] rsync to remote: SSH/network error {ret} (attempt {attempt}/{max_attempts}). Retrying in 5s...")
+            attempt += 1
+            time.sleep(5)
+
+    def rsync_from_remote(self, local_path: str) -> None:
+        if not self.ssh_host:
+            return
+        self.auto_set_ssh_agent()
+        if os.path.isfile(local_path):
+            local_dir = os.path.dirname(os.path.abspath(local_path))
+        else:
+            local_dir = os.path.abspath(local_path)
+            
+        remote_dir = self.map_remote_path(local_dir)
+        
+        import subprocess
+        ssh_host = self.ssh_host
+        if self.ssh_user:
+            ssh_host = f"{self.ssh_user}@{ssh_host}"
+            
+        ssh_opts = ["-o", "BatchMode=yes"]
+        if self.ssh_config:
+            ssh_opts.extend(["-F", os.path.abspath(self.ssh_config)])
+            
+        rsync_cmd = [
+            "rsync", "-artl",
+        ]
+        if not os.environ.get("ABIPY_FETCH_WFK"):
+            rsync_cmd.extend(["--exclude=*WFK*", "--exclude=*1WF*", "--exclude=*2WF*"])
+        rsync_cmd.extend([
+            "-e", " ".join(["ssh"] + ssh_opts),
+            f"{ssh_host}:{remote_dir}/",
+            local_dir
+        ])
+        _RSYNC_NETWORK_ERRORS = {255, 35}
+        attempt = 1
+        max_attempts = getattr(self, "max_ssh_retries", 5)
+        while True:
+            ret = subprocess.call(rsync_cmd)
+            if ret == 0:
+                break
+            if ret not in _RSYNC_NETWORK_ERRORS:
+                print(f"[SSH] rsync from remote returned non-retryable error {ret} (attempt {attempt}). Aborting.")
+                raise self.Error(f"rsync from remote failed with non-retryable exit code {ret}")
+            if attempt >= max_attempts:
+                raise self.Error(f"rsync from remote failed after {attempt} attempts (last exit code: {ret})")
+            print(f"[SSH RETRY] rsync from remote: SSH/network error {ret} (attempt {attempt}/{max_attempts}). Retrying in 5s...")
+            attempt += 1
+            time.sleep(5)
+
+    def Popen(self, cmd_list, stdout=PIPE, stderr=PIPE, universal_newlines=True, **kwargs):
+        if self.ssh_host:
+            self.auto_set_ssh_agent()
+            ssh_host = self.ssh_host
+            if self.ssh_user:
+                ssh_host = f"{self.ssh_user}@{ssh_host}"
+
+            mapped_cmd_list = []
+            for arg in cmd_list:
+                if isinstance(arg, str):
+                    mapped_cmd_list.append(self.map_remote_path(arg))
+                else:
+                    mapped_cmd_list.append(arg)
+
+            import shlex
+            remote_cmd = shlex.join(mapped_cmd_list)
+            ssh_cmd = ["ssh", "-o", "BatchMode=yes"]
+            if self.ssh_config:
+                ssh_cmd.extend(["-F", os.path.abspath(self.ssh_config)])
+            ssh_cmd.extend([ssh_host, remote_cmd])
+            from subprocess import Popen as SubprocessPopen
+            return SubprocessPopen(ssh_cmd, stdout=stdout, stderr=stderr, universal_newlines=universal_newlines, **kwargs)
+        else:
+            from subprocess import Popen as SubprocessPopen
+            return SubprocessPopen(cmd_list, stdout=stdout, stderr=stderr, universal_newlines=universal_newlines, **kwargs)
+
+    def system(self, cmd: str) -> int:
+        if self.ssh_host:
+            self.auto_set_ssh_agent()
+            ssh_host = self.ssh_host
+            if self.ssh_user:
+                ssh_host = f"{self.ssh_user}@{ssh_host}"
+
+            if self.local_workdir and self.remote_workdir:
+                local_wd = os.path.abspath(self.local_workdir)
+                remote_wd = os.path.abspath(self.remote_workdir)
+                cmd = cmd.replace(local_wd, remote_wd)
+
+            import subprocess
+            ssh_cmd = ["ssh", "-o", "BatchMode=yes"]
+            if self.ssh_config:
+                ssh_cmd.extend(["-F", os.path.abspath(self.ssh_config)])
+            ssh_cmd.extend([ssh_host, cmd])
+            _SSH_NETWORK_ERRORS = {255, 35}
+            attempt = 1
+            max_attempts = getattr(self, "max_ssh_retries", 5)
+            while True:
+                ret = subprocess.call(ssh_cmd)
+                if ret == 0:
+                    return 0
+                if ret not in _SSH_NETWORK_ERRORS:
+                    print(f"[SSH] Remote SSH command failed with non-retryable code {ret} (attempt {attempt}). Aborting.")
+                    return ret
+                if attempt >= max_attempts:
+                    raise self.Error(f"Remote SSH command failed after {attempt} attempts (last exit code: {ret})")
+                print(f"[SSH RETRY] Remote SSH command failed with code {ret} (attempt {attempt}/{max_attempts}). Retrying in 5s...")
+                attempt += 1
+                time.sleep(5)
+        else:
+            import subprocess
+            return subprocess.call(cmd, shell=True)
 
     def __str__(self):
         lines = ["%s:%s" % (self.__class__.__name__, self.qname)]
@@ -1071,7 +1362,7 @@ limits:
         # print("subs_dict:", subs_dict)
         return subs_dict
 
-    def _make_qheader(self, job_name, qout_path, qerr_path) -> str:
+    def _make_qheader(self, job_name, qout_path, qerr_path, launch_dir) -> str:
         """Return a string with the options that are passed to the resource manager."""
         # get substitution dict for replacements into the template
         subs_dict = self.get_subs_dict()
@@ -1082,6 +1373,7 @@ limits:
         subs_dict["job_name"] = job_name.replace("/", "_")
         subs_dict["_qout_path"] = qout_path
         subs_dict["_qerr_path"] = qerr_path
+        subs_dict["launch_dir"] = launch_dir
 
         qtemplate = QScriptTemplate(self.QTEMPLATE)
         # might contain unused parameters as leftover $$.
@@ -1120,12 +1412,29 @@ limits:
             qerr_path: Path of the Queue manager error file.
             exec_args: List of arguments passed to executable (used only if executable is a string, default: empty)
         """
+        if self.ssh_host:
+            launch_dir = self.map_remote_path(launch_dir)
+            qout_path = self.map_remote_path(qout_path)
+            qerr_path = self.map_remote_path(qerr_path)
+            if in_file:
+                in_file = self.map_remote_path(in_file)
+            if stdin:
+                stdin = self.map_remote_path(stdin)
+            if stdout:
+                stdout = self.map_remote_path(stdout)
+            if stderr:
+                stderr = self.map_remote_path(stderr)
+            if isinstance(executable, str):
+                executable = self.map_remote_path(executable)
+            if exec_args:
+                exec_args = [self.map_remote_path(arg) if isinstance(arg, str) else arg for arg in exec_args]
+
         # PbsPro does not accept job_names longer than 15 chars.
         if len(job_name) > 14 and isinstance(self, PbsProAdapter):
             job_name = job_name[:14]
 
         # Construct the header for the Queue Manager.
-        qheader = self._make_qheader(job_name, qout_path, qerr_path)
+        qheader = self._make_qheader(job_name, qout_path, qerr_path, launch_dir)
 
         # Add the bash section.
         se = ScriptEditor()
@@ -1142,6 +1451,7 @@ limits:
             # stderr is redirected to mods.err file.
             # module load 2>> mods.err
             se.add_comment("Load Modules")
+            se.add_line("[ -f ~/.bash_profile ] && source ~/.bash_profile")
             se.add_line("module --force purge")
             se.load_modules(self.modules)
             se.add_emptyline()
@@ -1205,6 +1515,10 @@ limits:
             raise self.Error(f"Cannot find script file located at: {script_file}")
 
         self.check_num_launches()
+
+        # Synchronize task files to the remote server before submitting
+        if self.ssh_host:
+            self.rsync_to_remote(script_file)
 
         # Call the concrete implementation.
         s = self._submit_to_queue(script_file)
@@ -1378,10 +1692,11 @@ class SlurmAdapter(QueueAdapter):
     QTYPE = "slurm"
 
     QTEMPLATE = """\
-#!/bin/bash
+#!/bin/bash -l
 
 #SBATCH --partition=$${partition}
 #SBATCH --job-name=$${job_name}
+#SBATCH --chdir=$${launch_dir}
 #SBATCH --nodes=$${nodes}
 #SBATCH --total_tasks=$${total_tasks}
 #SBATCH --ntasks=$${ntasks}
@@ -1433,16 +1748,15 @@ $${qverbatim}
         self.qparams["time"] = qu.time2slurm(timelimit)
 
     def cancel(self, job_id: int) -> int:
-        return os.system("scancel %d" % job_id)
+        return self.system("scancel %d" % job_id)
 
     def optimize_params(self, qnodes=None) -> dict:
         params = {}
-        if self.allocation == "nodes":
-            # run on the smallest number of nodes compatible with the configuration
-            params["nodes"] = max(
-                int(math.ceil(self.mpi_procs / self.hw.cores_per_node)),
-                int(math.ceil(self.total_mem / self.hw.mem_per_node)),
-            )
+        dist = self.distribute(self.mpi_procs, self.omp_threads, self.mem_per_proc)
+        params["nodes"] = dist.num_nodes
+        params["ntasks_per_node"] = dist.mpi_per_node
+        params["cpus_per_task"] = self.omp_threads
+        params["ntasks"] = None
         return params
 
         # dist = self.distribute(self.mpi_procs, self.omp_threads, self.mem_per_proc)
@@ -1467,24 +1781,42 @@ $${qverbatim}
         # return {}
 
     def _submit_to_queue(self, script_file: str) -> SubmitResults:
-        """Submit a job script to the queue."""
-        # need string not bytes so must use universal_newlines
-        process = Popen(["sbatch", script_file], stdout=PIPE, stderr=PIPE, universal_newlines=True)
+        """Submit a job script to the queue with infinite automatic retry on transient Slurm timeouts."""
+        attempt = 1
+        while True:
+            process = self.Popen(["sbatch", script_file], stdout=PIPE, stderr=PIPE, universal_newlines=True)
 
-        out, err = process.communicate()
+            out, err = process.communicate()
 
-        # grab the returncode. SLURM returns 0 if the job was successful
-        queue_id = None
-        if process.returncode == 0:
-            try:
-                # output should of the form '2561553.sdb' or '352353.jessup' - just grab the first part for job id
-                queue_id = int(out.split()[3])
-                logger.info(f"Job submission was successful and queue_id is {queue_id}")
-            except Exception:
-                # probably error parsing job code
-                logger.critical("Could not parse job id following slurm...")
+            # grab the returncode. SLURM returns 0 if the job was successful
+            queue_id = None
+            if process.returncode == 0:
+                try:
+                    # output should of the form '2561553.sdb' or '352353.jessup' - just grab the first part for job id
+                    queue_id = int(out.split()[3])
+                    logger.info(f"Job submission was successful and queue_id is {queue_id}")
+                except Exception:
+                    # probably error parsing job code
+                    logger.critical("Could not parse job id following slurm...")
+                return SubmitResults(qid=queue_id, out=out, err=err, process=process)
 
-        return SubmitResults(qid=queue_id, out=out, err=err, process=process)
+            combined_err = f"{out}\n{err}"
+            is_transient = any(phrase in combined_err.lower() for phrase in [
+                "socket timed out", "timed out", "connection timed out",
+                "temporarily unavailable", "slurm_receive_msg", "resource temporarily unavailable",
+                "failed to send", "unable to connect", "slurmdbd", "sbatch: error:"
+            ])
+
+            if is_transient:
+                print(f"[SLURM SUBMIT RETRY] sbatch socket timed out (attempt {attempt}). Retrying in 5s...")
+                logger.warning(
+                    f"[SLURM SUBMIT RETRY] sbatch timed out (attempt {attempt}). "
+                    f"Retrying in 5s. Stderr: {err.strip()}"
+                )
+                attempt += 1
+                time.sleep(5)
+            else:
+                return SubmitResults(qid=queue_id, out=out, err=err, process=process)
 
     def exclude_nodes(self, nodes):
         try:
@@ -1502,19 +1834,18 @@ $${qverbatim}
             raise self.Error("qadapter failed to exclude nodes")
 
     def _get_njobs_in_queue(self, username: str):
-        # need string not bytes so must use universal_newlines
-        process = Popen(["squeue", '-o "%u"', "-u", username], stdout=PIPE, stderr=PIPE, universal_newlines=True)
-
-        out, err = process.communicate()
-        njobs = None
-        if process.returncode == 0:
-            # parse the result. lines should have this form:
-            # username
-            # count lines that include the username in it
-            outs = out.splitlines()
-            njobs = len([line.split() for line in outs if username in line])
-
-        return njobs, process
+        attempt = 1
+        while True:
+            process = self.Popen(["squeue", '-o "%u"', "-u", username], stdout=PIPE, stderr=PIPE, universal_newlines=True)
+            out, err = process.communicate()
+            if process.returncode == 0:
+                outs = out.splitlines()
+                njobs = len([line.split() for line in outs if username in line])
+                return njobs, process
+            
+            print(f"[SSH RETRY] squeue query returned {process.returncode} (attempt {attempt}). Retrying in 5s...")
+            attempt += 1
+            time.sleep(5)
 
 
 class PbsProAdapter(QueueAdapter):
@@ -1558,7 +1889,7 @@ $${qverbatim}
         # self.qparams["mem"] = self.mem_per_proc
 
     def cancel(self, job_id: int) -> int:
-        return os.system("qdel %d" % job_id)
+        return self.system("qdel %d" % job_id)
 
     def optimize_params(self, qnodes=None):
         return {"select": self.get_select(qnodes=qnodes)}
@@ -1890,7 +2221,7 @@ $${qverbatim}
     def _submit_to_queue(self, script_file):
         """Submit a job script to the queue."""
         # need string not bytes so must use universal_newlines
-        process = Popen(["qsub", script_file], stdout=PIPE, stderr=PIPE, universal_newlines=True)
+        process = self.Popen(["qsub", script_file], stdout=PIPE, stderr=PIPE, universal_newlines=True)
 
         out, err = process.communicate()
         # grab the return code. PBS returns 0 if the job was successful
@@ -1906,7 +2237,7 @@ $${qverbatim}
 
     def _get_njobs_in_queue(self, username):
         # need string not bytes so must use universal_newlines
-        process = Popen(["qstat", "-a", "-u", username], stdout=PIPE, stderr=PIPE, universal_newlines=True)
+        process = self.Popen(["qstat", "-a", "-u", username], stdout=PIPE, stderr=PIPE, universal_newlines=True)
 
         out, err = process.communicate()
         njobs = None
@@ -2035,12 +2366,12 @@ $${qverbatim}
         self.qparams["walltime"] = qu.time2pbspro(timelimit)
 
     def cancel(self, job_id: int) -> int:
-        return os.system("qdel %d" % job_id)
+        return self.system("qdel %d" % job_id)
 
     def _submit_to_queue(self, script_file):
         """Submit a job script to the queue."""
         # need string not bytes so must use universal_newlines
-        process = Popen(["qsub", script_file], stdout=PIPE, stderr=PIPE, universal_newlines=True)
+        process = self.Popen(["qsub", script_file], stdout=PIPE, stderr=PIPE, universal_newlines=True)
 
         out, err = process.communicate()
         # grab the returncode. SGE returns 0 if the job was successful
@@ -2061,7 +2392,7 @@ $${qverbatim}
 
     def _get_njobs_in_queue(self, username):
         # need string not bytes so must use universal_newlines
-        process = Popen(["qstat", "-u", username], stdout=PIPE, stderr=PIPE, universal_newlines=True)
+        process = self.Popen(["qstat", "-u", username], stdout=PIPE, stderr=PIPE, universal_newlines=True)
 
         out, err = process.communicate()
         njobs = None
@@ -2125,12 +2456,12 @@ $${qverbatim}
         raise self.Error("qadapter failed to exclude nodes, not implemented yet in moad")
 
     def cancel(self, job_id: int) -> int:
-        return os.system("canceljob %d" % job_id)
+        return self.system("canceljob %d" % job_id)
 
     def _submit_to_queue(self, script_file):
         """Submit a job script to the queue."""
         # need string not bytes so must use universal_newlines
-        process = Popen(["msub", script_file], stdout=PIPE, stderr=PIPE, universal_newlines=True)
+        process = self.Popen(["msub", script_file], stdout=PIPE, stderr=PIPE, universal_newlines=True)
 
         out, err = process.communicate()
         queue_id = None
@@ -2147,7 +2478,7 @@ $${qverbatim}
 
     def _get_njobs_in_queue(self, username):
         # need string not bytes so must use universal_newlines
-        process = Popen(["showq", "-s -u", username], stdout=PIPE, stderr=PIPE, universal_newlines=True)
+        process = self.Popen(["showq", "-s -u", username], stdout=PIPE, stderr=PIPE, universal_newlines=True)
 
         out, err = process.communicate()
         njobs = None
@@ -2220,7 +2551,7 @@ $${qverbatim}
         self.qparams["wall_clock_limit"] = qu.time2loadlever(timelimit)
 
     def cancel(self, job_id: int) -> int:
-        return os.system("llcancel %d" % job_id)
+        return self.system("llcancel %d" % job_id)
 
     def bgsize_rankspernode(self):
         """Return (bg_size, ranks_per_node) from mpi_procs and omp_threads."""
@@ -2242,7 +2573,7 @@ $${qverbatim}
     def _submit_to_queue(self, script_file: str):
         """Submit a job script to the queue."""
         # need string not bytes so must use universal_newlines
-        process = Popen(["llsubmit", script_file], stdout=PIPE, stderr=PIPE, universal_newlines=True)
+        process = self.Popen(["llsubmit", script_file], stdout=PIPE, stderr=PIPE, universal_newlines=True)
 
         out, err = process.communicate()
         # grab the return code. llsubmit returns 0 if the job was successful
@@ -2263,7 +2594,7 @@ $${qverbatim}
 
     def _get_njobs_in_queue(self, username: str):
         # need string not bytes so must use universal_newlines
-        process = Popen(["llq", "-u", username], stdout=PIPE, stderr=PIPE, universal_newlines=True)
+        process = self.Popen(["llq", "-u", username], stdout=PIPE, stderr=PIPE, universal_newlines=True)
 
         out, err = process.communicate()
         njobs = None

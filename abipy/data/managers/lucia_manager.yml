@@ -1,0 +1,37 @@
+# TaskManager configuration template for the Lucia supercomputer at Cenaero
+# Documentation: https://doc.lucia.cenaero.be/
+
+# Standard batch partition hardware (AMD EPYC Zen 3 Milan)
+# Nodes: 260, Cores/Node: 128 (2 sockets, 64 cores/socket), Available Memory: 240 GB
+batch: &batch
+   num_nodes: 260
+   sockets_per_node: 2
+   cores_per_socket: 64
+   mem_per_node: 240 GB
+
+# Job launch environment and module load settings
+job: &job
+    mpi_runner: srun                  # Slurm's native srun is recommended on Lucia
+    shell_env:
+        PATH: "$HOME/bin:$PATH"       # Add your local abinit binary directory if needed
+    modules:
+        # Use 'module spider abinit' on the cluster to identify the exact toolchain and version
+        - toolchain/foss/2022a
+        - abinit/9.6.2-foss-2022a
+
+# Partitions/Queues list
+qadapters:
+  # Standard 'batch' partition
+  - priority: 10
+    queue:
+       qtype: slurm
+       qname: batch
+    limits:
+       timelimit: 1-00:00:00          # 1 day walltime limit (default)
+       min_cores: 1
+       max_cores: 128
+       min_mem_per_proc: 1000         # in MB (approx. 1 GB/proc)
+       max_mem_per_proc: 1875         # in MB (approx. 1.8 GB/proc limit for standard batch)
+       max_num_launches: 5
+    hardware: *batch
+    job: *job
